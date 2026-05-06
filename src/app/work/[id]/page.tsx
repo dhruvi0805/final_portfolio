@@ -6,7 +6,6 @@ import {
   getUxProjectById,
   uxProjects,
 } from "@/data/projects";
-import { site } from "@/data/site";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -28,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const linkMuted =
+  "text-sm text-cream-soft transition-colors hover:text-star-white";
+const metaLabel =
+  "text-xs font-semibold uppercase tracking-wide text-cream-faint";
+const glassCard =
+  "glass-dark-strong relative overflow-hidden rounded-2xl border border-[var(--glass-border)]";
+
 export default async function CaseStudyPage({ params }: Props) {
   const { id } = await params;
   const project = getUxProjectById(id);
@@ -41,66 +47,58 @@ export default async function CaseStudyPage({ params }: Props) {
     index < uxProjects.length - 1 ? uxProjects[index + 1] : null;
 
   return (
-    <article className="bg-impasto-vibrant pb-24 pt-32">
+    <article className="relative z-[2] pb-24 pt-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap gap-2 text-sm text-canvas-ink/65">
+          <ol className="flex flex-wrap gap-2 text-sm text-cream-faint">
             <li>
-              <Link href="/" className="hover:text-canvas-ink">
+              <Link href="/" className={linkMuted}>
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/#work" className="hover:text-canvas-ink">
+              <Link href="/#work" className={linkMuted}>
                 Work
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-canvas-ink">{project.title}</li>
+            <li className="font-medium text-star-white">{project.title}</li>
           </ol>
         </nav>
 
-        <header className="glass-surface-strong mt-10 rounded-3xl p-7 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cobalt">
+        <header className={`${glassCard} mt-10 p-7 sm:p-10`}>
+          <p className="font-mono text-xs font-light uppercase tracking-[0.2em] text-night-cerulean">
             Case study
           </p>
-          <h1 className="mt-3 font-display text-4xl leading-tight text-canvas-ink sm:text-5xl">
+          <h1 className="mt-3 font-display text-4xl leading-tight text-star-white sm:text-5xl">
             {project.title}
           </h1>
-          <p className="mt-4 text-lg text-canvas-ink/80">{project.subtitle}</p>
-          <p className="mt-6 text-base leading-relaxed text-canvas-ink/85">
+          <p className="mt-4 text-lg text-cream-muted">{project.subtitle}</p>
+          <p className="mt-6 text-base leading-relaxed text-cream-muted">
             {project.summary}
           </p>
 
-          <dl className="mt-8 grid gap-4 border-t border-canvas-ink/10 pt-8 sm:grid-cols-3">
+          <dl className="mt-8 grid gap-4 border-t border-[rgba(100,160,255,0.08)] pt-8 sm:grid-cols-3">
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
-                Role
-              </dt>
-              <dd className="mt-1 text-sm text-canvas-ink">{project.role}</dd>
+              <dt className={metaLabel}>Role</dt>
+              <dd className="mt-1 text-sm text-star-cream">{project.role}</dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
-                Timeline
-              </dt>
-              <dd className="mt-1 text-sm text-canvas-ink">
-                {project.timeline}
-              </dd>
+              <dt className={metaLabel}>Timeline</dt>
+              <dd className="mt-1 text-sm text-star-cream">{project.timeline}</dd>
             </div>
             <div className="sm:col-span-1">
-              <dt className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
-                Tools
-              </dt>
-              <dd className="mt-1 text-sm text-canvas-ink">
+              <dt className={metaLabel}>Tools</dt>
+              <dd className="mt-1 text-sm text-star-cream">
                 {project.tools.join(" · ")}
               </dd>
             </div>
           </dl>
 
           {project.outcome ? (
-            <p className="mt-8 rounded-2xl border border-sage/40 bg-sage/10 px-5 py-4 text-sm leading-relaxed text-canvas-ink">
-              <span className="font-semibold text-canvas-ink">Outcome — </span>
+            <p className="mt-8 rounded-2xl border border-[rgba(240,180,41,0.28)] bg-[rgba(240,180,41,0.06)] px-5 py-4 text-sm leading-relaxed text-cream-muted">
+              <span className="font-semibold text-star-white">Outcome — </span>
               {project.outcome}
             </p>
           ) : null}
@@ -111,7 +109,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 <li key={link.href + link.label}>
                   <a
                     href={link.href}
-                    className="glass-surface inline-flex rounded-full px-4 py-2 text-sm font-semibold text-cobalt transition duration-200 hover:border-cobalt/40"
+                    className="inline-flex rounded-full border border-[rgba(100,160,255,0.25)] bg-[rgba(20,40,90,0.2)] px-4 py-2 text-sm font-semibold text-night-cerulean backdrop-blur-sm transition duration-200 hover:border-star-gold hover:text-star-gold"
                   >
                     {link.label}
                   </a>
@@ -123,15 +121,15 @@ export default async function CaseStudyPage({ params }: Props) {
 
         <div className="mt-12 space-y-14">
           {project.sections.map((section) => (
-            <section key={section.heading} className="glass-surface rounded-3xl p-7 sm:p-8">
-              <h2 className="font-display text-2xl text-canvas-ink sm:text-3xl">
+            <section key={section.heading} className={`${glassCard} p-7 sm:p-8`}>
+              <h2 className="font-display text-2xl text-star-white sm:text-3xl">
                 {section.heading}
               </h2>
-              <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-canvas-ink/85">
+              <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-cream-muted">
                 {section.body}
               </p>
               {section.image ? (
-                <figure className="mt-6 overflow-hidden rounded-2xl border border-canvas-ink/10 bg-canvas-ink/[0.04]">
+                <figure className="mt-6 overflow-hidden rounded-2xl border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.4)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={section.image}
@@ -139,7 +137,7 @@ export default async function CaseStudyPage({ params }: Props) {
                     className="w-full object-cover"
                   />
                   {section.imageAlt ? (
-                    <figcaption className="px-4 py-3 text-center text-xs text-canvas-ink/65">
+                    <figcaption className="px-4 py-3 text-center text-xs text-cream-faint">
                       {section.imageAlt}
                     </figcaption>
                   ) : null}
@@ -149,14 +147,14 @@ export default async function CaseStudyPage({ params }: Props) {
           ))}
         </div>
 
-        <footer className="glass-surface mt-16 rounded-3xl p-7 sm:p-8">
-          <p className="text-sm font-medium text-canvas-ink/70">
+        <footer className={`${glassCard} mt-16 p-7 sm:p-8`}>
+          <p className="text-sm font-medium text-cream-soft">
             Content for this case study lives in{" "}
-            <code className="rounded bg-canvas-ink/5 px-1.5 py-0.5 text-canvas-ink">
+            <code className="rounded border border-[rgba(100,160,255,0.12)] bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 text-star-cream">
               src/data/projects.ts
             </code>{" "}
             — edit the{" "}
-            <code className="rounded bg-canvas-ink/5 px-1.5 py-0.5 text-canvas-ink">
+            <code className="rounded border border-[rgba(100,160,255,0.12)] bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 text-star-cream">
               {project.id}
             </code>{" "}
             entry to update copy, links, and imagery paths.
@@ -165,12 +163,10 @@ export default async function CaseStudyPage({ params }: Props) {
             {prev ? (
               <Link
                 href={`/work/${prev.id}`}
-                className="group glass-surface rounded-2xl p-4 transition duration-200 hover:border-cobalt/35 sm:max-w-[48%]"
+                className={`group ${glassCard} block rounded-2xl p-4 transition duration-200 hover:border-[rgba(100,160,255,0.35)] sm:max-w-[48%]`}
               >
-                <span className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
-                  Previous
-                </span>
-                <span className="mt-1 block font-display text-lg text-canvas-ink group-hover:text-cobalt">
+                <span className={metaLabel}>Previous</span>
+                <span className="mt-1 block font-display text-lg text-star-white transition group-hover:text-night-cerulean">
                   {prev.title}
                 </span>
               </Link>
@@ -180,12 +176,10 @@ export default async function CaseStudyPage({ params }: Props) {
             {next ? (
               <Link
                 href={`/work/${next.id}`}
-                className="group glass-surface rounded-2xl p-4 text-right transition duration-200 hover:border-cobalt/35 sm:max-w-[48%]"
+                className={`group ${glassCard} block rounded-2xl p-4 text-right transition duration-200 hover:border-[rgba(100,160,255,0.35)] sm:max-w-[48%]`}
               >
-                <span className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
-                  Next
-                </span>
-                <span className="mt-1 block font-display text-lg text-canvas-ink group-hover:text-cobalt">
+                <span className={metaLabel}>Next</span>
+                <span className="mt-1 block font-display text-lg text-star-white transition group-hover:text-night-cerulean">
                   {next.title}
                 </span>
               </Link>
@@ -193,7 +187,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
           <Link
             href="/#work"
-            className="mt-10 inline-flex text-sm font-semibold text-cobalt hover:underline"
+            className="mt-10 inline-flex text-sm font-semibold text-star-gold hover:underline"
           >
             ← All UX projects
           </Link>

@@ -32,6 +32,8 @@ export type AnimationProject = {
   brief: string;
   /** Path under public, e.g. /videos/clip.mp4 */
   videoPath: string;
+  /** Small uppercase label above the title (e.g. tool stack) */
+  motionLabel?: string;
 };
 
 export const uxProjects: UXProject[] = [
@@ -153,18 +155,21 @@ export const animationProjects: AnimationProject[] = [
     title: "Aurora Drift",
     brief: "Soft volumetric lighting study — loopable hero motion for a climate-tech landing page.",
     videoPath: "/videos/placeholder-1.mp4",
+    motionLabel: "3D · Lighting study",
   },
   {
     id: "reel-terra",
     title: "Terra Form",
     brief: "Hard-surface product spin with tactile pause frames for social cutdowns.",
     videoPath: "/videos/placeholder-2.mp4",
+    motionLabel: "3D · Product spin",
   },
   {
     id: "reel-liquify",
     title: "Liquify Bloom",
     brief: "Organic morph inspired by impasto strokes; explores brand motion language.",
     videoPath: "/videos/placeholder-3.mp4",
+    motionLabel: "Motion · Organic forms",
   },
 ];
 

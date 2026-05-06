@@ -9,27 +9,60 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: {
-          DEFAULT: "#F9F9F9",
-          ink: "#013220",
+        night: {
+          black: "var(--night-black)",
+          navy: "var(--deep-navy)",
+          cobalt: "var(--cobalt)",
+          starlight: "var(--starlight-blue)",
+          vangogh: "var(--van-gogh-blue)",
+          cerulean: "var(--cerulean)",
+          sky: "var(--sky-blue)",
         },
-        sage: "#9CAF88",
-        willow: "#7D8B6F",
-        cobalt: "#3D6B8C",
-        lilac: "#B8A9C9",
-        ochre: "#C4A35A",
+        star: {
+          gold: "var(--gold)",
+          amber: "var(--amber)",
+          cream: "var(--cream)",
+          white: "var(--white-star)",
+          yellow: "var(--paint-yellow)",
+          ochre: "var(--paint-ochre)",
+        },
+        motion: {
+          tint: "rgba(13, 27, 62, 0.3)",
+        },
       },
       boxShadow: {
-        glass: "0 10px 32px rgba(1, 50, 32, 0.12), 0 2px 10px rgba(1, 50, 32, 0.08)",
-        "glass-soft": "0 8px 24px rgba(1, 50, 32, 0.1)",
+        "glow-blue": "0 0 60px rgba(38, 85, 168, 0.2)",
+        "glow-gold": "0 0 60px rgba(240, 180, 41, 0.1)",
+        "cta-blue": "0 20px 60px rgba(38, 85, 168, 0.4)",
       },
       backgroundImage: {
-        "impasto-vibrant":
-          "radial-gradient(circle at 22% 20%, rgba(61, 107, 140, 0.4), transparent 42%), radial-gradient(circle at 80% 12%, rgba(156, 175, 136, 0.35), transparent 40%), radial-gradient(circle at 10% 85%, rgba(184, 169, 201, 0.32), transparent 42%)",
+        "work-section":
+          "linear-gradient(180deg, var(--night-black) 0%, rgba(13,27,62,0.5) 50%, var(--night-black) 100%)",
+        "btn-primary-night":
+          "linear-gradient(135deg, var(--van-gogh-blue), var(--cerulean))",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
         display: ["var(--font-display)", "Georgia", "serif"],
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        ringPulse: {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.4" },
+          "50%": { transform: "scale(1.4)", opacity: "0" },
+        },
+        rotateGlow: {
+          to: { filter: "hue-rotate(30deg)", transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "fade-in-slow": "fadeIn 1.5s ease 0.4s forwards",
+        "ring-pulse": "ringPulse 3s ease-in-out infinite",
+        "orb-spin": "rotateGlow 8s linear infinite",
       },
     },
   },
