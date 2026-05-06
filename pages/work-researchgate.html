@@ -6,18 +6,22 @@
     <title>ResearchGate — Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../aurora-glass.css" />
   </head>
-  <body class="min-h-screen bg-night-black text-[#f5ede0]">
+  <body class="min-h-screen bg-night-black text-[#f5ede0]" style="background:#05070f;">
+    <div class="aurora-bg" aria-hidden="true"><div class="aurora-orb orb-1"></div><div class="aurora-orb orb-2"></div><div class="aurora-orb orb-3"></div><div class="aurora-orb orb-4"></div><div class="aurora-grid"></div></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
     <main class="relative z-[2] mx-auto max-w-3xl px-6 pb-20 pt-20">
       <a href="../index.html#work" class="font-mono text-xs uppercase tracking-[0.2em] text-star-gold">← Back to selected work</a>
-      <article class="mt-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <h1 class="font-display text-5xl text-star-white">ResearchGate</h1>
+      <article class="glass-card mt-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <h1 class="aurora-text font-display text-5xl text-star-white">ResearchGate</h1>
         <p class="mt-4 text-cream-muted">Scholarly discovery without the clutter.</p>
         <p class="mt-8 leading-relaxed text-cream-soft">A desktop exploration that improves literature triage through calm visual density, scannable metadata, and persistent filter context. The concept focuses on reducing abandonment on results pages.</p>
       </article>
     </main>
+    <script src="../aurora.js"></script>
   </body>
 </html>

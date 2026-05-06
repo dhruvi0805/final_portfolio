@@ -10,6 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./aurora-glass.css">
     <script>
       tailwind = {
         config: {
@@ -30,14 +33,21 @@
       };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
-  <body data-page="home" class="min-h-screen bg-night-black font-sans text-[#f5ede0] antialiased">
-    <canvas id="starCanvas" class="pointer-events-none fixed inset-0 z-0 h-screen w-full" aria-hidden="true"></canvas>
+  <body data-page="home" class="min-h-screen bg-night-black font-sans text-[#f5ede0] antialiased" style="background:#05070f;">
+    <div class="aurora-bg" aria-hidden="true">
+      <div class="aurora-orb orb-1"></div>
+      <div class="aurora-orb orb-2"></div>
+      <div class="aurora-orb orb-3"></div>
+      <div class="aurora-orb orb-4"></div>
+      <div class="aurora-grid"></div>
+    </div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <header class="fixed left-0 right-0 top-0 z-[100]" data-reveal>
       <nav
-        class="nav-glass flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] sm:py-7"
+        class="glass-nav nav-glass flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] sm:py-7"
       >
         <a href="./index.html" class="shrink-0 font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-[1.15rem]">
           Dhruvi<span class="italic text-star-gold"> Malusare</span>
@@ -47,20 +57,20 @@
           <li><a href="./pages/projects.html" data-page="projects" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Projects</a></li>
           <li><a href="./pages/about.html" data-page="about" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">About</a></li>
           <li><a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Resume</a></li>
-          <li><a href="./pages/contact.html" data-page="contact" class="btn-primary-night inline-block rounded-none px-5 py-2.5 sm:px-9 sm:py-3.5">Contact</a></li>
+          <li><a href="./pages/contact.html" data-page="contact" class="glass-btn btn-primary-night inline-block rounded-none px-5 py-2.5 sm:px-9 sm:py-3.5">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="relative z-[2]">
-      <section class="relative isolate flex min-h-screen items-center overflow-hidden px-[8vw] pt-28">
+      <section class="hero-glow relative isolate flex min-h-screen items-center overflow-hidden px-[8vw] pt-28">
         <svg class="pointer-events-none absolute left-[55%] top-[15%] z-[1] w-[300px] opacity-[0.07]" viewBox="0 0 300 200" aria-hidden="true">
           <path d="M20,100 Q80,20 160,80 Q240,140 280,60" stroke="rgba(240,180,41,0.6)" stroke-width="6" fill="none" stroke-linecap="round"></path>
           <path d="M10,130 Q90,60 170,110 Q250,160 290,90" stroke="rgba(58,123,213,0.5)" stroke-width="4" fill="none" stroke-linecap="round"></path>
         </svg>
         <div class="relative z-[3] max-w-[680px]">
           <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.35em] text-night-cerulean" data-reveal>UX Designer & Creative Technologist</p>
-          <h1 class="mb-2 font-display text-[clamp(4rem,8vw,7.5rem)] font-bold leading-[0.9] text-star-white" data-reveal>
+          <h1 class="aurora-text mb-2 font-display text-[clamp(4rem,8vw,7.5rem)] font-bold leading-[0.9] text-star-white" data-reveal>
             Dhruvi<br /><span class="block font-normal italic text-star-yellow">Malusare.</span>
           </h1>
           <p class="mb-12 max-w-xl font-sans text-[clamp(1rem,2vw,1.4rem)] font-light italic text-cream-soft" data-reveal>
@@ -70,8 +80,8 @@
             I craft calm, legible experiences where research, interaction, and motion meet.
           </p>
           <div class="flex flex-wrap items-center gap-5" data-reveal>
-            <a href="#work" class="btn-primary-night">View work</a>
-            <a href="#contact" class="btn-ghost-night">Let's talk <span class="inline-block animate-bounce text-base">↓</span></a>
+            <a href="#work" class="glass-btn btn-primary-night">View work</a>
+            <a href="#contact" class="glass-btn btn-ghost-night">Let's talk <span class="inline-block animate-bounce text-base">↓</span></a>
           </div>
         </div>
       </section>
@@ -82,34 +92,34 @@
         <div class="mx-auto max-w-[1400px]">
           <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
             <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">01 —</span>
-            <h2 class="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">
+            <h2 class="aurora-text font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">
               Selected <em class="font-normal italic text-[rgba(240,180,41,0.8)]">work</em>
             </h2>
           </div>
           <div class="columns-1 gap-3 space-y-3 md:columns-2" data-reveal>
-            <a href="./pages/work-funnymoney.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
-              <div class="relative min-h-[360px] bg-gradient-to-br from-[rgba(38,85,168,0.55)] to-[rgba(10,11,26,0.2)] p-8">
+            <a href="./pages/work-funnymoney.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="glass-img-frame relative min-h-[360px] bg-gradient-to-br from-[rgba(38,85,168,0.55)] to-[rgba(10,11,26,0.2)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.4)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">Featured · Case study</span>
                 <h3 class="font-display text-[2rem] font-bold text-star-white">FunnyMoney</h3>
                 <p class="mt-3 max-w-[28ch] text-base leading-[1.7] text-cream-soft">Making household budgeting feel human, not punitive.</p>
               </div>
             </a>
-            <a href="./pages/work-thrive.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
-              <div class="relative min-h-[260px] bg-gradient-to-br from-[rgba(240,180,41,0.35)] to-[rgba(10,11,26,0.1)] p-8">
+            <a href="./pages/work-thrive.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="glass-img-frame relative min-h-[260px] bg-gradient-to-br from-[rgba(240,180,41,0.35)] to-[rgba(10,11,26,0.1)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(240,180,41,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">UX · Case study</span>
                 <h3 class="font-display text-[1.8rem] font-bold text-star-white">Thrive</h3>
                 <p class="mt-3 max-w-[26ch] text-sm leading-[1.7] text-cream-soft">Habit coaching for neurodivergent students.</p>
               </div>
             </a>
-            <a href="./pages/work-wayfinding.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
-              <div class="relative min-h-[300px] bg-gradient-to-br from-[rgba(26,58,122,0.5)] to-[rgba(10,11,26,0.2)] p-8">
+            <a href="./pages/work-wayfinding.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="glass-img-frame relative min-h-[300px] bg-gradient-to-br from-[rgba(26,58,122,0.5)] to-[rgba(10,11,26,0.2)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
                 <h3 class="font-display text-[1.8rem] font-bold text-star-white">Wayfinding</h3>
                 <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Campus navigation that respects cognitive load.</p>
               </div>
             </a>
-            <a href="./pages/work-researchgate.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
-              <div class="relative min-h-[340px] bg-gradient-to-br from-[rgba(58,123,213,0.4)] to-[rgba(10,11,26,0.15)] p-8">
+            <a href="./pages/work-researchgate.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="glass-img-frame relative min-h-[340px] bg-gradient-to-br from-[rgba(58,123,213,0.4)] to-[rgba(10,11,26,0.15)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
                 <h3 class="font-display text-[1.9rem] font-bold text-star-white">ResearchGate</h3>
                 <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Scholarly discovery without the clutter.</p>
@@ -125,24 +135,24 @@
         <div class="mx-auto max-w-[1400px]">
           <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
             <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">02 —</span>
-            <h2 class="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">3D <em class="font-normal italic text-[rgba(240,180,41,0.8)]">motion</em></h2>
+            <h2 class="aurora-text font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">3D <em class="font-normal italic text-[rgba(240,180,41,0.8)]">motion</em></h2>
           </div>
           <ul class="grid grid-cols-1 gap-0.5 md:grid-cols-3" data-reveal>
-            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
               <div class="motion-bg-1 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-1 opacity-45"></div></div></div>
               <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
                 <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Lighting study</div>
                 <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Aurora Drift</h3>
               </div>
             </li>
-            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
               <div class="motion-bg-2 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-2 opacity-45"></div></div></div>
               <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
                 <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Product spin</div>
                 <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Terra Form</h3>
               </div>
             </li>
-            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
               <div class="motion-bg-3 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-3 opacity-45"></div></div></div>
               <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
                 <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">Motion · Organic forms</div>
@@ -159,11 +169,11 @@
         <div class="mx-auto grid max-w-[1400px] items-center gap-16 lg:grid-cols-2 lg:gap-20">
           <div data-reveal>
             <p class="mb-5 font-mono text-[0.6rem] uppercase tracking-[0.3em] text-night-cerulean">03 — About</p>
-            <h2 class="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-star-white">I think in <em class="font-normal italic text-star-yellow">systems,</em><br />design in <em class="font-normal italic text-star-yellow">stories.</em></h2>
+            <h2 class="aurora-text font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-star-white">I think in <em class="font-normal italic text-star-yellow">systems,</em><br />design in <em class="font-normal italic text-star-yellow">stories.</em></h2>
             <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">I'm a UX designer focused on research-backed flows, accessible UI, and motion that supports comprehension.</p>
             <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">Based in the NJIT / New Jersey area; open to internships, collaborative class projects, and roles where I can keep sharpening systems thinking and craft.</p>
           </div>
-          <div class="glass-dark-strong p-12" data-reveal>
+          <div class="glass-card glass-dark-strong p-12" data-reveal>
             <p class="mb-8 font-mono text-[0.58rem] uppercase tracking-[0.25em] text-night-cerulean">Recognition & experience</p>
             <ul class="list-none">
               <li class="flex gap-5 border-b border-[rgba(100,160,255,0.08)] py-5"><span class="text-lg text-star-gold">✦</span><div><div class="text-[0.95rem] text-star-white">UX Portfolio — IS117</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">NJIT · 2025–2026</div></div></li>
@@ -178,10 +188,10 @@
       <section id="contact" class="scroll-mt-24 relative px-[8vw] py-32 text-center sm:py-36">
         <div class="relative z-[2] mx-auto max-w-4xl" data-reveal>
           <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-night-cerulean">04 — Contact</p>
-          <h2 class="font-display text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-star-white">Let's build<br /><em class="font-normal italic text-star-yellow">something</em><br />together.</h2>
+          <h2 class="aurora-text font-display text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-star-white">Let's build<br /><em class="font-normal italic text-star-yellow">something</em><br />together.</h2>
           <p class="mx-auto mt-6 max-w-xl text-base font-light italic text-cream-soft">Reach out for collaborations, feedback on this portfolio, or internship conversations.</p>
           <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
-            <a href="mailto:hello@example.com" class="btn-primary-night inline-flex items-center gap-2 rounded-none px-10 py-4">hello@example.com ↗</a>
+            <a href="mailto:hello@example.com" class="glass-btn btn-primary-night inline-flex items-center gap-2 rounded-none px-10 py-4">hello@example.com ↗</a>
           </div>
         </div>
       </section>
@@ -194,7 +204,6 @@
       </div>
     </footer>
 
-    <script src="./assets/js/animations.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./aurora.js"></script>
   </body>
 </html>
