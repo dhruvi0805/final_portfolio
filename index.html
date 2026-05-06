@@ -3,395 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhruvi Malusare - UX Portfolio</title>
+    <title>Dhruvi Malusare — UX Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --ink: #ffffff;
-        --ink-dim: rgba(255, 255, 255, 0.82);
-        --ink-soft: rgba(255, 255, 255, 0.66);
-        --accent: #fcd34d;
-        --glass-border: rgba(255, 255, 255, 0.2);
-      }
-
-      * { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; overflow-x: hidden; }
-      body {
-        font-family: "Manrope", "Segoe UI", system-ui, sans-serif;
-        background: linear-gradient(-45deg, #1a2f23, #d97706, #be185d, #1e3a2a, #f59e0b, #db2777);
-        background-size: 400% 400%;
-        animation: gradientMove 15s ease infinite;
-        color: var(--ink);
-        line-height: 1.5;
-        min-height: 100vh;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.15;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      }
-
-      .wrap { width: min(1120px, 92vw); margin: 0 auto; }
-
-      .glass {
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid var(--glass-border);
-        border-radius: 1.1rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-      }
-
-      .nav-shell {
-        position: fixed;
-        z-index: 40;
-        top: 0;
-        left: 0;
-        right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.9rem 0.4rem;
-      }
-
-      .brand {
-        font-size: 1.1rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-      }
-      .nav-links { display: flex; gap: 0.35rem; flex-wrap: wrap; }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--ink-soft);
-        font-size: 0.88rem;
-        font-weight: 600;
-        padding: 0.5rem 0.8rem;
-        border-radius: 0.8rem;
-        transition: color 220ms ease, background 220ms ease;
-      }
-      .nav-links a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.08); }
-      .nav-links .cta {
-        background: #ffffff;
-        color: #182442;
-        border-radius: 999px;
-        padding-inline: 1rem;
-      }
-      .nav-links .cta:hover { filter: brightness(0.96); background: #ffffff; }
-
-      main { padding-top: 5.6rem; }
-      section { position: relative; padding: 5rem 0; z-index: 2; }
-
-      .hero-panel {
-        padding: 2.2rem;
-        max-width: 760px;
-        border-radius: 1.6rem;
-        text-align: center;
-        margin-inline: auto;
-      }
-      .eyebrow {
-        margin: 0;
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-      h1 {
-        margin: 0.7rem 0 0;
-        font-size: clamp(2.2rem, 6vw, 4.1rem);
-        line-height: 1.08;
-        letter-spacing: -0.02em;
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 450;
-      }
-      .subtitle {
-        display: block;
-        margin-top: 0.35rem;
-        font-size: clamp(1.15rem, 2.4vw, 1.85rem);
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.9);
-      }
-      .lead { margin: 1.2rem auto 0; font-size: 1.04rem; color: var(--ink-dim); max-width: 62ch; }
-      .hero-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
-      .btn {
-        display: inline-block;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 650;
-        padding: 0.62rem 1rem;
-        border-radius: 999px;
-      }
-      .btn-glass { color: #ffffff; }
-      .btn-link { color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); }
-      .btn-link:hover { background: rgba(255, 255, 255, 0.08); }
-
-      .section-title {
-        margin: 0;
-        font-size: clamp(1.7rem, 4vw, 2.8rem);
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 450;
-      }
-      .section-copy { color: var(--ink-dim); margin: 0.55rem 0 0; }
-      .heading-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-      }
-      .heading-meta { color: var(--ink-soft); font-style: italic; font-size: 0.9rem; }
-
-      .grid { margin-top: 1.4rem; display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .card {
-        padding: 1rem 1.05rem;
-        text-decoration: none;
-        color: inherit;
-        border-radius: 1rem;
-        transition: transform 300ms ease, border-color 220ms ease, background 220ms ease;
-      }
-      .card:hover {
-        transform: translateY(-7px);
-        border-color: rgba(255, 255, 255, 0.34);
-        background: rgba(255, 255, 255, 0.2);
-      }
-      .card h3 { margin: 0; font-size: 1.35rem; }
-      .card p { margin: 0.45rem 0 0; color: var(--ink-dim); font-size: 0.92rem; }
-
-      .motion-grid { margin-top: 1.4rem; display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .motion-card { padding: 0.9rem; border-radius: 1rem; }
-      .mock-video {
-        border-radius: 0.8rem;
-        border: 1px dashed rgba(255, 255, 255, 0.35);
-        background: rgba(0, 0, 0, 0.2);
-        aspect-ratio: 16 / 9;
-        display: grid;
-        place-items: center;
-        font-size: 0.82rem;
-        color: var(--ink-dim);
-      }
-
-      .contact {
-        background: rgba(0, 0, 0, 0.18);
-        backdrop-filter: blur(10px);
-      }
-      .contact .section-copy { color: var(--ink-dim); }
-      .contact .btn {
-        color: #182442;
-        background: #ffffff;
-      }
-
-      .impasto {
-        position: absolute;
-        pointer-events: none;
-        filter: drop-shadow(0 24px 20px rgba(0, 0, 0, 0.2));
-        opacity: 0.88;
-      }
-      .impasto.right {
-        right: -10%;
-        top: 4%;
-        width: min(52vw, 620px);
-      }
-      .impasto.left {
-        left: -12%;
-        bottom: 3%;
-        width: min(48vw, 560px);
-      }
-
-      footer {
-        position: relative;
-        z-index: 2;
-        padding: 1.4rem 0 2rem;
-        font-size: 0.82rem;
-        color: var(--ink-soft);
-      }
-
-      .material-symbols-outlined {
-        font-size: 1.15rem;
-        vertical-align: middle;
-        font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
-      }
-
-      @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-      @media (max-width: 900px) {
-        .grid { grid-template-columns: 1fr; }
-        .motion-grid { grid-template-columns: 1fr; }
-        .impasto { opacity: 0.55; transform: scale(0.8); }
-        .heading-row { display: block; }
-        .heading-meta { display: block; margin-top: 0.4rem; }
-      }
-    </style>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                night: { black: "var(--night-black)", cerulean: "var(--cerulean)" },
+                star: { gold: "var(--gold)", white: "var(--white-star)", yellow: "var(--paint-yellow)" },
+              },
+              fontFamily: {
+                sans: ['Cormorant Garamond', "Georgia", "serif"],
+                mono: ['DM Mono', "ui-monospace", "monospace"],
+                display: ['Playfair Display', "Georgia", "serif"],
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
-  <body>
-    <!-- Editable Nav -->
-    <header class="nav-shell">
-      <div class="wrap glass">
-        <nav>
-          <strong class="brand">Dhruvi Malusare</strong>
-          <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#work">Work</a>
-            <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-            <a class="cta" href="#contact">Contact</a>
-          </div>
-        </nav>
-      </div>
+  <body data-page="home" class="min-h-screen bg-night-black font-sans text-[#f5ede0] antialiased">
+    <canvas id="starCanvas" class="pointer-events-none fixed inset-0 z-0 h-screen w-full" aria-hidden="true"></canvas>
+
+    <header class="fixed left-0 right-0 top-0 z-[100]" data-reveal>
+      <nav
+        class="nav-glass flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] sm:py-7"
+      >
+        <a href="./index.html" class="shrink-0 font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-[1.15rem]">
+          Dhruvi<span class="italic text-star-gold"> Malusare</span>
+        </a>
+        <ul class="flex list-none flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:gap-x-8 md:gap-x-12">
+          <li><a href="./index.html" data-page="home" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Home</a></li>
+          <li><a href="./pages/projects.html" data-page="projects" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Projects</a></li>
+          <li><a href="./pages/about.html" data-page="about" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">About</a></li>
+          <li><a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Resume</a></li>
+          <li><a href="./pages/contact.html" data-page="contact" class="btn-primary-night inline-block rounded-none px-5 py-2.5 sm:px-9 sm:py-3.5">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main id="home">
-      <!-- Editable Hero -->
-      <section class="hero">
-        <svg class="impasto right" viewBox="0 0 760 540" fill="none" aria-hidden="true">
-          <defs>
-            <radialGradient id="h1" cx="18%" cy="18%" r="88%">
-              <stop offset="0%" stop-color="rgba(184,169,201,0.95)" />
-              <stop offset="42%" stop-color="rgba(61,107,140,0.92)" />
-              <stop offset="100%" stop-color="rgba(20,61,78,0.95)" />
-            </radialGradient>
-            <radialGradient id="h2" cx="28%" cy="22%" r="65%">
-              <stop offset="0%" stop-color="rgba(255,255,255,0.66)" />
-              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-            </radialGradient>
-          </defs>
-          <path d="M128 78C289 9 540 58 656 185C736 273 698 470 505 503C332 534 143 436 94 293C54 182 59 111 128 78Z" fill="url(#h1)" />
-          <path d="M188 149C336 90 529 152 588 273C619 335 565 438 433 448C306 457 173 369 160 273C150 221 164 171 188 149Z" fill="url(#h2)" />
+    <main class="relative z-[2]">
+      <section class="relative isolate flex min-h-screen items-center overflow-hidden px-[8vw] pt-28">
+        <svg class="pointer-events-none absolute left-[55%] top-[15%] z-[1] w-[300px] opacity-[0.07]" viewBox="0 0 300 200" aria-hidden="true">
+          <path d="M20,100 Q80,20 160,80 Q240,140 280,60" stroke="rgba(240,180,41,0.6)" stroke-width="6" fill="none" stroke-linecap="round"></path>
+          <path d="M10,130 Q90,60 170,110 Q250,160 290,90" stroke="rgba(58,123,213,0.5)" stroke-width="4" fill="none" stroke-linecap="round"></path>
         </svg>
-
-        <svg class="impasto left" viewBox="0 0 680 500" fill="none" aria-hidden="true">
-          <defs>
-            <radialGradient id="h3" cx="72%" cy="24%" r="90%">
-              <stop offset="0%" stop-color="rgba(156,175,136,0.96)" />
-              <stop offset="40%" stop-color="rgba(83,121,94,0.94)" />
-              <stop offset="100%" stop-color="rgba(1,50,32,0.95)" />
-            </radialGradient>
-            <radialGradient id="h4" cx="70%" cy="26%" r="68%">
-              <stop offset="0%" stop-color="rgba(255,255,255,0.66)" />
-              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
-            </radialGradient>
-          </defs>
-          <path d="M564 90C427 10 234 52 104 151C16 219 -4 355 123 427C257 503 461 459 584 332C656 258 649 136 564 90Z" fill="url(#h3)" />
-          <path d="M455 173C350 102 206 151 153 240C130 285 158 365 252 384C356 405 499 317 509 233C514 199 493 179 455 173Z" fill="url(#h4)" />
-        </svg>
-
-        <div class="wrap">
-          <div class="hero-panel glass">
-            <p class="eyebrow">Digital Water Lilies</p>
-            <h1>
-              Dhruvi Malusare
-              <span class="subtitle">UX Designer - Creative Technologist</span>
-            </h1>
-            <p class="lead">I craft calm, legible experiences where research, interaction, and motion meet.</p>
-            <div class="hero-actions">
-              <a class="btn btn-glass glass" href="#work">View selected work</a>
-              <a class="btn btn-link" href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">Download resume</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Editable Work -->
-      <section id="work">
-        <div class="wrap">
-          <div class="heading-row">
-            <div>
-              <p class="eyebrow">Curated Work</p>
-              <h2 class="section-title">UX case studies</h2>
-              <p class="section-copy">Four projects spanning fintech habits, education, spatial clarity, and scholarly tools.</p>
-            </div>
-            <span class="heading-meta">2023 - 2024 Collection</span>
-          </div>
-          <div class="grid">
-            <a class="card glass" href="#" aria-label="FunnyMoney case study">
-              <h3>FunnyMoney</h3>
-              <p>Making household budgeting feel human, not punitive.</p>
-            </a>
-            <a class="card glass" href="#" aria-label="Thrive case study">
-              <h3>Thrive</h3>
-              <p>Habit coaching for neurodivergent students.</p>
-            </a>
-            <a class="card glass" href="#" aria-label="Wayfinding case study">
-              <h3>Wayfinding</h3>
-              <p>Campus navigation that respects cognitive load.</p>
-            </a>
-            <a class="card glass" href="#" aria-label="ResearchGate case study">
-              <h3>ResearchGate</h3>
-              <p>Scholarly discovery without the clutter.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Editable Motion -->
-      <section id="motion">
-        <div class="wrap">
-          <h2 class="section-title">3D and motion <span class="material-symbols-outlined" aria-hidden="true">animation</span></h2>
-          <p class="section-copy">Swap reel labels and connect to your local MP4 files if needed.</p>
-          <div class="motion-grid">
-            <article class="motion-card glass">
-              <div class="mock-video">Aurora Drift - 16:9 Placeholder</div>
-            </article>
-            <article class="motion-card glass">
-              <div class="mock-video">Terra Form - 16:9 Placeholder</div>
-            </article>
-            <article class="motion-card glass">
-              <div class="mock-video">Liquify Bloom - 16:9 Placeholder</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Editable Contact -->
-      <section id="contact" class="contact">
-        <div class="wrap">
-          <h2 class="section-title">Let's build something legible and alive.</h2>
-          <p class="section-copy">Open to UX design roles and collaborative prototypes.</p>
-          <p style="margin-top: 1rem;">
-            <a class="btn" href="mailto:hello@example.com">Email Dhruvi</a>
+        <div class="relative z-[3] max-w-[680px]">
+          <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.35em] text-night-cerulean" data-reveal>UX Designer & Creative Technologist</p>
+          <h1 class="mb-2 font-display text-[clamp(4rem,8vw,7.5rem)] font-bold leading-[0.9] text-star-white" data-reveal>
+            Dhruvi<br /><span class="block font-normal italic text-star-yellow">Malusare.</span>
+          </h1>
+          <p class="mb-12 max-w-xl font-sans text-[clamp(1rem,2vw,1.4rem)] font-light italic text-cream-soft" data-reveal>
+            Crafting interfaces that feel intentional, read clearly, and respect real people.
           </p>
+          <p class="mb-14 max-w-[480px] text-[1.05rem] font-light leading-[1.85] text-cream-muted" data-reveal>
+            I craft calm, legible experiences where research, interaction, and motion meet.
+          </p>
+          <div class="flex flex-wrap items-center gap-5" data-reveal>
+            <a href="#work" class="btn-primary-night">View work</a>
+            <a href="#contact" class="btn-ghost-night">Let's talk <span class="inline-block animate-bounce text-base">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="work" class="work-bg scroll-mt-24 px-[8vw] py-[120px]">
+        <div class="mx-auto max-w-[1400px]">
+          <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
+            <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">01 —</span>
+            <h2 class="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">
+              Selected <em class="font-normal italic text-[rgba(240,180,41,0.8)]">work</em>
+            </h2>
+          </div>
+          <div class="columns-1 gap-3 space-y-3 md:columns-2" data-reveal>
+            <a href="./pages/work-funnymoney.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="relative min-h-[360px] bg-gradient-to-br from-[rgba(38,85,168,0.55)] to-[rgba(10,11,26,0.2)] p-8">
+                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.4)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">Featured · Case study</span>
+                <h3 class="font-display text-[2rem] font-bold text-star-white">FunnyMoney</h3>
+                <p class="mt-3 max-w-[28ch] text-base leading-[1.7] text-cream-soft">Making household budgeting feel human, not punitive.</p>
+              </div>
+            </a>
+            <a href="./pages/work-thrive.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="relative min-h-[260px] bg-gradient-to-br from-[rgba(240,180,41,0.35)] to-[rgba(10,11,26,0.1)] p-8">
+                <span class="mb-4 inline-block border border-[rgba(240,180,41,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">UX · Case study</span>
+                <h3 class="font-display text-[1.8rem] font-bold text-star-white">Thrive</h3>
+                <p class="mt-3 max-w-[26ch] text-sm leading-[1.7] text-cream-soft">Habit coaching for neurodivergent students.</p>
+              </div>
+            </a>
+            <a href="./pages/work-wayfinding.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="relative min-h-[300px] bg-gradient-to-br from-[rgba(26,58,122,0.5)] to-[rgba(10,11,26,0.2)] p-8">
+                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
+                <h3 class="font-display text-[1.8rem] font-bold text-star-white">Wayfinding</h3>
+                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Campus navigation that respects cognitive load.</p>
+              </div>
+            </a>
+            <a href="./pages/work-researchgate.html" class="group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+              <div class="relative min-h-[340px] bg-gradient-to-br from-[rgba(58,123,213,0.4)] to-[rgba(10,11,26,0.15)] p-8">
+                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
+                <h3 class="font-display text-[1.9rem] font-bold text-star-white">ResearchGate</h3>
+                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Scholarly discovery without the clutter.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="motion" class="scroll-mt-24 bg-[rgba(13,27,62,0.3)] px-[8vw] py-[120px]">
+        <div class="mx-auto max-w-[1400px]">
+          <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
+            <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">02 —</span>
+            <h2 class="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">3D <em class="font-normal italic text-[rgba(240,180,41,0.8)]">motion</em></h2>
+          </div>
+          <ul class="grid grid-cols-1 gap-0.5 md:grid-cols-3" data-reveal>
+            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+              <div class="motion-bg-1 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-1 opacity-45"></div></div></div>
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
+                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Lighting study</div>
+                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Aurora Drift</h3>
+              </div>
+            </li>
+            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+              <div class="motion-bg-2 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-2 opacity-45"></div></div></div>
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
+                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Product spin</div>
+                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Terra Form</h3>
+              </div>
+            </li>
+            <li class="group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
+              <div class="motion-bg-3 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-3 opacity-45"></div></div></div>
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
+                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">Motion · Organic forms</div>
+                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Liquify Bloom</h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="about" class="scroll-mt-24 px-[8vw] py-[120px]">
+        <div class="mx-auto grid max-w-[1400px] items-center gap-16 lg:grid-cols-2 lg:gap-20">
+          <div data-reveal>
+            <p class="mb-5 font-mono text-[0.6rem] uppercase tracking-[0.3em] text-night-cerulean">03 — About</p>
+            <h2 class="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-star-white">I think in <em class="font-normal italic text-star-yellow">systems,</em><br />design in <em class="font-normal italic text-star-yellow">stories.</em></h2>
+            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">I'm a UX designer focused on research-backed flows, accessible UI, and motion that supports comprehension.</p>
+            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">Based in the NJIT / New Jersey area; open to internships, collaborative class projects, and roles where I can keep sharpening systems thinking and craft.</p>
+          </div>
+          <div class="glass-dark-strong p-12" data-reveal>
+            <p class="mb-8 font-mono text-[0.58rem] uppercase tracking-[0.25em] text-night-cerulean">Recognition & experience</p>
+            <ul class="list-none">
+              <li class="flex gap-5 border-b border-[rgba(100,160,255,0.08)] py-5"><span class="text-lg text-star-gold">✦</span><div><div class="text-[0.95rem] text-star-white">UX Portfolio — IS117</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">NJIT · 2025–2026</div></div></li>
+              <li class="flex gap-5 py-5"><span class="text-lg text-night-cerulean">◆</span><div><div class="text-[0.95rem] text-star-white">B.S. in progress</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">New Jersey Institute of Technology</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="contact" class="scroll-mt-24 relative px-[8vw] py-32 text-center sm:py-36">
+        <div class="relative z-[2] mx-auto max-w-4xl" data-reveal>
+          <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-night-cerulean">04 — Contact</p>
+          <h2 class="font-display text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-star-white">Let's build<br /><em class="font-normal italic text-star-yellow">something</em><br />together.</h2>
+          <p class="mx-auto mt-6 max-w-xl text-base font-light italic text-cream-soft">Reach out for collaborations, feedback on this portfolio, or internship conversations.</p>
+          <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:hello@example.com" class="btn-primary-night inline-flex items-center gap-2 rounded-none px-10 py-4">hello@example.com ↗</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="wrap">Standalone editable HTML portfolio artifact.</div>
+    <footer class="relative z-[2] border-t border-[rgba(100,160,255,0.06)] px-[8vw] py-10">
+      <div class="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="font-mono text-[0.6rem] tracking-[0.15em] text-[rgba(245,237,224,0.2)]">© 2026 Dhruvi Malusare · UX portfolio</p>
+        <a href="#" class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[rgba(245,237,224,0.25)] transition-colors duration-300 hover:text-star-gold">Back to top ↑</a>
+      </div>
     </footer>
 
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", (e) => {
-          const id = a.getAttribute("href");
-          if (!id || id === "#") return;
-          const el = document.querySelector(id);
-          if (!el) return;
-          e.preventDefault();
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      });
-    </script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

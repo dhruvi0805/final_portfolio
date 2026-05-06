@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Dhruvi Malusare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <script>tailwind={config:{theme:{extend:{colors:{night:{black:"var(--night-black)",cerulean:"var(--cerulean)"},star:{gold:"var(--gold)",white:"var(--white-star)",yellow:"var(--paint-yellow)"}}}}}}};</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body data-page="contact" class="min-h-screen bg-night-black font-sans text-[#f5ede0] antialiased">
+    <canvas id="starCanvas" class="pointer-events-none fixed inset-0 z-0 h-screen w-full" aria-hidden="true"></canvas>
+    <header class="fixed left-0 right-0 top-0 z-[100]"><nav class="nav-glass flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] sm:py-7"><a href="../index.html" class="shrink-0 font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-[1.15rem]">Dhruvi<span class="italic text-star-gold"> Malusare</span></a><ul class="flex list-none flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:gap-x-8 md:gap-x-12"><li><a href="../index.html" data-page="home" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Home</a></li><li><a href="./projects.html" data-page="projects" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Projects</a></li><li><a href="./about.html" data-page="about" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">About</a></li><li><a href="./contact.html" data-page="contact" class="btn-primary-night inline-block rounded-none px-5 py-2.5 sm:px-9 sm:py-3.5">Contact</a></li></ul></nav></header>
+    <main class="relative z-[2] px-[8vw] pb-20 pt-36">
+      <section class="relative py-16 text-center sm:py-24">
+        <div class="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[min(700px,90vw)] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse,rgba(38,85,168,0.12)_0%,transparent_70%)]" aria-hidden="true"></div>
+        <div class="relative z-[2] mx-auto max-w-4xl" data-reveal>
+          <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-night-cerulean">04 — Contact</p>
+          <h1 class="font-display text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-star-white">Let's build<br /><em class="font-normal italic text-star-yellow">something</em><br />together.</h1>
+          <p class="mx-auto mt-6 max-w-xl text-base font-light italic text-cream-soft">Reach out for collaborations, feedback on this portfolio, or internship conversations.</p>
+          <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:hello@example.com" class="btn-primary-night inline-flex items-center gap-2 rounded-none px-10 py-4">hello@example.com ↗</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-none border border-[rgba(100,160,255,0.25)] bg-[rgba(20,40,90,0.15)] px-10 py-4 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-cream-muted backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-star-gold hover:text-star-gold">LinkedIn ↗</a>
+            <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-none border border-[rgba(100,160,255,0.25)] bg-[rgba(20,40,90,0.15)] px-10 py-4 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-cream-muted backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-star-gold hover:text-star-gold">Resume PDF ↓</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
