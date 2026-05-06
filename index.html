@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhruvi Malusare - UX Portfolio</title>
+    <style>
+      :root {
+        --canvas: #f9f9f9;
+        --ink: #013220;
+        --cobalt: #3d6b8c;
+        --sage: #9caf88;
+        --willow: #7d8b6f;
+        --lilac: #b8a9c9;
+        --ochre: #c4a35a;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; overflow-x: hidden; }
+      body {
+        font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        background: var(--canvas);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+
+      .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(1, 50, 32, 0.14);
+        border-radius: 1.1rem;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 10px 32px rgba(1, 50, 32, 0.12), 0 2px 10px rgba(1, 50, 32, 0.08);
+        backdrop-filter: blur(22px) saturate(130%);
+      }
+
+      .nav-shell {
+        position: fixed;
+        z-index: 40;
+        top: 0.8rem;
+        left: 0;
+        right: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 0.9rem;
+      }
+
+      .brand { font-size: 1.06rem; font-weight: 700; letter-spacing: 0.01em; }
+      .nav-links { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+      .nav-links a {
+        text-decoration: none;
+        color: rgba(1, 50, 32, 0.82);
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 0.5rem 0.8rem;
+        border-radius: 999px;
+      }
+      .nav-links a:hover { background: rgba(1, 50, 32, 0.06); }
+      .nav-links .cta { background: var(--ochre); color: var(--ink); }
+      .nav-links .cta:hover { filter: brightness(0.96); }
+
+      main { padding-top: 5.6rem; }
+      section { position: relative; padding: 4rem 0; }
+
+      .hero {
+        background:
+          radial-gradient(circle at 16% 20%, rgba(61, 107, 140, 0.22), transparent 45%),
+          radial-gradient(circle at 86% 12%, rgba(156, 175, 136, 0.24), transparent 42%),
+          radial-gradient(circle at 18% 92%, rgba(184, 169, 201, 0.2), transparent 46%);
+      }
+
+      .hero-panel { padding: 2rem; max-width: 760px; border-radius: 1.6rem; }
+      .eyebrow { margin: 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt); }
+      h1 { margin: 0.7rem 0 0; font-size: clamp(2.2rem, 6vw, 4.1rem); line-height: 1.05; letter-spacing: -0.02em; }
+      .subtitle { display: block; margin-top: 0.35rem; font-size: clamp(1.15rem, 2.4vw, 1.85rem); font-weight: 500; color: rgba(1, 50, 32, 0.88); }
+      .lead { margin: 1.2rem 0 0; font-size: 1.04rem; color: rgba(1, 50, 32, 0.8); max-width: 62ch; }
+      .hero-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 650;
+        padding: 0.62rem 1rem;
+        border-radius: 999px;
+      }
+      .btn-glass { color: var(--ink); }
+      .btn-link { color: var(--cobalt); }
+
+      .section-title { margin: 0; font-size: clamp(1.7rem, 4vw, 2.4rem); }
+      .section-copy { color: rgba(1, 50, 32, 0.75); margin: 0.55rem 0 0; }
+
+      .grid { margin-top: 1.4rem; display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .card { padding: 1rem 1.05rem; text-decoration: none; color: inherit; border-radius: 1rem; }
+      .card:hover { border-color: rgba(61, 107, 140, 0.4); }
+      .card h3 { margin: 0; font-size: 1.35rem; }
+      .card p { margin: 0.45rem 0 0; color: rgba(1, 50, 32, 0.74); font-size: 0.92rem; }
+
+      .motion-grid { margin-top: 1.4rem; display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .motion-card { padding: 0.9rem; border-radius: 1rem; }
+      .mock-video {
+        border-radius: 0.8rem;
+        border: 1px dashed rgba(1, 50, 32, 0.28);
+        background: rgba(1, 50, 32, 0.05);
+        aspect-ratio: 16 / 9;
+        display: grid;
+        place-items: center;
+        font-size: 0.82rem;
+        color: rgba(1, 50, 32, 0.68);
+      }
+
+      .contact {
+        background: linear-gradient(170deg, rgba(1, 50, 32, 0.94), rgba(1, 50, 32, 1));
+        color: white;
+      }
+      .contact .section-copy { color: rgba(255, 255, 255, 0.86); }
+      .contact .btn {
+        color: var(--ink);
+        background: var(--ochre);
+      }
+
+      .impasto {
+        position: absolute;
+        pointer-events: none;
+        filter: drop-shadow(0 30px 24px rgba(1, 50, 32, 0.2));
+        opacity: 0.95;
+      }
+      .impasto.right {
+        right: -10%;
+        top: 4%;
+        width: min(52vw, 620px);
+      }
+      .impasto.left {
+        left: -12%;
+        bottom: 3%;
+        width: min(48vw, 560px);
+      }
+
+      footer { padding: 1.4rem 0 2rem; font-size: 0.82rem; color: rgba(1, 50, 32, 0.66); }
+
+      @media (max-width: 900px) {
+        .grid { grid-template-columns: 1fr; }
+        .motion-grid { grid-template-columns: 1fr; }
+        .impasto { opacity: 0.55; transform: scale(0.8); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Editable Nav -->
+    <header class="nav-shell">
+      <div class="wrap glass">
+        <nav>
+          <strong class="brand">Dhruvi Malusare</strong>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+            <a class="cta" href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Editable Hero -->
+      <section class="hero">
+        <svg class="impasto right" viewBox="0 0 760 540" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="h1" cx="18%" cy="18%" r="88%">
+              <stop offset="0%" stop-color="rgba(184,169,201,0.95)" />
+              <stop offset="42%" stop-color="rgba(61,107,140,0.92)" />
+              <stop offset="100%" stop-color="rgba(20,61,78,0.95)" />
+            </radialGradient>
+            <radialGradient id="h2" cx="28%" cy="22%" r="65%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.66)" />
+              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+            </radialGradient>
+          </defs>
+          <path d="M128 78C289 9 540 58 656 185C736 273 698 470 505 503C332 534 143 436 94 293C54 182 59 111 128 78Z" fill="url(#h1)" />
+          <path d="M188 149C336 90 529 152 588 273C619 335 565 438 433 448C306 457 173 369 160 273C150 221 164 171 188 149Z" fill="url(#h2)" />
+        </svg>
+
+        <svg class="impasto left" viewBox="0 0 680 500" fill="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="h3" cx="72%" cy="24%" r="90%">
+              <stop offset="0%" stop-color="rgba(156,175,136,0.96)" />
+              <stop offset="40%" stop-color="rgba(83,121,94,0.94)" />
+              <stop offset="100%" stop-color="rgba(1,50,32,0.95)" />
+            </radialGradient>
+            <radialGradient id="h4" cx="70%" cy="26%" r="68%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.66)" />
+              <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+            </radialGradient>
+          </defs>
+          <path d="M564 90C427 10 234 52 104 151C16 219 -4 355 123 427C257 503 461 459 584 332C656 258 649 136 564 90Z" fill="url(#h3)" />
+          <path d="M455 173C350 102 206 151 153 240C130 285 158 365 252 384C356 405 499 317 509 233C514 199 493 179 455 173Z" fill="url(#h4)" />
+        </svg>
+
+        <div class="wrap">
+          <div class="hero-panel glass">
+            <p class="eyebrow">Digital Water Lilies</p>
+            <h1>
+              Dhruvi Malusare
+              <span class="subtitle">UX Designer - Creative Technologist</span>
+            </h1>
+            <p class="lead">I craft calm, legible experiences where research, interaction, and motion meet.</p>
+            <div class="hero-actions">
+              <a class="btn btn-glass glass" href="#work">View selected work</a>
+              <a class="btn btn-link" href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">Download resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editable Work -->
+      <section id="work">
+        <div class="wrap">
+          <h2 class="section-title">UX case studies</h2>
+          <p class="section-copy">Four projects spanning fintech habits, education, spatial clarity, and scholarly tools.</p>
+          <div class="grid">
+            <a class="card glass" href="#" aria-label="FunnyMoney case study">
+              <h3>FunnyMoney</h3>
+              <p>Making household budgeting feel human, not punitive.</p>
+            </a>
+            <a class="card glass" href="#" aria-label="Thrive case study">
+              <h3>Thrive</h3>
+              <p>Habit coaching for neurodivergent students.</p>
+            </a>
+            <a class="card glass" href="#" aria-label="Wayfinding case study">
+              <h3>Wayfinding</h3>
+              <p>Campus navigation that respects cognitive load.</p>
+            </a>
+            <a class="card glass" href="#" aria-label="ResearchGate case study">
+              <h3>ResearchGate</h3>
+              <p>Scholarly discovery without the clutter.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editable Motion -->
+      <section id="motion">
+        <div class="wrap">
+          <h2 class="section-title">3D and motion</h2>
+          <p class="section-copy">Swap reel labels and connect to your local MP4 files if needed.</p>
+          <div class="motion-grid">
+            <article class="motion-card glass">
+              <div class="mock-video">Aurora Drift - 16:9 Placeholder</div>
+            </article>
+            <article class="motion-card glass">
+              <div class="mock-video">Terra Form - 16:9 Placeholder</div>
+            </article>
+            <article class="motion-card glass">
+              <div class="mock-video">Liquify Bloom - 16:9 Placeholder</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editable Contact -->
+      <section id="contact" class="contact">
+        <div class="wrap">
+          <h2 class="section-title">Let's build something legible and alive.</h2>
+          <p class="section-copy">Open to UX design roles and collaborative prototypes.</p>
+          <p style="margin-top: 1rem;">
+            <a class="btn" href="mailto:hello@example.com">Email Dhruvi</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Standalone editable HTML portfolio artifact.</div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          if (!id || id === "#") return;
+          const el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 border-t border-canvas-ink/10 bg-canvas-ink text-base py-16 sm:py-20"
+      className="scroll-mt-24 border-t border-canvas-ink/10 bg-canvas-ink/95 text-base py-16 sm:py-20"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -37,7 +37,7 @@ export function ContactSection() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href={`mailto:${site.email}`}
-              className="inline-flex rounded-full bg-ochre px-6 py-3 text-sm font-semibold text-canvas-ink shadow transition hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex rounded-full bg-ochre px-6 py-3 text-sm font-semibold text-canvas-ink transition duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Email {site.name.split(" ")[0]}
             </a>

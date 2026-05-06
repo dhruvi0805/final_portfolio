@@ -10,7 +10,7 @@ export function WorkGrid() {
   return (
     <section
       id="work"
-      className="scroll-mt-24 border-t border-canvas-ink/10 bg-white/40 py-16 backdrop-blur-sm sm:py-20"
+      className="scroll-mt-24 border-t border-canvas-ink/10 bg-white/35 py-16 sm:py-20"
       aria-labelledby="work-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -43,7 +43,7 @@ export function WorkGrid() {
             >
               <Link
                 href={`/work/${project.id}`}
-                className="group flex h-full flex-col rounded-2xl border border-canvas-ink/10 bg-[#F9F9F9]/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-cobalt/30 hover:shadow-md"
+                className="glass-surface group flex h-full cursor-pointer flex-col rounded-2xl p-6 transition-colors duration-200 hover:border-cobalt/30"
               >
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <div>
@@ -55,7 +55,7 @@ export function WorkGrid() {
                     </p>
                   </div>
                   <span
-                    className="rounded-full bg-canvas-ink/5 px-2.5 py-1 text-xs font-medium text-canvas-ink/70"
+                    className="rounded-full bg-canvas-ink/6 px-2.5 py-1 text-xs font-medium text-canvas-ink/70"
                     aria-hidden
                   >
                     Case study

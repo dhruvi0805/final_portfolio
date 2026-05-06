@@ -7,52 +7,114 @@ const viscous = { type: "spring" as const, stiffness: 100, damping: 20 };
 export function ImpastoStrokes() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 overflow-hidden max-md:opacity-40"
+      className="pointer-events-none absolute inset-0 overflow-hidden max-md:opacity-50"
       aria-hidden
     >
       <motion.svg
-        className="absolute -right-[18%] top-[8%] h-[min(520px,55vh)] w-[min(90vw,640px)] text-cobalt/35 md:text-cobalt/45"
-        viewBox="0 0 600 420"
+        className="absolute -right-[20%] top-[2%] h-[min(620px,58vh)] w-[min(92vw,720px)]"
+        viewBox="0 0 760 540"
         fill="none"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 45, y: 12 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
         transition={viscous}
       >
+        <defs>
+          <radialGradient id="strokeADeep" cx="18%" cy="18%" r="88%">
+            <stop offset="0%" stopColor="rgba(184,169,201,0.95)" />
+            <stop offset="42%" stopColor="rgba(61,107,140,0.92)" />
+            <stop offset="100%" stopColor="rgba(20,61,78,0.95)" />
+          </radialGradient>
+          <radialGradient id="strokeAHigh" cx="28%" cy="22%" r="65%">
+            <stop offset="0%" stopColor="rgba(255,255,255,0.64)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+          </radialGradient>
+          <linearGradient id="strokeARim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(3,49,40,0.18)" />
+            <stop offset="70%" stopColor="rgba(3,49,40,0)" />
+          </linearGradient>
+        </defs>
         <path
-          d="M120 40C260 20 420 80 520 180C600 260 560 400 420 400C280 400 140 320 80 200C40 120 60 60 120 40Z"
-          fill="currentColor"
+          d="M128 78C289 9 540 58 656 185C736 273 698 470 505 503C332 534 143 436 94 293C54 182 59 111 128 78Z"
+          fill="url(#strokeADeep)"
         />
         <path
-          d="M200 120C320 100 480 160 520 260C540 320 500 380 400 380C300 380 180 300 160 220C150 170 170 130 200 120Z"
-          className="text-sage/50"
-          fill="currentColor"
+          d="M188 149C336 90 529 152 588 273C619 335 565 438 433 448C306 457 173 369 160 273C150 221 164 171 188 149Z"
+          fill="url(#strokeAHigh)"
+          style={{ mixBlendMode: "screen" }}
+        />
+        <path
+          d="M142 112C315 29 554 83 639 188C676 236 682 324 630 393C568 319 479 261 322 230C239 215 174 186 142 112Z"
+          fill="url(#strokeARim)"
+          style={{ mixBlendMode: "multiply" }}
+        />
+        <ellipse
+          cx="256"
+          cy="172"
+          rx="120"
+          ry="60"
+          fill="rgba(255,255,255,0.2)"
+          style={{ mixBlendMode: "screen" }}
         />
       </motion.svg>
 
       <motion.svg
-        className="absolute -left-[22%] bottom-[6%] h-[min(480px,50vh)] w-[min(88vw,600px)] text-willow/40 md:text-willow/50"
-        viewBox="0 0 580 400"
+        className="absolute -left-[26%] bottom-[3%] h-[min(560px,54vh)] w-[min(90vw,680px)]"
+        viewBox="0 0 680 500"
         fill="none"
-        initial={{ opacity: 0, x: -36 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -36, y: 10 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ ...viscous, delay: 0.08 }}
       >
+        <defs>
+          <radialGradient id="strokeBDeep" cx="72%" cy="24%" r="90%">
+            <stop offset="0%" stopColor="rgba(156,175,136,0.96)" />
+            <stop offset="40%" stopColor="rgba(83,121,94,0.94)" />
+            <stop offset="100%" stopColor="rgba(1,50,32,0.95)" />
+          </radialGradient>
+          <radialGradient id="strokeBHigh" cx="70%" cy="26%" r="68%">
+            <stop offset="0%" stopColor="rgba(255,255,255,0.66)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+          </radialGradient>
+          <linearGradient id="strokeBShadow" x1="15%" y1="80%" x2="86%" y2="20%">
+            <stop offset="0%" stopColor="rgba(1,50,32,0.24)" />
+            <stop offset="100%" stopColor="rgba(1,50,32,0)" />
+          </linearGradient>
+        </defs>
         <path
-          d="M460 60C360 40 220 80 120 160C40 230 20 320 120 360C220 400 380 360 480 280C540 230 520 80 460 60Z"
-          fill="currentColor"
+          d="M564 90C427 10 234 52 104 151C16 219 -4 355 123 427C257 503 461 459 584 332C656 258 649 136 564 90Z"
+          fill="url(#strokeBDeep)"
         />
         <path
-          d="M380 140C300 120 200 160 160 240C140 290 180 340 260 340C360 340 460 260 440 200C430 170 410 150 380 140Z"
-          className="text-lilac/35"
-          fill="currentColor"
+          d="M455 173C350 102 206 151 153 240C130 285 158 365 252 384C356 405 499 317 509 233C514 199 493 179 455 173Z"
+          fill="url(#strokeBHigh)"
+          style={{ mixBlendMode: "screen" }}
+        />
+        <path
+          d="M593 144C547 181 492 208 426 218C262 242 183 302 151 380C88 325 85 248 149 189C247 100 454 62 593 144Z"
+          fill="url(#strokeBShadow)"
+          style={{ mixBlendMode: "multiply" }}
+        />
+        <ellipse
+          cx="460"
+          cy="156"
+          rx="112"
+          ry="52"
+          fill="rgba(255,255,255,0.18)"
+          style={{ mixBlendMode: "screen" }}
         />
       </motion.svg>
 
       <motion.div
-        className="absolute left-1/2 top-1/3 hidden h-40 w-40 -translate-x-1/2 rounded-full bg-gradient-to-br from-cobalt/15 to-sage/20 blur-3xl md:block"
-        initial={{ scale: 0.85, opacity: 0 }}
+        className="absolute left-[48%] top-[32%] hidden h-48 w-48 -translate-x-1/2 rounded-full bg-gradient-to-br from-cobalt/30 via-lilac/25 to-sage/30 blur-3xl md:block"
+        initial={{ scale: 0.82, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ ...viscous, delay: 0.12 }}
+      />
+      <motion.div
+        className="absolute right-[24%] top-[18%] hidden h-32 w-32 rounded-full bg-white/20 blur-2xl md:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ...viscous, delay: 0.18 }}
       />
     </div>
   );

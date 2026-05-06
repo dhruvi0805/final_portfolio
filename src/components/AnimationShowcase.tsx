@@ -11,7 +11,7 @@ function ReelVideo({ src, title }: { src: string; title: string }) {
 
   if (failed) {
     return (
-      <div className="flex aspect-video w-full flex-col items-center justify-center rounded-xl border border-dashed border-canvas-ink/20 bg-canvas-ink/[0.03] px-4 text-center">
+      <div className="glass-surface flex aspect-video w-full flex-col items-center justify-center rounded-xl border-dashed px-4 text-center">
         <p className="text-sm font-medium text-canvas-ink">Video placeholder</p>
         <p className="mt-1 text-xs text-canvas-ink/65">
           Add your MP4 to{" "}
@@ -27,7 +27,7 @@ function ReelVideo({ src, title }: { src: string; title: string }) {
 
   return (
     <video
-      className="aspect-video w-full rounded-xl border border-canvas-ink/10 bg-black object-cover shadow-inner"
+      className="glass-outline aspect-video w-full rounded-xl bg-black object-cover shadow-glass-soft"
       src={src}
       muted
       playsInline
@@ -44,7 +44,7 @@ export function AnimationShowcase() {
   return (
     <section
       id="motion"
-      className="scroll-mt-24 border-t border-canvas-ink/10 py-16 sm:py-20"
+      className="scroll-mt-24 border-t border-canvas-ink/10 bg-white/20 py-16 sm:py-20"
       aria-labelledby="motion-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">

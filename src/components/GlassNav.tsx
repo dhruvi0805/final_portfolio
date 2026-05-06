@@ -9,7 +9,7 @@ import { site } from "@/data/site";
 const spring = { type: "spring" as const, stiffness: 100, damping: 20 };
 
 const linkClass =
-  "rounded-full px-3 py-2 text-sm font-medium text-canvas-ink/80 transition hover:bg-canvas-ink/5 hover:text-canvas-ink";
+  "rounded-full px-3 py-2 text-sm font-medium text-canvas-ink/80 transition-colors duration-200 hover:bg-canvas-ink/6 hover:text-canvas-ink";
 
 export function GlassNav() {
   const lenis = useLenis();
@@ -38,13 +38,13 @@ export function GlassNav() {
 
   return (
     <motion.header
-      className="fixed left-0 right-0 top-0 z-[100] border-b border-canvas-ink/10 bg-[var(--surface-glass)] backdrop-blur-[20px]"
+      className="fixed left-0 right-0 top-3 z-[100] px-3 sm:px-5"
       initial={{ y: -16, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={spring}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6"
+        className="glass-surface mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6"
         aria-label="Primary"
       >
         <Link
@@ -78,14 +78,14 @@ export function GlassNav() {
             <a
               href="#contact"
               onClick={scrollToContact}
-              className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-canvas-ink shadow-sm transition hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas-ink"
+              className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-canvas-ink transition duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas-ink"
             >
               Contact
             </a>
           ) : (
             <Link
               href="/#contact"
-              className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-canvas-ink shadow-sm transition hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas-ink"
+              className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-canvas-ink transition duration-200 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas-ink"
             >
               Contact
             </Link>

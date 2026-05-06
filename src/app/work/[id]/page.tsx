@@ -41,7 +41,7 @@ export default async function CaseStudyPage({ params }: Props) {
     index < uxProjects.length - 1 ? uxProjects[index + 1] : null;
 
   return (
-    <article className="pb-24 pt-28">
+    <article className="bg-impasto-vibrant pb-24 pt-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap gap-2 text-sm text-canvas-ink/65">
@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </ol>
         </nav>
 
-        <header className="mt-10 border-b border-canvas-ink/10 pb-10">
+        <header className="glass-surface-strong mt-10 rounded-3xl p-7 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cobalt">
             Case study
           </p>
@@ -111,7 +111,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 <li key={link.href + link.label}>
                   <a
                     href={link.href}
-                    className="inline-flex rounded-full border border-canvas-ink/15 bg-white/70 px-4 py-2 text-sm font-semibold text-cobalt backdrop-blur-sm transition hover:border-cobalt/40"
+                    className="glass-surface inline-flex rounded-full px-4 py-2 text-sm font-semibold text-cobalt transition duration-200 hover:border-cobalt/40"
                   >
                     {link.label}
                   </a>
@@ -121,9 +121,9 @@ export default async function CaseStudyPage({ params }: Props) {
           ) : null}
         </header>
 
-        <div className="prose-portfolio mt-12 space-y-14">
+        <div className="mt-12 space-y-14">
           {project.sections.map((section) => (
-            <section key={section.heading}>
+            <section key={section.heading} className="glass-surface rounded-3xl p-7 sm:p-8">
               <h2 className="font-display text-2xl text-canvas-ink sm:text-3xl">
                 {section.heading}
               </h2>
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({ params }: Props) {
           ))}
         </div>
 
-        <footer className="mt-16 border-t border-canvas-ink/10 pt-10">
+        <footer className="glass-surface mt-16 rounded-3xl p-7 sm:p-8">
           <p className="text-sm font-medium text-canvas-ink/70">
             Content for this case study lives in{" "}
             <code className="rounded bg-canvas-ink/5 px-1.5 py-0.5 text-canvas-ink">
@@ -165,7 +165,7 @@ export default async function CaseStudyPage({ params }: Props) {
             {prev ? (
               <Link
                 href={`/work/${prev.id}`}
-                className="group rounded-2xl border border-canvas-ink/10 bg-white/60 p-4 transition hover:border-cobalt/35 sm:max-w-[48%]"
+                className="group glass-surface rounded-2xl p-4 transition duration-200 hover:border-cobalt/35 sm:max-w-[48%]"
               >
                 <span className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
                   Previous
@@ -180,7 +180,7 @@ export default async function CaseStudyPage({ params }: Props) {
             {next ? (
               <Link
                 href={`/work/${next.id}`}
-                className="group rounded-2xl border border-canvas-ink/10 bg-white/60 p-4 text-right transition hover:border-cobalt/35 sm:max-w-[48%]"
+                className="group glass-surface rounded-2xl p-4 text-right transition duration-200 hover:border-cobalt/35 sm:max-w-[48%]"
               >
                 <span className="text-xs font-semibold uppercase tracking-wide text-canvas-ink/55">
                   Next
