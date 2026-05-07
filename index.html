@@ -1,196 +1,987 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhruvi Malusare — UX Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./aurora-glass.css" />
-    <link rel="stylesheet" href="./border-glow.css" />
-    <script>
-      tailwind = {
-        config: {
-          theme: {
-            extend: {
-              colors: {
-                night: { black: "var(--night-black)", cerulean: "var(--cerulean)" },
-                star: { gold: "var(--gold)", white: "var(--white-star)", yellow: "var(--paint-yellow)" },
-              },
-              fontFamily: {
-                sans:    ['Lora', 'Georgia', 'serif'],
-                mono:    ['Space Mono', 'ui-monospace', 'monospace'],
-                display: ['Raleway', 'sans-serif'],
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body data-page="home" class="min-h-screen bg-night-black antialiased">
-    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100]">
-      <nav class="glass-nav nav-glass flex w-full items-center justify-between">
-        <a href="./index.html" class="font-display text-[1.1rem] font-semibold tracking-tight text-star-white" style="text-decoration:none;opacity:1">
-          Dhruvi <em class="font-normal not-italic italic">Malusare</em>
-        </a>
-        <ul class="flex list-none items-center gap-8">
-          <li><a href="./index.html" data-page="home" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Home</a></li>
-          <li><a href="./pages/projects.html" data-page="projects" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Projects</a></li>
-          <li><a href="./pages/about.html" data-page="about" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">About</a></li>
-          <li><a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Resume</a></li>
-          <li><a href="./pages/contact.html" data-page="contact" class="glass-btn btn-primary-night">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dhruvi Malusare — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet"/>
+<style>
+/* ─── RETRO ELEGANCE — "A 1970s Swiss magazine as a UX portfolio" ─── */
 
-    <main class="relative z-[2]">
-      <section class="hero-glow relative isolate flex min-h-screen items-center overflow-hidden px-[8vw] pt-28">
-        <svg class="pointer-events-none absolute left-[55%] top-[15%] z-[1] w-[300px] opacity-[0.07]" viewBox="0 0 300 200" aria-hidden="true">
-          <path d="M20,100 Q80,20 160,80 Q240,140 280,60" stroke="rgba(240,180,41,0.6)" stroke-width="6" fill="none" stroke-linecap="round"></path>
-          <path d="M10,130 Q90,60 170,110 Q250,160 290,90" stroke="rgba(58,123,213,0.5)" stroke-width="4" fill="none" stroke-linecap="round"></path>
-        </svg>
-        <div class="relative z-[3] max-w-[680px]">
-          <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.35em] text-night-cerulean" data-reveal>UX Designer & Creative Technologist</p>
-          <h1 class="aurora-text mb-2 font-display text-[clamp(4rem,8vw,7.5rem)] font-bold leading-[0.9] text-star-white" data-reveal>
-            Dhruvi<br /><span class="block font-normal italic text-star-yellow">Malusare.</span>
-          </h1>
-          <p class="mb-12 max-w-xl font-sans text-[clamp(1rem,2vw,1.4rem)] font-light italic text-cream-soft" data-reveal>
-            Crafting interfaces that feel intentional, read clearly, and respect real people.
-          </p>
-          <p class="mb-14 max-w-[480px] text-[1.05rem] font-light leading-[1.85] text-cream-muted" data-reveal>
-            I craft calm, legible experiences where research, interaction, and motion meet.
-          </p>
-          <div class="flex flex-wrap items-center gap-5" data-reveal>
-            <a href="#work" class="glass-btn btn-primary-night">View work</a>
-            <a href="#contact" class="glass-btn btn-ghost-night">Let's talk <span class="inline-block animate-bounce text-base">↓</span></a>
-          </div>
-        </div>
-      </section>
+:root {
+  --crimson:    #b5342a;   /* aged crimson — less saturated, more ink-like */
+  --crimson-dk: #7f1a11;
+  --teal:       #1a6262;   /* deeper, more dignified teal */
+  --teal-lt:    #247878;
+  --mustard:    #b88c22;   /* aged mustard — warm, not lime-y */
+  --mustard-lt: #d4a030;
+  --cream:      #f0e6cc;   /* parchment — slightly more yellowed */
+  --ink:        #120c06;   /* deeper warm ink, not cold black */
+  --gold:       #c89c38;   /* antique gold */
+}
 
-      <div class="section-divider"></div>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-      <section id="work" class="work-bg scroll-mt-24 px-[8vw] py-[120px]">
-        <div class="mx-auto max-w-[1400px]">
-          <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
-            <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">01 —</span>
-            <h2 class="aurora-text font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">
-              Selected <em class="font-normal italic text-[rgba(240,180,41,0.8)]">work</em>
-            </h2>
-          </div>
-          <div class="columns-1 gap-3 space-y-3 md:columns-2" data-reveal>
-            <a href="./pages/work-funnymoney.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
-              <div class="glass-img-frame relative min-h-[360px] bg-gradient-to-br from-[rgba(38,85,168,0.55)] to-[rgba(10,11,26,0.2)] p-8">
-                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.4)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">Featured · Case study</span>
-                <h3 class="font-display text-[2rem] font-bold text-star-white">FunnyMoney</h3>
-                <p class="mt-3 max-w-[28ch] text-base leading-[1.7] text-cream-soft">Making household budgeting feel human, not punitive.</p>
-              </div>
-            </a>
-            <a href="./pages/work-thrive.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
-              <div class="glass-img-frame relative min-h-[260px] bg-gradient-to-br from-[rgba(240,180,41,0.35)] to-[rgba(10,11,26,0.1)] p-8">
-                <span class="mb-4 inline-block border border-[rgba(240,180,41,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">UX · Case study</span>
-                <h3 class="font-display text-[1.8rem] font-bold text-star-white">Thrive</h3>
-                <p class="mt-3 max-w-[26ch] text-sm leading-[1.7] text-cream-soft">Plant Doctor App — a mobile app that diagnoses plant diseases via real-time scans and provides comprehensive care tracking.</p>
-              </div>
-            </a>
-            <a href="./pages/work-wayfinding.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
-              <div class="glass-img-frame relative min-h-[300px] bg-gradient-to-br from-[rgba(26,58,122,0.5)] to-[rgba(10,11,26,0.2)] p-8">
-                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
-                <h3 class="font-display text-[1.8rem] font-bold text-star-white">WayFinding</h3>
-                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Library Navigation System — kiosk and app for interactive maps and wayfinding.</p>
-              </div>
-            </a>
-            <a href="./pages/work-researchgate.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
-              <div class="glass-img-frame relative min-h-[340px] bg-gradient-to-br from-[rgba(58,123,213,0.4)] to-[rgba(10,11,26,0.15)] p-8">
-                <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
-                <h3 class="font-display text-[1.9rem] font-bold text-star-white">ResearchGate</h3>
-                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Research Opportunity Platform — a hub for researchers and students to share and discover events.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.82;   /* airier body rhythm */
+  overflow-x: hidden;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-      <div class="section-divider"></div>
+a { color: inherit; text-decoration: none; }
 
-      <section id="motion" class="motion-section scroll-mt-24 px-[8vw] py-[120px]">
-        <div class="mx-auto max-w-[1400px]">
-          <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
-            <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">02 —</span>
-            <h2 class="aurora-text font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">3D <em class="font-normal italic text-[rgba(240,180,41,0.8)]">motion</em></h2>
-          </div>
-          <ul class="grid grid-cols-1 gap-0.5 md:grid-cols-3" data-reveal>
-            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
-              <div class="motion-bg-1 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-1 opacity-45"></div></div></div>
-              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
-                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Lighting study</div>
-                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Aurora Drift</h3>
-              </div>
-            </li>
-            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
-              <div class="motion-bg-2 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-2 opacity-45"></div></div></div>
-              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
-                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">3D · Product spin</div>
-                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Terra Form</h3>
-              </div>
-            </li>
-            <li class="glass-card group relative aspect-[9/12] overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:border-[rgba(240,180,41,0.3)] hover:shadow-glow-gold">
-              <div class="motion-bg-3 absolute inset-0"><div class="absolute inset-0 flex items-center justify-center"><div class="motion-orb-3 opacity-45"></div></div></div>
-              <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-[rgba(10,11,26,0.95)] to-transparent pb-8 pl-8 pr-8 pt-20">
-                <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">Motion · Organic forms</div>
-                <h3 class="mt-2 font-display text-[1.4rem] font-bold leading-tight text-star-white">Liquify Bloom</h3>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+/* ── Paper grain — real fiber feel ────────────────────────── */
+/* Lower baseFrequency (0.75) = coarser, more natural fiber.
+   mix-blend-mode: multiply blends into warm sections naturally. */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.055'/%3E%3C/svg%3E");
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+}
 
-      <div class="section-divider"></div>
+/* ─── NAV — masthead double rule ───────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 52px; height: 62px;
+  background: var(--ink);
+  border-bottom: none;
+  /* Double rule: thick gold over faint gold — like vintage editorial masthead */
+  box-shadow:
+    0 1.5px 0 rgba(200, 155, 42, 0.28),
+    0 3px   0 rgba(200, 155, 42, 0.08);
+}
 
-      <section id="about" class="scroll-mt-24 px-[8vw] py-[120px]">
-        <div class="mx-auto grid max-w-[1400px] items-center gap-16 lg:grid-cols-2 lg:gap-20">
-          <div data-reveal>
-            <p class="mb-5 font-mono text-[0.6rem] uppercase tracking-[0.3em] text-night-cerulean">03 — About</p>
-            <h2 class="aurora-text font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-star-white">I think in <em class="font-normal italic text-star-yellow">systems,</em><br />design in <em class="font-normal italic text-star-yellow">stories.</em></h2>
-            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">I'm a UX designer focused on research-backed flows, accessible UI, and motion that supports comprehension.</p>
-            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">Based in the NJIT / New Jersey area; open to internships, collaborative class projects, and roles where I can keep sharpening systems thinking and craft.</p>
-          </div>
-          <div class="glass-card glass-dark-strong p-12" data-reveal>
-            <p class="mb-8 font-mono text-[0.58rem] uppercase tracking-[0.25em] text-night-cerulean">Recognition & experience</p>
-            <ul class="list-none">
-              <li class="flex gap-5 border-b border-[rgba(100,160,255,0.08)] py-5"><span class="text-lg text-star-gold">✦</span><div><div class="text-[0.95rem] text-star-white">UX Portfolio — IS117</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">NJIT · 2025–2026</div></div></li>
-              <li class="flex gap-5 py-5"><span class="text-lg text-night-cerulean">◆</span><div><div class="text-[0.95rem] text-star-white">B.S. in progress</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">New Jersey Institute of Technology</div></div></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 20px;
+  color: var(--gold); letter-spacing: 0.05em;
+}
 
-      <div class="section-divider"></div>
+.nav-links { display: flex; gap: 44px; list-style: none; }
+.nav-links a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10.5px; font-weight: 300;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--cream); opacity: 0.65;
+  transition: opacity 0.25s, color 0.25s;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold); }
 
-      <section id="contact" class="scroll-mt-24 relative px-[8vw] py-32 text-center sm:py-36">
-        <div class="relative z-[2] mx-auto max-w-4xl" data-reveal>
-          <p class="mb-6 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-night-cerulean">04 — Contact</p>
-          <h2 class="aurora-text font-display text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-star-white">Let's build<br /><em class="font-normal italic text-star-yellow">something</em><br />together.</h2>
-          <p class="mx-auto mt-6 max-w-xl text-base font-light italic text-cream-soft">Reach out for collaborations, feedback on this portfolio, or internship conversations.</p>
-          <div class="mt-12 flex flex-wrap items-center justify-center gap-3">
-            <a href="mailto:hello@example.com" class="glass-btn btn-primary-night inline-flex items-center gap-2 rounded-none px-10 py-4">hello@example.com ↗</a>
-          </div>
-        </div>
-      </section>
-    </main>
+/* ─── SECTION 1: HERO — crimson ────────────────────────────── */
+.hero {
+  min-height: 100vh; padding-top: 62px;
+  background: var(--crimson);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+}
 
-    <footer class="relative z-[2] border-t border-[rgba(255,255,255,0.08)] px-[8vw] py-10">
-      <div class="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 sm:flex-row">
-        <p class="font-mono text-[0.6rem] tracking-[0.15em] text-cream-faint">© 2026 Dhruvi Malusare · UX portfolio</p>
-        <a href="#" class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-gold">Back to top ↑</a>
+/* Horizontal register lines + edge vignette — like old print stock */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 59px,
+      rgba(0, 0, 0, 0.07) 59px, rgba(0, 0, 0, 0.07) 60px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.07) 0%,
+      transparent 18%,
+      transparent 78%,
+      rgba(0, 0, 0, 0.13) 100%
+    );
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  padding: 60px 68px 84px;
+}
+
+/* EYEBROW */
+.eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10.5px; font-weight: 300; letter-spacing: 0.42em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.6);
+  margin-bottom: 26px;
+}
+
+/* MASSIVE EDITORIAL NAME */
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(80px, 14vw, 180px);
+  line-height: 0.86;
+  letter-spacing: -0.025em;   /* tighter — optical headline sizing */
+  color: var(--cream);
+  margin-bottom: 0;
+  position: relative;
+}
+
+.hero-name .italic-line {
+  font-style: italic;
+  color: var(--mustard-lt);
+  display: block;
+}
+
+/* CIRCLE BADGE — stamp aesthetic */
+.badge {
+  position: absolute;
+  width: 140px; height: 140px;
+  border: 1.5px solid rgba(200, 155, 42, 0.65);  /* softer border */
+  border-radius: 50%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  background: rgba(18, 12, 6, 0.45);
+}
+
+.badge-inner {
+  position: absolute; inset: 6px;
+  border: 1px solid rgba(200, 155, 42, 0.3);
+  border-radius: 50%;
+}
+
+.badge-text-top {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7px; font-weight: 300;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--mustard-lt);
+  display: block; margin-top: -14px;
+}
+
+.badge-main {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 16px;
+  color: var(--cream); line-height: 1.2;
+  text-align: center;
+  opacity: 0.92;
+}
+
+.badge-sub {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 6.5px; font-weight: 300;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(212, 160, 48, 0.75); margin-top: 4px;
+}
+
+.badge-1 { top: 60px; right: 64px; }
+.badge-2 { bottom: 80px; right: 220px; width: 110px; height: 110px; }
+
+/* TAGLINE STRIP */
+.hero-tagline-row {
+  display: flex; align-items: flex-end;
+  gap: 36px; margin-top: 34px;
+}
+
+.hero-tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic; font-size: clamp(16px, 2.2vw, 24px);
+  color: rgba(240, 230, 204, 0.82); line-height: 1.55;
+  max-width: 480px;
+  border-left: 2.5px solid rgba(200, 155, 42, 0.7);  /* softer, aged */
+  padding-left: 22px;
+}
+
+.hero-cta-group { display: flex; flex-direction: column; gap: 10px; }
+
+/* BUTTONS — stamped type, ink-bleed hover */
+.btn-retro {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10.5px; font-weight: 300; letter-spacing: 0.34em;
+  text-transform: uppercase; padding: 14px 38px;
+  border: 1px solid rgba(240, 230, 204, 0.65);  /* softer, not stark white */
+  color: var(--cream);
+  background: transparent; cursor: pointer;
+  opacity: 0.92;   /* slight stamp impression */
+  transition: background 0.28s ease, color 0.28s ease,
+              border-color 0.28s ease, opacity 0.28s ease;
+  display: inline-block; text-align: center;
+}
+.btn-retro:hover {
+  background: rgba(200, 155, 42, 0.88);  /* muted mustard ink-bleed */
+  color: var(--ink);
+  border-color: transparent;
+  opacity: 1;
+}
+.btn-retro.filled {
+  background: rgba(18, 12, 6, 0.92);
+  color: var(--cream);
+  border-color: rgba(18, 12, 6, 0.9);
+  opacity: 0.88;   /* stamped look */
+}
+.btn-retro.filled:hover {
+  background: rgba(200, 155, 42, 0.88);
+  color: var(--ink);
+  border-color: transparent;
+  opacity: 1;
+}
+
+/* STAT STRIP */
+.stat-strip {
+  display: flex; gap: 0;
+  margin-top: 68px;
+  border-top: 1px solid rgba(240, 230, 204, 0.18);
+}
+.stat-item {
+  flex: 1; padding: 26px 32px;
+  border-right: 1px solid rgba(240, 230, 204, 0.12);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900; line-height: 1;
+  color: var(--mustard-lt);
+  letter-spacing: -0.01em;
+}
+.stat-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
+  margin-top: 5px;
+}
+
+/* ─── MARQUEE — stately ticker ─────────────────────────────── */
+.marquee {
+  background: var(--mustard);
+  overflow: hidden; white-space: nowrap;
+  padding: 15px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.marquee-track {
+  display: inline-block;
+  animation: slide 32s linear infinite;  /* slower — more stately */
+}
+.marquee-track span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 21px;
+  color: var(--ink); padding: 0 32px;
+  letter-spacing: 0.02em;
+}
+.marquee-track .sep {
+  font-style: normal; font-weight: 900;
+  color: rgba(139, 26, 18, 0.65);  /* muted crimson separator */
+}
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ─── SECTION 2: WORK — teal ───────────────────────────────── */
+.section-work {
+  background: var(--teal);
+  padding: 0 0 88px;
+  position: relative; overflow: hidden;
+}
+
+.section-work::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 79px,
+      rgba(0, 0, 0, 0.05) 79px, rgba(0, 0, 0, 0.05) 80px
+    );
+  pointer-events: none;
+}
+
+.section-label {
+  padding: 64px 68px 0;
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 60px;
+}
+
+.section-label-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300;
+  letter-spacing: 0.42em; text-transform: uppercase;  /* print-catalog open */
+  color: rgba(240, 230, 204, 0.45);
+  white-space: nowrap;
+}
+
+.section-label-line {
+  flex: 1; height: 1px;
+  background: rgba(240, 230, 204, 0.18);  /* softer rule */
+}
+
+.section-title-giant {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-style: italic;
+  font-size: clamp(60px, 11vw, 130px);
+  line-height: 0.88; color: var(--cream);
+  padding: 0 68px; margin-bottom: 64px;
+  letter-spacing: -0.03em;  /* tighter — more editorial */
+}
+
+.section-title-giant .outline {
+  -webkit-text-stroke: 1.5px rgba(240, 230, 204, 0.7);  /* slightly faded stroke */
+  color: transparent;
+  display: block;
+}
+
+/* PROJECT ROWS */
+.project-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(240, 230, 204, 0.1);  /* softer divider */
+  position: relative; z-index: 1;
+  transition: background 0.35s;
+}
+.project-row:hover { background: rgba(0, 0, 0, 0.08); }  /* gentler hover */
+.project-row.full { grid-template-columns: 1fr; }
+
+.project-visual-panel {
+  min-height: 360px;
+  position: relative; overflow: hidden;
+}
+.project-visual-panel.p1 { background: var(--crimson-dk); }
+.project-visual-panel.p2 { background: #100a04; }
+.project-visual-panel.p3 { background: #263820; }
+
+/* Inner vignette on project visuals — editorial depth */
+.project-visual-panel::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* Giant archival numeral */
+.proj-bg-num {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 280px;
+  line-height: 1; color: rgba(255, 255, 255, 0.05);
+  bottom: -40px; right: -20px;
+  pointer-events: none; user-select: none;
+  letter-spacing: -0.04em;
+}
+
+.proj-accent-circle {
+  position: absolute;
+  border: 1px solid rgba(200, 155, 42, 0.22);  /* more ghosted gold */
+  border-radius: 50%; pointer-events: none;
+}
+
+.proj-tag {
+  position: absolute; top: 28px; left: 28px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.35em;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 155, 42, 0.6);  /* aged mustard */
+  color: rgba(200, 155, 42, 0.85);
+  padding: 5px 14px;
+  z-index: 2;
+}
+
+.project-info-panel {
+  padding: 52px 56px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid rgba(240, 230, 204, 0.08);  /* very soft */
+}
+
+.proj-num-small {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.42em;
+  color: rgba(212, 160, 48, 0.8); margin-bottom: 18px;
+}
+
+.proj-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-style: italic;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 0.98; color: var(--cream);
+  margin-bottom: 22px;
+  letter-spacing: -0.02em;
+}
+
+.proj-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 300; line-height: 1.82;
+  color: rgba(240, 230, 204, 0.72); margin-bottom: 32px;
+  flex: 1;
+}
+
+.proj-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.proj-pill {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.55);
+  border: 1px solid rgba(240, 230, 204, 0.18);
+  padding: 4px 12px;
+}
+
+.proj-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(240, 230, 204, 0.1);
+  padding-top: 22px;
+}
+
+/* Ghosted archival year — catalog label feel */
+.proj-year {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 28px;
+  color: rgba(240, 230, 204, 0.22);
+  letter-spacing: -0.01em;
+}
+
+.proj-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--mustard-lt);
+  display: flex; align-items: center; gap: 8px;
+  transition: gap 0.25s;
+}
+.proj-link:hover { gap: 16px; }
+.proj-link::after { content: '→'; font-size: 14px; }
+
+/* ─── SECTION 3: ABOUT — mustard ───────────────────────────── */
+.section-about {
+  background: var(--mustard);
+  position: relative; overflow: hidden;
+}
+
+/* Diagonal hatch + corner vignettes — aged paper surface */
+.section-about::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent, transparent 19px,
+      rgba(0, 0, 0, 0.03) 19px, rgba(0, 0, 0, 0.03) 20px
+    ),
+    radial-gradient(ellipse at 0% 0%,   rgba(0,0,0,0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(0,0,0,0.07) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; z-index: 1;
+}
+
+.about-left {
+  padding: 84px 68px;
+  border-right: 1px solid rgba(26, 16, 8, 0.18);
+}
+
+.about-giant-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.9; color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.03em;
+}
+.about-giant-name em {
+  font-style: italic; color: var(--crimson);
+  display: block;
+}
+
+.about-divider {
+  width: 52px; height: 3px;
+  background: rgba(26, 16, 8, 0.7);  /* slightly softer ink rule */
+  margin: 30px 0;
+}
+
+.about-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 300; line-height: 1.85;
+  color: var(--ink);
+}
+.about-body strong { font-weight: 600; }
+
+.skills-list {
+  margin-top: 44px; display: flex; flex-direction: column; gap: 0;
+}
+.skill-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(26, 16, 8, 0.1);  /* softer rule */
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px; font-weight: 300; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--ink);
+}
+.skill-row::after { content: '→'; opacity: 0.35; }
+
+.about-right {
+  background: var(--ink);
+  padding: 84px 60px;
+  display: flex; flex-direction: column; gap: 48px;
+}
+
+.exp-section-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.42em;
+  text-transform: uppercase; color: rgba(200, 155, 42, 0.8);
+  margin-bottom: -24px;
+}
+
+.exp-item {
+  padding-left: 24px;
+  border-left: 2px solid rgba(200, 155, 42, 0.55);  /* aged mustard rule */
+}
+.exp-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 26px;
+  color: var(--cream); line-height: 1.1; margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.exp-co {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(200, 155, 42, 0.75);
+  margin-bottom: 4px;
+}
+.exp-period {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 100; letter-spacing: 0.15em;
+  color: rgba(240, 230, 204, 0.28); margin-bottom: 10px;
+}
+.exp-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 300; line-height: 1.75;
+  color: rgba(240, 230, 204, 0.55);
+}
+
+/* ─── SECTION 4: CONTACT — crimson ─────────────────────────── */
+.section-contact {
+  background: var(--crimson);
+  position: relative; overflow: hidden;
+  min-height: 60vh;
+}
+
+/* Two-point radial fade — aged print on textured stock */
+.section-contact::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(ellipse 65% 80% at 85% 55%, rgba(127, 26, 17, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 50% at 5% 10%,  rgba(100, 20, 12, 0.3) 0%, transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+
+.contact-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; z-index: 1;
+}
+
+.contact-left {
+  padding: 104px 68px;
+  border-right: 1px solid rgba(240, 230, 204, 0.12);
+}
+
+.contact-hed {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 110px);
+  line-height: 0.88; color: var(--cream);
+  letter-spacing: -0.03em; margin-bottom: 34px;
+}
+.contact-hed em {
+  font-style: italic; color: var(--mustard-lt);
+  display: block;
+}
+
+.contact-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 300; line-height: 1.75;
+  color: rgba(240, 230, 204, 0.72); max-width: 380px;
+  margin-bottom: 44px;
+}
+
+.contact-email {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 22px;
+  color: var(--mustard-lt);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.35);  /* softer gold rule */
+  padding-bottom: 6px; display: inline-block;
+  transition: color 0.25s, border-color 0.25s;
+}
+.contact-email:hover { color: var(--cream); border-color: rgba(240,230,204,0.5); }
+
+.contact-right {
+  padding: 104px 60px;
+  display: flex; flex-direction: column; gap: 2px;
+  justify-content: center;
+}
+
+.contact-right-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.38em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.38);
+  margin-bottom: 26px;
+}
+
+.social-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 26px;
+  background: rgba(18, 12, 6, 0.3);  /* softer ink tint */
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--cream);
+  margin-bottom: 2px;
+  transition: background 0.28s, color 0.28s;
+  cursor: pointer;
+}
+.social-row:hover { background: rgba(200, 155, 42, 0.88); color: var(--ink); }
+.social-row::after { content: '↗'; font-family: serif; font-size: 16px; opacity: 0.7; }
+
+/* Contact badge */
+.contact-badge {
+  position: absolute;
+  right: 64px; top: 80px;
+  width: 150px; height: 150px;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(200, 155, 42, 0.15);  /* even softer gold rule */
+  padding: 30px 68px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 20px; color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.footer-copy {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 100; letter-spacing: 0.24em;
+  color: rgba(240, 230, 204, 0.28);
+}
+.footer-top {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.38);
+  transition: color 0.25s; cursor: pointer;
+}
+.footer-top:hover { color: var(--gold); }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection { background: var(--mustard); color: var(--ink); }
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: rgba(200, 155, 42, 0.35); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { gap: 20px; }
+  .hero-inner, .section-label, .section-title-giant,
+  .about-left, .contact-left, .contact-right, footer { padding-left: 24px; padding-right: 24px; }
+  .project-row, .about-grid, .contact-inner { grid-template-columns: 1fr; }
+  .project-info-panel { border-left: none; border-top: 1px solid rgba(240,230,204,0.1); }
+  .about-right { padding: 60px 24px; }
+  .badge-1 { right: 24px; top: 80px; }
+  .badge-2 { display: none; }
+  .stat-strip { flex-wrap: wrap; }
+  .stat-item { min-width: 50%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dhruvi Malusare</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO — CRIMSON ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">UX Designer &amp; Researcher &nbsp;·&nbsp; Available for Projects</p>
+
+    <h1 class="hero-name">
+      Dhruvi<br>
+      <span class="italic-line">Malusare</span>
+    </h1>
+
+    <div class="hero-tagline-row">
+      <p class="hero-tagline">
+        Designing systems that make complex things feel completely obvious — from 0→1 products to enterprise overhauls.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#work" class="btn-retro filled">View Work</a>
+        <a href="#contact" class="btn-retro">Get In Touch</a>
       </div>
-    </footer>
+    </div>
 
-    <script src="./aurora.js"></script>
-  </body>
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3M+</div>
+        <div class="stat-label">Users Impacted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">★ 4.8</div>
+        <div class="stat-label">App Store Launch</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badge 1 -->
+  <div class="badge badge-1">
+    <div class="badge-inner"></div>
+    <span class="badge-text-top">Senior Level</span>
+    <div class="badge-main">Research<br>Led</div>
+    <span class="badge-sub">UX · Strategy · Systems</span>
+  </div>
+
+  <!-- Badge 2 -->
+  <div class="badge badge-2">
+    <div class="badge-inner"></div>
+    <div class="badge-main" style="font-size:13px;">B2B<br>&amp;<br>B2C</div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>User Research</span><span class="sep"> ✦ </span>
+    <span>Interaction Design</span><span class="sep"> ✦ </span>
+    <span>Information Architecture</span><span class="sep"> ✦ </span>
+    <span>Design Systems</span><span class="sep"> ✦ </span>
+    <span>Usability Testing</span><span class="sep"> ✦ </span>
+    <span>Product Strategy</span><span class="sep"> ✦ </span>
+    <span>Prototyping</span><span class="sep"> ✦ </span>
+    <span>User Research</span><span class="sep"> ✦ </span>
+    <span>Interaction Design</span><span class="sep"> ✦ </span>
+    <span>Information Architecture</span><span class="sep"> ✦ </span>
+    <span>Design Systems</span><span class="sep"> ✦ </span>
+    <span>Usability Testing</span><span class="sep"> ✦ </span>
+    <span>Product Strategy</span><span class="sep"> ✦ </span>
+    <span>Prototyping</span><span class="sep"> ✦ </span>
+  </div>
+</div>
+
+<!-- ═══ WORK — TEAL ═══ -->
+<section class="section-work" id="work">
+  <div class="section-label">
+    <span class="section-label-text">Selected Work</span>
+    <div class="section-label-line"></div>
+    <span class="section-label-text">2022 – 2025</span>
+  </div>
+
+  <div class="section-title-giant">
+    The Work
+    <span class="outline">Collection</span>
+  </div>
+
+  <!-- PROJECT 01 -->
+  <div class="project-row">
+    <div class="project-visual-panel p1">
+      <div class="proj-bg-num">01</div>
+      <div class="proj-accent-circle" style="width:200px;height:200px;top:-40px;left:-60px;opacity:0.2;"></div>
+      <div class="proj-accent-circle" style="width:100px;height:100px;bottom:40px;right:60px;opacity:0.15;"></div>
+      <div class="proj-tag">Enterprise SaaS</div>
+    </div>
+    <div class="project-info-panel">
+      <div>
+        <div class="proj-num-small">Project No. 01</div>
+        <h3 class="proj-title">Meridian<br>Analytics Dashboard</h3>
+        <p class="proj-desc">
+          Redesigned a B2B analytics platform serving 200,000+ enterprise users. Led end-to-end research, journey mapping, and interaction design — reducing time-to-insight by 47% and cutting support tickets by a third.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-pill">Research</span>
+          <span class="proj-pill">IA</span>
+          <span class="proj-pill">Prototyping</span>
+          <span class="proj-pill">Design System</span>
+        </div>
+      </div>
+      <div class="proj-footer">
+        <span class="proj-year">2024</span>
+        <a href="#" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 02 -->
+  <div class="project-row">
+    <div class="project-info-panel" style="border-left:none; border-right:1px solid rgba(240,230,204,0.08);">
+      <div>
+        <div class="proj-num-small">Project No. 02</div>
+        <h3 class="proj-title">Verdant<br>Health Companion</h3>
+        <p class="proj-desc">
+          0→1 consumer health app for chronic condition management. Led three rounds of user testing across 60+ participants; shipped MVP in four months with a 4.8★ App Store rating at launch.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-pill">User Testing</span>
+          <span class="proj-pill">iOS / Android</span>
+          <span class="proj-pill">0 → 1</span>
+        </div>
+      </div>
+      <div class="proj-footer">
+        <span class="proj-year">2023</span>
+        <a href="#" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+    <div class="project-visual-panel p2">
+      <div class="proj-bg-num">02</div>
+      <div class="proj-accent-circle" style="width:260px;height:260px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.12;"></div>
+      <div class="proj-tag">Mobile App</div>
+    </div>
+  </div>
+
+  <!-- PROJECT 03 -->
+  <div class="project-row">
+    <div class="project-visual-panel p3">
+      <div class="proj-bg-num">03</div>
+      <div class="proj-accent-circle" style="width:180px;height:180px;bottom:30px;left:30px;opacity:0.15;"></div>
+      <div class="proj-tag">Design System</div>
+    </div>
+    <div class="project-info-panel">
+      <div>
+        <div class="proj-num-small">Project No. 03</div>
+        <h3 class="proj-title">Fieldstone<br>Design System</h3>
+        <p class="proj-desc">
+          Built a cross-platform design system from scratch for a fintech startup — 120+ components, token-driven theming, full Figma + React Storybook integration. Cut design-to-dev handoff time by 60%.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-pill">Figma</span>
+          <span class="proj-pill">Tokens</span>
+          <span class="proj-pill">Documentation</span>
+        </div>
+      </div>
+      <div class="proj-footer">
+        <span class="proj-year">2022</span>
+        <a href="#" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT — MUSTARD ═══ -->
+<section class="section-about" id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <div class="about-giant-name">
+        About<br>
+        <em>Dhruvi.</em>
+      </div>
+      <div class="about-divider"></div>
+      <p class="about-body">
+        I'm a UX designer with <strong>7+ years</strong> working across enterprise software, consumer apps, and design systems. My process is grounded in <strong>real research</strong> — I spend more time at whiteboards and with users than in Figma.
+        <br><br>
+        I've embedded with product and engineering teams at Series A startups and Fortune 500s alike. I care about the whole product experience — from first impression to the empty state nobody designs.
+        <br><br>
+        Currently open to <strong>full-time and contract roles</strong>, remote or on-site.
+      </p>
+      <div class="skills-list">
+        <div class="skill-row">User Research</div>
+        <div class="skill-row">Interaction Design</div>
+        <div class="skill-row">Usability Testing</div>
+        <div class="skill-row">Design Systems</div>
+        <div class="skill-row">Information Architecture</div>
+        <div class="skill-row">Figma / Framer</div>
+        <div class="skill-row">Prototyping</div>
+        <div class="skill-row">Product Strategy</div>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="exp-section-label">Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-title">Senior UX Designer</div>
+        <div class="exp-co">Acme Corp — Full-time</div>
+        <div class="exp-period">2023 – Present</div>
+        <div class="exp-desc">Lead UX for the core product suite. Own research operations, mentor junior designers, and partner with PM on roadmap prioritization.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title">Product Designer</div>
+        <div class="exp-co">Startupco — Full-time</div>
+        <div class="exp-period">2021 – 2023</div>
+        <div class="exp-desc">First design hire. Built the design org from scratch, shipped 3 major product lines, and established the company's design system.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title">UX Designer</div>
+        <div class="exp-co">Agency Name — Contract</div>
+        <div class="exp-period">2018 – 2021</div>
+        <div class="exp-desc">Worked across 15+ client engagements in healthcare, fintech, and e-commerce. Heavy research and rapid prototyping focus.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT — CRIMSON ═══ -->
+<section class="section-contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2 class="contact-hed">
+        Let's<br>
+        <em>Make</em>
+        Things.
+      </h2>
+      <p class="contact-sub">
+        Have a project, a problem, or just want to talk shop? I'm always up for a good conversation about design.
+      </p>
+      <a href="mailto:dhruvi@malusare.com" class="contact-email">dhruvi@malusare.com</a>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-right-label">Find me elsewhere</div>
+      <a href="#" class="social-row">LinkedIn</a>
+      <a href="#" class="social-row">Read.cv</a>
+      <a href="#" class="social-row">Dribbble</a>
+      <a href="#" class="social-row">Download Résumé</a>
+    </div>
+  </div>
+
+  <!-- decorative badge -->
+  <div class="badge contact-badge" style="width:130px;height:130px;">
+    <div class="badge-inner"></div>
+    <div class="badge-main" style="font-size:13px;">Open<br>to Work</div>
+    <span class="badge-sub">2025</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dhruvi Malusare</div>
+  <div class="footer-copy">© 2025 — All work is my own. Built with intent.</div>
+  <a href="#" class="footer-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+</footer>
+
+</body>
 </html>
