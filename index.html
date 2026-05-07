@@ -7,12 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./aurora-glass.css">
+    <link rel="stylesheet" href="./aurora-glass.css" />
+    <link rel="stylesheet" href="./border-glow.css" />
     <script>
       tailwind = {
         config: {
@@ -23,9 +22,9 @@
                 star: { gold: "var(--gold)", white: "var(--white-star)", yellow: "var(--paint-yellow)" },
               },
               fontFamily: {
-                sans: ['Cormorant Garamond', "Georgia", "serif"],
-                mono: ['DM Mono', "ui-monospace", "monospace"],
-                display: ['Playfair Display', "Georgia", "serif"],
+                sans:    ['Lora', 'Georgia', 'serif'],
+                mono:    ['Space Mono', 'ui-monospace', 'monospace'],
+                display: ['Raleway', 'sans-serif'],
               },
             },
           },
@@ -34,7 +33,7 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body data-page="home" class="min-h-screen bg-night-black font-sans text-[#f5ede0] antialiased" style="background:#05070f;">
+  <body data-page="home" class="theme-dark min-h-screen bg-night-black font-sans text-star-white antialiased">
     <div class="aurora-bg" aria-hidden="true">
       <div class="aurora-orb orb-1"></div>
       <div class="aurora-orb orb-2"></div>
@@ -45,19 +44,19 @@
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <header class="fixed left-0 right-0 top-0 z-[100]" data-reveal>
+    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100] flex justify-center px-4 pt-4 pb-2">
       <nav
-        class="glass-nav nav-glass flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-[60px] sm:py-7"
+        class="glass-nav nav-glass flex w-full max-w-[min(1100px,calc(100vw-2rem))] flex-col gap-3 rounded-full px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-8 sm:py-3.5"
       >
-        <a href="./index.html" class="shrink-0 font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-[1.15rem]">
+        <a href="./index.html" class="shrink-0 text-center font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-left sm:text-[1.15rem]">
           Dhruvi<span class="italic text-star-gold"> Malusare</span>
         </a>
-        <ul class="flex list-none flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:gap-x-8 md:gap-x-12">
+        <ul class="flex list-none flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end sm:gap-x-6 md:gap-x-10">
           <li><a href="./index.html" data-page="home" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Home</a></li>
           <li><a href="./pages/projects.html" data-page="projects" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Projects</a></li>
           <li><a href="./pages/about.html" data-page="about" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">About</a></li>
           <li><a href="https://example.com/resume.pdf" target="_blank" rel="noreferrer" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Resume</a></li>
-          <li><a href="./pages/contact.html" data-page="contact" class="glass-btn btn-primary-night inline-block rounded-none px-5 py-2.5 sm:px-9 sm:py-3.5">Contact</a></li>
+          <li><a href="./pages/contact.html" data-page="contact" class="glass-btn btn-primary-night inline-block rounded-full px-5 py-2.5 sm:rounded-full sm:px-7 sm:py-2.5">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -97,32 +96,32 @@
             </h2>
           </div>
           <div class="columns-1 gap-3 space-y-3 md:columns-2" data-reveal>
-            <a href="./pages/work-funnymoney.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+            <a href="./pages/work-funnymoney.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
               <div class="glass-img-frame relative min-h-[360px] bg-gradient-to-br from-[rgba(38,85,168,0.55)] to-[rgba(10,11,26,0.2)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.4)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">Featured · Case study</span>
                 <h3 class="font-display text-[2rem] font-bold text-star-white">FunnyMoney</h3>
                 <p class="mt-3 max-w-[28ch] text-base leading-[1.7] text-cream-soft">Making household budgeting feel human, not punitive.</p>
               </div>
             </a>
-            <a href="./pages/work-thrive.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+            <a href="./pages/work-thrive.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
               <div class="glass-img-frame relative min-h-[260px] bg-gradient-to-br from-[rgba(240,180,41,0.35)] to-[rgba(10,11,26,0.1)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(240,180,41,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-star-gold">UX · Case study</span>
                 <h3 class="font-display text-[1.8rem] font-bold text-star-white">Thrive</h3>
-                <p class="mt-3 max-w-[26ch] text-sm leading-[1.7] text-cream-soft">Habit coaching for neurodivergent students.</p>
+                <p class="mt-3 max-w-[26ch] text-sm leading-[1.7] text-cream-soft">Plant Doctor App — a mobile app that diagnoses plant diseases via real-time scans and provides comprehensive care tracking.</p>
               </div>
             </a>
-            <a href="./pages/work-wayfinding.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+            <a href="./pages/work-wayfinding.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
               <div class="glass-img-frame relative min-h-[300px] bg-gradient-to-br from-[rgba(26,58,122,0.5)] to-[rgba(10,11,26,0.2)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
-                <h3 class="font-display text-[1.8rem] font-bold text-star-white">Wayfinding</h3>
-                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Campus navigation that respects cognitive load.</p>
+                <h3 class="font-display text-[1.8rem] font-bold text-star-white">WayFinding</h3>
+                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Library Navigation System — kiosk and app for interactive maps and wayfinding.</p>
               </div>
             </a>
-            <a href="./pages/work-researchgate.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(38,85,168,0.2)]">
+            <a href="./pages/work-researchgate.html" class="glass-card group relative block break-inside-avoid overflow-hidden border border-[var(--glass-border)] bg-[var(--glass-bg)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[rgba(100,160,255,0.35)] hover:shadow-[0_0_60px_rgba(192,132,252,0.22)]">
               <div class="glass-img-frame relative min-h-[340px] bg-gradient-to-br from-[rgba(58,123,213,0.4)] to-[rgba(10,11,26,0.15)] p-8">
                 <span class="mb-4 inline-block border border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.25)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-night-cerulean">UX · Case study</span>
                 <h3 class="font-display text-[1.9rem] font-bold text-star-white">ResearchGate</h3>
-                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Scholarly discovery without the clutter.</p>
+                <p class="mt-3 max-w-[28ch] text-sm leading-[1.7] text-cream-soft">Research Opportunity Platform — a hub for researchers and students to share and discover events.</p>
               </div>
             </a>
           </div>
@@ -131,7 +130,7 @@
 
       <div class="section-divider"></div>
 
-      <section id="motion" class="scroll-mt-24 bg-[rgba(13,27,62,0.3)] px-[8vw] py-[120px]">
+      <section id="motion" class="motion-section scroll-mt-24 px-[8vw] py-[120px]">
         <div class="mx-auto max-w-[1400px]">
           <div class="mb-[72px] flex items-baseline gap-6" data-reveal>
             <span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">02 —</span>
@@ -197,10 +196,10 @@
       </section>
     </main>
 
-    <footer class="relative z-[2] border-t border-[rgba(100,160,255,0.06)] px-[8vw] py-10">
+    <footer class="relative z-[2] border-t border-[rgba(255,255,255,0.08)] px-[8vw] py-10">
       <div class="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 sm:flex-row">
-        <p class="font-mono text-[0.6rem] tracking-[0.15em] text-[rgba(245,237,224,0.2)]">© 2026 Dhruvi Malusare · UX portfolio</p>
-        <a href="#" class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[rgba(245,237,224,0.25)] transition-colors duration-300 hover:text-star-gold">Back to top ↑</a>
+        <p class="font-mono text-[0.6rem] tracking-[0.15em] text-cream-faint">© 2026 Dhruvi Malusare · UX portfolio</p>
+        <a href="#" class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-gold">Back to top ↑</a>
       </div>
     </footer>
 

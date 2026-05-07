@@ -3,24 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wayfinding — Case Study</title>
+    <title>WayFinding — Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <script>tailwind={config:{theme:{extend:{colors:{night:{black:"var(--night-black)",cerulean:"var(--cerulean)"},star:{gold:"var(--gold)",white:"var(--white-star)",yellow:"var(--paint-yellow)"}},fontFamily:{sans:["Lora","Georgia","serif"],mono:["Space Mono","ui-monospace","monospace"],display:["Raleway","sans-serif"]}}}}};</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../aurora-glass.css" />
+    <link rel="stylesheet" href="../border-glow.css" />
   </head>
-  <body class="min-h-screen bg-night-black text-[#f5ede0]" style="background:#05070f;">
+  <body class="theme-dark min-h-screen bg-night-black font-sans text-star-white antialiased">
     <div class="aurora-bg" aria-hidden="true"><div class="aurora-orb orb-1"></div><div class="aurora-orb orb-2"></div><div class="aurora-orb orb-3"></div><div class="aurora-orb orb-4"></div><div class="aurora-grid"></div></div>
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
-    <main class="relative z-[2] mx-auto max-w-3xl px-6 pb-20 pt-20">
+    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100] flex justify-center px-4 pt-4 pb-2">
+      <nav class="glass-nav nav-glass flex w-full max-w-[min(1100px,calc(100vw-2rem))] flex-col gap-3 rounded-full px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-8 sm:py-3.5">
+        <a href="../index.html" class="shrink-0 text-center font-display text-[1.05rem] font-bold tracking-[0.05em] text-star-white sm:text-left sm:text-[1.15rem]">Dhruvi<span class="italic text-star-gold"> Malusare</span></a>
+        <ul class="flex list-none flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end sm:gap-x-6 md:gap-x-10">
+          <li><a href="../index.html" data-page="home" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Home</a></li>
+          <li><a href="./projects.html" data-page="projects" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">Projects</a></li>
+          <li><a href="./about.html" data-page="about" class="nav-link group relative font-mono text-[0.7rem] font-light uppercase tracking-[0.2em] text-cream-faint transition-colors duration-300 hover:text-star-white after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-star-gold after:transition-[width] after:duration-300 hover:after:w-full">About</a></li>
+          <li><a href="./contact.html" data-page="contact" class="glass-btn btn-primary-night inline-block rounded-full px-5 py-2.5 sm:px-7 sm:py-2.5">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="relative z-[2] mx-auto max-w-4xl px-6 pb-20 pt-36">
       <a href="../index.html#work" class="font-mono text-xs uppercase tracking-[0.2em] text-star-gold">← Back to selected work</a>
       <article class="glass-card mt-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <h1 class="aurora-text font-display text-5xl text-star-white">Wayfinding</h1>
-        <p class="mt-4 text-cream-muted">Campus navigation that respects cognitive load.</p>
-        <p class="mt-8 leading-relaxed text-cream-soft">Signage and digital wayfinding aligned to one mental model: landmarks first, then paths, then room numbers. Accessibility specs include non-color route cues and readable hierarchy in physical and digital contexts.</p>
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">UX/UI Design · Completed</p>
+        <h1 class="aurora-text mt-3 font-display text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-tight text-star-white">WayFinding</h1>
+        <p class="mt-2 font-display text-xl text-cream-muted">Library Navigation System</p>
+        <p class="mt-8 text-lg leading-relaxed text-cream-soft">A centralized kiosk synced with a mobile app that improves physical library wayfinding through interactive maps and navigation.</p>
       </article>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Problem</p>
+        <p class="mt-4 leading-relaxed text-cream-soft">Students often struggle to navigate the library, leading to frustration, wasted time, and underutilization of library resources. The library lacks an accessible wayfinding system integrated with its existing database.</p>
+        <p class="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Goal</p>
+        <p class="mt-4 leading-relaxed text-cream-soft">Create a solution that improves physical navigation in the library while increasing efficiency and accessibility.</p>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Stakeholders</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Students</li><li>Library visitors</li><li>Librarians</li></ul>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Methodology</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>User interviews</li><li>Observation</li><li>Contextual research</li></ul>
+        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Key insights</p>
+        <ul class="mt-4 list-disc space-y-3 pl-5 text-cream-soft">
+          <li>Library anxiety deters people from using available resources.</li>
+          <li>Users feel uncomfortable repeatedly asking librarians for help.</li>
+          <li>The library book naming convention is confusing for many users.</li>
+          <li>Most visitors go directly to the front desk for navigation assistance.</li>
+          <li>Participants often photograph book numbers on their phones while navigating.</li>
+        </ul>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Features</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft">
+          <li>Interactive kiosk navigation</li>
+          <li>QR code synced mobile navigation</li>
+          <li>Indoor positioning system</li>
+          <li>Accessibility-focused haptic feedback</li>
+          <li>Book search and guided routing</li>
+        </ul>
+        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Key screens</p>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">Kiosk Search</h3><p class="mt-2 text-sm text-cream-muted">Search for books and resources</p></div>
+          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">Interactive Map</h3><p class="mt-2 text-sm text-cream-muted">Displays route and navigation</p></div>
+          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4 sm:col-span-2"><h3 class="font-display font-bold text-star-white">Mobile Navigation</h3><p class="mt-2 text-sm text-cream-muted">Guided indoor directions through QR sync</p></div>
+        </div>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Project planning</p>
+        <p class="mt-4 leading-relaxed text-cream-soft">Users search for books at a centralized kiosk. The kiosk generates a map and QR code that syncs directions to the user’s phone.</p>
+        <p class="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Technology stack</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft">
+          <li>Bluetooth beacon network for positioning</li>
+          <li>Mobile motion sensors (gyroscope, accelerometer, magnetometer)</li>
+          <li>Hybrid indoor positioning system</li>
+          <li>Proximity haptic feedback for accessibility</li>
+          <li>Middleware for routing and beacon management</li>
+        </ul>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Metrics</p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-5">
+            <p class="font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Reduced Navigation Time</p>
+            <p class="mt-2 font-display text-2xl font-bold text-star-white">~9.5 minutes</p>
+            <p class="mt-2 text-sm text-cream-muted">70% faster navigation</p>
+          </div>
+          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-5">
+            <p class="font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Ease of Navigation Improvement</p>
+            <p class="mt-2 font-display text-2xl font-bold text-star-white">64%</p>
+          </div>
+        </div>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Project imagery</p>
+        <p class="mb-4 text-sm text-cream-faint">Future assets: <code class="font-mono text-[0.7rem] text-night-cerulean">../assets/img/case-studies/wayfinding/01.jpg</code> — <code class="font-mono text-[0.7rem] text-night-cerulean">03.jpg</code></p>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <figure class="m-0">
+            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 1 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 1 of 3 — replace with screen or photo</span></div>
+          </figure>
+          <figure class="m-0">
+            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 2 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 2 of 3 — replace with screen or photo</span></div>
+          </figure>
+          <figure class="m-0">
+            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 3 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 3 of 3 — replace with screen or photo</span></div>
+          </figure>
+        </div>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Prototype</p>
+        <a href="https://claude.ai/public/artifacts/8025b0e1-2f1c-469e-9dcc-e2b0343bcb9f" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block font-mono text-sm text-star-gold underline decoration-[rgba(240,180,41,0.4)] underline-offset-4 transition-colors hover:text-star-white">View interactive prototype ↗</a>
+      </section>
+      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
+        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Tags</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Accessibility</span>
+          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Wayfinding</span>
+          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Mobile UX</span>
+          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Kiosk Design</span>
+          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Human-Centered Design</span>
+        </div>
+      </section>
     </main>
     <script src="../aurora.js"></script>
   </body>

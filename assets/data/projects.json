@@ -1,0 +1,176 @@
+{
+  "projects": [
+    {
+      "id": "thrive",
+      "title": "Thrive",
+      "subtitle": "Plant Doctor App",
+      "category": "UX/UI Design",
+      "status": "Completed",
+      "description": "A mobile app that diagnoses plant diseases via real-time scans and provides comprehensive care tracking.",
+      "problemStatement": "Many plant owners struggle with keeping their plants alive due to a lack of awareness of specific care requirements for different species or misdiagnosed issues. This often leads to frustration, wasted time, and a low satisfaction rate.",
+      "goal": "Create a solution to reduce diagnosis time and improve user adherence to a plant care schedule.",
+      "stakeholders": ["Plant owners"],
+      "researchFindings": [
+        "24% of Americans admit they cannot keep a houseplant alive for more than six months.",
+        "The average plant parent has killed seven indoor plants.",
+        "Overwatering, underwatering, neglect, and over-fertilizing are the top four causes of plant death.",
+        "One-third of new plant owners struggle with watering."
+      ],
+      "methodology": ["Interviews", "Contextual inquiries", "Secondary research"],
+      "keyInsights": [
+        "People often forget to tend to their plants due to busy lifestyles.",
+        "Plant owners lack knowledge about species-specific care requirements.",
+        "Users do not always have the time or energy to research plant care."
+      ],
+      "features": [
+        "Adding and organizing plants",
+        "Weekly progress tracking",
+        "Personalized motivational messages",
+        "Best care environment recommendations",
+        "Diagnosis and treatment recommendations linked to a storefront"
+      ],
+      "pages": [
+        { "title": "Plant Profile", "description": "Plant summary and care history" },
+        { "title": "To-Do List", "description": "Track watering, fertilizing, and care tasks" },
+        { "title": "Plant Diagnosis", "description": "Identify diseases and issues through scanning" },
+        { "title": "Plant Shop", "description": "Storefront for plant care products" },
+        { "title": "Explore", "description": "Tips and tricks for plant care" }
+      ],
+      "metrics": [],
+      "technologies": ["Mobile app design", "Real-time image scanning", "AI-assisted diagnosis"],
+      "prototype": "https://www.figma.com/proto/dOKZQvL8ys0b2aseTS32wV/Thrive?node-id=0-1&t=b14ItR4ktSX1z6MD-1",
+      "tags": ["UX Research", "Mobile Design", "Healthcare", "AI", "Plant Care"]
+    },
+    {
+      "id": "wayfinding",
+      "title": "WayFinding",
+      "subtitle": "Library Navigation System",
+      "category": "UX/UI Design",
+      "status": "Completed",
+      "description": "A centralized kiosk synced with a mobile app that improves physical library wayfinding through interactive maps and navigation.",
+      "problemStatement": "Students often struggle to navigate the library, leading to frustration, wasted time, and underutilization of library resources. The library lacks an accessible wayfinding system integrated with its existing database.",
+      "goal": "Create a solution that improves physical navigation in the library while increasing efficiency and accessibility.",
+      "stakeholders": ["Students", "Library visitors", "Librarians"],
+      "researchFindings": [],
+      "methodology": ["User interviews", "Observation", "Contextual research"],
+      "keyInsights": [
+        "Library anxiety deters people from using available resources.",
+        "Users feel uncomfortable repeatedly asking librarians for help.",
+        "The library book naming convention is confusing for many users.",
+        "Most visitors go directly to the front desk for navigation assistance.",
+        "Participants often photograph book numbers on their phones while navigating."
+      ],
+      "features": [
+        "Interactive kiosk navigation",
+        "QR code synced mobile navigation",
+        "Indoor positioning system",
+        "Accessibility-focused haptic feedback",
+        "Book search and guided routing"
+      ],
+      "pages": [
+        { "title": "Kiosk Search", "description": "Search for books and resources" },
+        { "title": "Interactive Map", "description": "Displays route and navigation" },
+        { "title": "Mobile Navigation", "description": "Guided indoor directions through QR sync" }
+      ],
+      "projectPlanning": {
+        "concept": "Users search for books at a centralized kiosk. The kiosk generates a map and QR code that syncs directions to the user’s phone.",
+        "technology": [
+          "Bluetooth beacon network for positioning",
+          "Mobile motion sensors (gyroscope, accelerometer, magnetometer)",
+          "Hybrid indoor positioning system",
+          "Proximity haptic feedback for accessibility",
+          "Middleware for routing and beacon management"
+        ]
+      },
+      "metrics": [
+        {
+          "label": "Reduced Navigation Time",
+          "value": "~9.5 minutes",
+          "description": "70% faster navigation"
+        },
+        {
+          "label": "Ease of Navigation Improvement",
+          "value": "64%"
+        }
+      ],
+      "technologies": [],
+      "prototype": "https://claude.ai/public/artifacts/8025b0e1-2f1c-469e-9dcc-e2b0343bcb9f",
+      "tags": ["Accessibility", "Wayfinding", "Mobile UX", "Kiosk Design", "Human-Centered Design"]
+    },
+    {
+      "id": "researchgate",
+      "title": "ResearchGate",
+      "subtitle": "Research Opportunity Platform",
+      "category": "UX/UI Design",
+      "status": "Completed",
+      "description": "A mobile app that acts as a central hub for researchers to create events and opportunities for students to discover and join.",
+      "problemStatement": "Students, especially high school students, often lack awareness about research opportunities, creating an information gap between them and the research community. Researchers also struggle to reach younger audiences.",
+      "goal": "Create a service that spreads awareness about research opportunities and bridges the information gap between students and researchers.",
+      "stakeholders": ["Researchers", "Institutions", "High school students", "College students"],
+      "researchFindings": [
+        "College research creates the foundation for major advances in health, medicine, communication, economics, energy, and national security.",
+        "Adolescents ask insightful questions that differ from those of advanced researchers.",
+        "Universities can help keep STEM education engaging for younger students.",
+        "Only 29% of Gen Z students cite STEM careers as their first choice despite 75% expressing interest in STEM fields."
+      ],
+      "methodology": ["Heuristic evaluation", "Interviews", "Secondary research", "GenderMag walkthroughs"],
+      "keyInsights": [
+        "Researchers are motivated but lack time to organize outreach events.",
+        "Researchers see strong potential in highly motivated college students.",
+        "AI should act as a supplemental tool rather than replacing human interaction.",
+        "Students need greater exposure to research opportunities early on."
+      ],
+      "features": [
+        "Research event discovery",
+        "Personalized recommendations",
+        "AI-assisted event creation",
+        "Lab and researcher follow system",
+        "Completion badges and engagement tracking"
+      ],
+      "pages": [],
+      "productRequirements": {
+        "studentIncentives": [
+          "College and career preparation",
+          "Early exposure to research",
+          "Networking opportunities",
+          "Research skill development"
+        ],
+        "researcherIncentives": [
+          "Training future researchers",
+          "Increased student involvement",
+          "Long-term return on investment",
+          "Improved college retention"
+        ],
+        "limitationsAddressed": {
+          "lowStudentMotivation": [
+            "Personalized recommendations",
+            "Completion badges",
+            "Skill-building opportunities"
+          ],
+          "researcherMotivation": [
+            "AI event creation helper",
+            "Low-effort event formats",
+            "Research presentation opportunities"
+          ],
+          "immaturity": ["Interest screening questions", "Follow-up involvement encouragement"],
+          "roi": ["Follow-up surveys", "Encouragement to join future events", "Lab following features"]
+        }
+      },
+      "metrics": [
+        {
+          "label": "Awareness Gap",
+          "value": "73%",
+          "description": "73% of surveyed college students reported they were unaware of research opportunities in high school"
+        },
+        {
+          "label": "Stakeholder Interviews",
+          "value": "5",
+          "description": "Identified 4 core issues: awareness, resources, platform, and time"
+        }
+      ],
+      "technologies": [],
+      "prototype": "https://www.figma.com/proto/N99AFRcNE3GPNujyAbvyi9/IS-257-Prototype?node-id=151-107&t=9SQeDKqmRRtFnwfM-1",
+      "tags": ["Education", "Research", "STEM", "Mobile UX", "AI", "Community Building"]
+    }
+  ]
+}
