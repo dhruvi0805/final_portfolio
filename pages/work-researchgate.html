@@ -1,157 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ResearchGate — Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-    <script>tailwind={config:{theme:{extend:{colors:{night:{black:"var(--night-black)",cerulean:"var(--cerulean)"},star:{gold:"var(--gold)",white:"var(--white-star)",yellow:"var(--paint-yellow)"}},fontFamily:{sans:["Lora","Georgia","serif"],mono:["Space Mono","ui-monospace","monospace"],display:["Raleway","sans-serif"]}}}}};</script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../aurora-glass.css" />
-    <link rel="stylesheet" href="../border-glow.css" />
-  </head>
-  <body class="min-h-screen bg-night-black antialiased">
-    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100]">
-      <nav class="glass-nav nav-glass flex w-full items-center justify-between">
-        <a href="../index.html" class="font-display text-[1.1rem] font-semibold tracking-tight text-star-white" style="text-decoration:none;opacity:1">Dhruvi <em class="font-normal not-italic italic">Malusare</em></a>
-        <ul class="flex list-none items-center gap-8">
-          <li><a href="../index.html" data-page="home" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Home</a></li>
-          <li><a href="./projects.html" data-page="projects" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Projects</a></li>
-          <li><a href="./about.html" data-page="about" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">About</a></li>
-          <li><a href="./contact.html" data-page="contact" class="glass-btn btn-primary-night">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="relative z-[2] mx-auto max-w-4xl px-6 pb-20 pt-36">
-      <a href="../index.html#work" class="font-mono text-xs uppercase tracking-[0.2em] text-star-gold">← Back to selected work</a>
-      <article class="glass-card mt-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">UX/UI Design · Completed</p>
-        <h1 class="aurora-text mt-3 font-display text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-tight text-star-white">ResearchGate</h1>
-        <p class="mt-2 font-display text-xl text-cream-muted">Research Opportunity Platform</p>
-        <p class="mt-8 text-lg leading-relaxed text-cream-soft">A mobile app that acts as a central hub for researchers to create events and opportunities for students to discover and join.</p>
-      </article>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Problem</p>
-        <p class="mt-4 leading-relaxed text-cream-soft">Students, especially high school students, often lack awareness about research opportunities, creating an information gap between them and the research community. Researchers also struggle to reach younger audiences.</p>
-        <p class="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Goal</p>
-        <p class="mt-4 leading-relaxed text-cream-soft">Create a service that spreads awareness about research opportunities and bridges the information gap between students and researchers.</p>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Stakeholders</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Researchers</li><li>Institutions</li><li>High school students</li><li>College students</li></ul>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Research findings</p>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-cream-soft">
-          <li>College research creates the foundation for major advances in health, medicine, communication, economics, energy, and national security.</li>
-          <li>Adolescents ask insightful questions that differ from those of advanced researchers.</li>
-          <li>Universities can help keep STEM education engaging for younger students.</li>
-          <li>Only 29% of Gen Z students cite STEM careers as their first choice despite 75% expressing interest in STEM fields.</li>
-        </ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Methodology</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Heuristic evaluation</li><li>Interviews</li><li>Secondary research</li><li>GenderMag walkthroughs</li></ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Key insights</p>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-cream-soft">
-          <li>Researchers are motivated but lack time to organize outreach events.</li>
-          <li>Researchers see strong potential in highly motivated college students.</li>
-          <li>AI should act as a supplemental tool rather than replacing human interaction.</li>
-          <li>Students need greater exposure to research opportunities early on.</li>
-        </ul>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Features</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft">
-          <li>Research event discovery</li>
-          <li>Personalized recommendations</li>
-          <li>AI-assisted event creation</li>
-          <li>Lab and researcher follow system</li>
-          <li>Completion badges and engagement tracking</li>
-        </ul>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Product requirements</p>
-        <p class="mt-6 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-star-gold">Student incentives</p>
-        <ul class="mt-3 list-disc space-y-2 pl-5 text-cream-soft">
-          <li>College and career preparation</li>
-          <li>Early exposure to research</li>
-          <li>Networking opportunities</li>
-          <li>Research skill development</li>
-        </ul>
-        <p class="mt-8 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-star-gold">Researcher incentives</p>
-        <ul class="mt-3 list-disc space-y-2 pl-5 text-cream-soft">
-          <li>Training future researchers</li>
-          <li>Increased student involvement</li>
-          <li>Long-term return on investment</li>
-          <li>Improved college retention</li>
-        </ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Limitations addressed</p>
-        <div class="mt-4 space-y-6">
-          <div>
-            <p class="font-display text-sm font-semibold text-star-white">Low student motivation</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-cream-muted"><li>Personalized recommendations</li><li>Completion badges</li><li>Skill-building opportunities</li></ul>
-          </div>
-          <div>
-            <p class="font-display text-sm font-semibold text-star-white">Researcher motivation</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-cream-muted"><li>AI event creation helper</li><li>Low-effort event formats</li><li>Research presentation opportunities</li></ul>
-          </div>
-          <div>
-            <p class="font-display text-sm font-semibold text-star-white">Immaturity</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-cream-muted"><li>Interest screening questions</li><li>Follow-up involvement encouragement</li></ul>
-          </div>
-          <div>
-            <p class="font-display text-sm font-semibold text-star-white">ROI</p>
-            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-cream-muted"><li>Follow-up surveys</li><li>Encouragement to join future events</li><li>Lab following features</li></ul>
-          </div>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ResearchGate — Case Study — Dhruvi Malusare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../retro-elegance.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dhruvi Malusare</div>
+  <ul class="nav-links">
+    <li><a href="./projects.html">Work</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a href="./projects.html" class="page-back">Back to selected work</a>
+
+  <div class="page-hero">
+    <div class="page-tag">Ed-Tech &nbsp;·&nbsp; UX/UI Design &nbsp;·&nbsp; Completed</div>
+    <h1 class="page-title">ResearchGate</h1>
+    <p class="page-subtitle">Research Opportunity Platform</p>
+    <p class="page-summary">
+      A mobile app that acts as a central hub for researchers to create events and for students to discover and join research opportunities — bridging a 73% awareness gap.
+    </p>
+  </div>
+
+  <main class="page-body">
+
+    <div class="case-section">
+      <div class="case-two-col">
+        <div class="case-col-block">
+          <div class="case-col-label">Problem</div>
+          <p class="case-body">
+            Students — especially high schoolers — often lack awareness about research opportunities, creating an information gap between them and the research community. Researchers also struggle to reach younger audiences efficiently.
+          </p>
         </div>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Metrics</p>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-5">
-            <p class="font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Awareness Gap</p>
-            <p class="mt-2 font-display text-2xl font-bold text-star-white">73%</p>
-            <p class="mt-2 text-sm text-cream-muted">73% of surveyed college students reported they were unaware of research opportunities in high school</p>
-          </div>
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-5">
-            <p class="font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Stakeholder Interviews</p>
-            <p class="mt-2 font-display text-2xl font-bold text-star-white">5</p>
-            <p class="mt-2 text-sm text-cream-muted">Identified 4 core issues: awareness, resources, platform, and time</p>
-          </div>
+        <div class="case-col-block">
+          <div class="case-col-label">Goal</div>
+          <p class="case-body">
+            Create a service that spreads awareness about research opportunities and bridges the information gap between students and researchers at every level.
+          </p>
         </div>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Project imagery</p>
-        <p class="mb-4 text-sm text-cream-faint">Future assets: <code class="font-mono text-[0.7rem] text-night-cerulean">../assets/img/case-studies/researchgate/01.jpg</code> — <code class="font-mono text-[0.7rem] text-night-cerulean">03.jpg</code></p>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 1 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 1 of 3 — replace with screen or photo</span></div>
-          </figure>
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 2 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 2 of 3 — replace with screen or photo</span></div>
-          </figure>
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 3 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 3 of 3 — replace with screen or photo</span></div>
-          </figure>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Stakeholders</div>
+      <div class="tags-strip">
+        <span class="tag-pill">Researchers</span>
+        <span class="tag-pill">Institutions</span>
+        <span class="tag-pill">High School Students</span>
+        <span class="tag-pill">College Students</span>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Research Findings</div>
+      <ul class="case-list">
+        <li>Only 29% of Gen Z students cite STEM careers as their first choice despite 75% expressing interest in STEM fields.</li>
+        <li>College research creates the foundation for major advances in health, medicine, communication, and national security.</li>
+        <li>Adolescents ask insightful questions that differ from those of advanced researchers — valuable input often untapped.</li>
+        <li>Universities can help keep STEM education engaging for younger students with early exposure.</li>
+      </ul>
+
+      <div class="case-label" style="margin-top:36px;">Research Methodology</div>
+      <div class="tags-strip">
+        <span class="tag-pill">Heuristic Evaluation</span>
+        <span class="tag-pill">Interviews</span>
+        <span class="tag-pill">Secondary Research</span>
+        <span class="tag-pill">GenderMag Walkthroughs</span>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Key Insights</div>
+      <ul class="case-list">
+        <li>Researchers are motivated but lack time to organize outreach events.</li>
+        <li>Researchers see strong potential in highly motivated college students.</li>
+        <li>AI should act as a supplemental tool rather than replacing human interaction.</li>
+        <li>Students need greater exposure to research opportunities early on.</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Features</div>
+      <ul class="case-list">
+        <li>Research event discovery with personalized recommendations</li>
+        <li>AI-assisted event creation to reduce researcher effort</li>
+        <li>Lab and researcher follow system for ongoing engagement</li>
+        <li>Completion badges and engagement tracking for students</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Design Solutions by Barrier</div>
+      <div class="case-two-col">
+        <div class="case-col-block">
+          <div class="case-col-label">Low Student Motivation</div>
+          <ul class="case-list">
+            <li>Personalized recommendations</li>
+            <li>Completion badges</li>
+            <li>Skill-building opportunities</li>
+          </ul>
         </div>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Prototype</p>
-        <a href="https://www.figma.com/proto/N99AFRcNE3GPNujyAbvyi9/IS-257-Prototype?node-id=151-107&t=9SQeDKqmRRtFnwfM-1" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block font-mono text-sm text-star-gold underline decoration-[rgba(240,180,41,0.4)] underline-offset-4 transition-colors hover:text-star-white">View Figma prototype ↗</a>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Tags</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Education</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Research</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">STEM</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Mobile UX</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">AI</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Community Building</span>
+        <div class="case-col-block">
+          <div class="case-col-label">Researcher Time Constraints</div>
+          <ul class="case-list">
+            <li>AI event creation helper</li>
+            <li>Low-effort event formats</li>
+            <li>Research presentation opportunities</li>
+          </ul>
         </div>
-      </section>
-    </main>
-    <script src="../aurora.js"></script>
-  </body>
+        <div class="case-col-block">
+          <div class="case-col-label">Student Immaturity</div>
+          <ul class="case-list">
+            <li>Interest screening questions</li>
+            <li>Follow-up involvement encouragement</li>
+          </ul>
+        </div>
+        <div class="case-col-block">
+          <div class="case-col-label">ROI for Institutions</div>
+          <ul class="case-list">
+            <li>Follow-up surveys</li>
+            <li>Lab following features</li>
+            <li>Long-term retention tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Outcomes</div>
+      <div class="metric-grid">
+        <div class="metric-item">
+          <div class="metric-num">73%</div>
+          <div class="metric-label">Awareness Gap</div>
+          <div class="metric-desc">Of surveyed college students were unaware of research opportunities in high school</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">5</div>
+          <div class="metric-label">Stakeholder Interviews</div>
+          <div class="metric-desc">Identified 4 core issues: awareness, resources, platform access, and time</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Prototype</div>
+      <p class="case-body">Interactive Figma prototype demonstrating the event discovery, researcher follow, and AI-assisted event creation flows.</p>
+      <a href="https://www.figma.com/proto/N99AFRcNE3GPNujyAbvyi9/IS-257-Prototype?node-id=151-107&t=9SQeDKqmRRtFnwfM-1"
+         target="_blank" rel="noopener noreferrer" class="proto-link">View Figma Prototype</a>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Tags</div>
+      <div class="tags-strip">
+        <span class="tag-pill">Education</span>
+        <span class="tag-pill">Research</span>
+        <span class="tag-pill">STEM</span>
+        <span class="tag-pill">Mobile UX</span>
+        <span class="tag-pill">AI</span>
+        <span class="tag-pill">Community Building</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-logo">Dhruvi Malusare</div>
+  <div class="footer-copy">© 2025 — All work is my own. Built with intent.</div>
+  <a href="./projects.html" class="footer-top">← All projects</a>
+</footer>
+
+</body>
 </html>

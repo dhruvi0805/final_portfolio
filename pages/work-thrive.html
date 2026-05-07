@@ -1,118 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thrive — Case Study</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-    <script>tailwind={config:{theme:{extend:{colors:{night:{black:"var(--night-black)",cerulean:"var(--cerulean)"},star:{gold:"var(--gold)",white:"var(--white-star)",yellow:"var(--paint-yellow)"}},fontFamily:{sans:["Lora","Georgia","serif"],mono:["Space Mono","ui-monospace","monospace"],display:["Raleway","sans-serif"]}}}}};</script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../aurora-glass.css" />
-    <link rel="stylesheet" href="../border-glow.css" />
-  </head>
-  <body class="min-h-screen bg-night-black antialiased">
-    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100]">
-      <nav class="glass-nav nav-glass flex w-full items-center justify-between">
-        <a href="../index.html" class="font-display text-[1.1rem] font-semibold tracking-tight text-star-white" style="text-decoration:none;opacity:1">Dhruvi <em class="font-normal not-italic italic">Malusare</em></a>
-        <ul class="flex list-none items-center gap-8">
-          <li><a href="../index.html" data-page="home" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Home</a></li>
-          <li><a href="./projects.html" data-page="projects" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Projects</a></li>
-          <li><a href="./about.html" data-page="about" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">About</a></li>
-          <li><a href="./contact.html" data-page="contact" class="glass-btn btn-primary-night">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="relative z-[2] mx-auto max-w-4xl px-6 pb-20 pt-36">
-      <a href="../index.html#work" class="font-mono text-xs uppercase tracking-[0.2em] text-star-gold">← Back to selected work</a>
-      <article class="glass-card mt-8 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <div class="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">UX/UI Design · Completed</p>
-            <h1 class="aurora-text mt-3 font-display text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-tight text-star-white">Thrive</h1>
-            <p class="mt-2 font-display text-xl text-cream-muted">Plant Doctor App</p>
-          </div>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thrive — Case Study — Dhruvi Malusare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../retro-elegance.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dhruvi Malusare</div>
+  <ul class="nav-links">
+    <li><a href="./projects.html">Work</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a href="./projects.html" class="page-back">Back to selected work</a>
+
+  <div class="page-hero">
+    <div class="page-tag">Mobile App &nbsp;·&nbsp; UX/UI Design &nbsp;·&nbsp; Completed</div>
+    <h1 class="page-title">Thrive</h1>
+    <p class="page-subtitle">Plant Doctor App</p>
+    <p class="page-summary">
+      A mobile app that diagnoses plant diseases via real-time scans and provides comprehensive care tracking — designed for plant owners who struggle with species-specific care.
+    </p>
+  </div>
+
+  <main class="page-body">
+
+    <div class="case-section">
+      <div class="case-two-col">
+        <div class="case-col-block">
+          <div class="case-col-label">Problem</div>
+          <p class="case-body">
+            Many plant owners struggle with keeping their plants alive due to a lack of awareness of specific care requirements for different species or misdiagnosed issues — leading to frustration, wasted time, and low satisfaction.
+          </p>
         </div>
-        <p class="mt-8 text-lg leading-relaxed text-cream-soft">A mobile app that diagnoses plant diseases via real-time scans and provides comprehensive care tracking.</p>
-      </article>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Problem</p>
-        <p class="mt-4 leading-relaxed text-cream-soft">Many plant owners struggle with keeping their plants alive due to a lack of awareness of specific care requirements for different species or misdiagnosed issues. This often leads to frustration, wasted time, and a low satisfaction rate.</p>
-        <p class="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Goal</p>
-        <p class="mt-4 leading-relaxed text-cream-soft">Create a solution to reduce diagnosis time and improve user adherence to a plant care schedule.</p>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Stakeholders</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Plant owners</li></ul>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Research findings</p>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-cream-soft">
-          <li>24% of Americans admit they cannot keep a houseplant alive for more than six months.</li>
-          <li>The average plant parent has killed seven indoor plants.</li>
-          <li>Overwatering, underwatering, neglect, and over-fertilizing are the top four causes of plant death.</li>
-          <li>One-third of new plant owners struggle with watering.</li>
-        </ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Methodology</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Interviews</li><li>Contextual inquiries</li><li>Secondary research</li></ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Key insights</p>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-cream-soft">
-          <li>People often forget to tend to their plants due to busy lifestyles.</li>
-          <li>Plant owners lack knowledge about species-specific care requirements.</li>
-          <li>Users do not always have the time or energy to research plant care.</li>
-        </ul>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Features</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft">
-          <li>Adding and organizing plants</li>
-          <li>Weekly progress tracking</li>
-          <li>Personalized motivational messages</li>
-          <li>Best care environment recommendations</li>
-          <li>Diagnosis and treatment recommendations linked to a storefront</li>
-        </ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Key screens</p>
-        <div class="mt-4 grid gap-4 sm:grid-cols-2">
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">Plant Profile</h3><p class="mt-2 text-sm text-cream-muted">Plant summary and care history</p></div>
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">To-Do List</h3><p class="mt-2 text-sm text-cream-muted">Track watering, fertilizing, and care tasks</p></div>
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">Plant Diagnosis</h3><p class="mt-2 text-sm text-cream-muted">Identify diseases and issues through scanning</p></div>
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4"><h3 class="font-display font-bold text-star-white">Plant Shop</h3><p class="mt-2 text-sm text-cream-muted">Storefront for plant care products</p></div>
-          <div class="border border-[rgba(100,160,255,0.12)] bg-[rgba(10,11,26,0.04)] p-4 sm:col-span-2"><h3 class="font-display font-bold text-star-white">Explore</h3><p class="mt-2 text-sm text-cream-muted">Tips and tricks for plant care</p></div>
+        <div class="case-col-block">
+          <div class="case-col-label">Goal</div>
+          <p class="case-body">
+            Create a solution to reduce diagnosis time and improve user adherence to a plant care schedule through intelligent guidance and reminders.
+          </p>
         </div>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Project imagery</p>
-        <p class="mb-4 text-sm text-cream-faint">Future assets: <code class="font-mono text-[0.7rem] text-night-cerulean">../assets/img/case-studies/thrive/01.jpg</code> — <code class="font-mono text-[0.7rem] text-night-cerulean">03.jpg</code></p>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 1 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 1 of 3 — replace with screen or photo</span></div>
-          </figure>
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 2 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 2 of 3 — replace with screen or photo</span></div>
-          </figure>
-          <figure class="m-0">
-            <div class="flex aspect-[4/3] items-center justify-center rounded border border-dashed border-[rgba(58,123,213,0.35)] bg-[rgba(10,11,26,0.08)] px-3" role="img" aria-label="Image placeholder 3 of 3"><span class="text-center text-sm text-cream-muted">Image placeholder 3 of 3 — replace with screen or photo</span></div>
-          </figure>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Research Findings</div>
+      <ul class="case-list">
+        <li>24% of Americans admit they cannot keep a houseplant alive for more than six months.</li>
+        <li>The average plant parent has killed seven indoor plants.</li>
+        <li>Overwatering, underwatering, neglect, and over-fertilizing are the top four causes of plant death.</li>
+        <li>One-third of new plant owners struggle specifically with watering frequency.</li>
+      </ul>
+
+      <div class="case-label" style="margin-top:36px;">Research Methodology</div>
+      <div class="tags-strip">
+        <span class="tag-pill">Interviews</span>
+        <span class="tag-pill">Contextual Inquiries</span>
+        <span class="tag-pill">Secondary Research</span>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Key Insights</div>
+      <ul class="case-list">
+        <li>People often forget to tend to their plants due to busy lifestyles.</li>
+        <li>Plant owners lack knowledge about species-specific care requirements.</li>
+        <li>Users do not always have the time or energy to research plant care independently.</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Features</div>
+      <ul class="case-list">
+        <li>Adding and organizing plants with species-specific care profiles</li>
+        <li>Weekly progress tracking and care history</li>
+        <li>Personalized motivational messages and care reminders</li>
+        <li>Best care environment recommendations per species</li>
+        <li>AI-assisted diagnosis and treatment recommendations linked to a storefront</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Key Screens</div>
+      <div class="case-two-col">
+        <div class="case-col-block">
+          <div class="case-col-label">Plant Profile</div>
+          <p class="case-body" style="font-size:16px;">Plant summary, care history, and species-specific guidance in one place.</p>
         </div>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Technologies</p>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-cream-soft"><li>Mobile app design</li><li>Real-time image scanning</li><li>AI-assisted diagnosis</li></ul>
-        <p class="mt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Prototype</p>
-        <a href="https://www.figma.com/proto/dOKZQvL8ys0b2aseTS32wV/Thrive?node-id=0-1&t=b14ItR4ktSX1z6MD-1" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block font-mono text-sm text-star-gold underline decoration-[rgba(240,180,41,0.4)] underline-offset-4 transition-colors hover:text-star-white">View Figma prototype ↗</a>
-      </section>
-      <section class="glass-card mt-6 border border-[var(--glass-border)] bg-[var(--glass-bg)] p-8 backdrop-blur-xl">
-        <p class="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-night-cerulean">Tags</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">UX Research</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Mobile Design</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Healthcare</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">AI</span>
-          <span class="border border-[rgba(58,123,213,0.3)] px-3 py-1 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-night-cerulean">Plant Care</span>
+        <div class="case-col-block">
+          <div class="case-col-label">To-Do List</div>
+          <p class="case-body" style="font-size:16px;">Track watering, fertilizing, and care tasks with reminders.</p>
         </div>
-      </section>
-    </main>
-    <script src="../aurora.js"></script>
-  </body>
+        <div class="case-col-block">
+          <div class="case-col-label">Plant Diagnosis</div>
+          <p class="case-body" style="font-size:16px;">Identify diseases and issues through real-time scanning.</p>
+        </div>
+        <div class="case-col-block">
+          <div class="case-col-label">Explore</div>
+          <p class="case-body" style="font-size:16px;">Tips, tricks, and care guides curated by plant type.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Technologies</div>
+      <div class="tags-strip">
+        <span class="tag-pill">Mobile App Design</span>
+        <span class="tag-pill">Real-Time Image Scanning</span>
+        <span class="tag-pill">AI-Assisted Diagnosis</span>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Prototype</div>
+      <p class="case-body">Interactive Figma prototype covering the core care tracking and diagnosis flows.</p>
+      <a href="https://www.figma.com/proto/dOKZQvL8ys0b2aseTS32wV/Thrive?node-id=0-1&t=b14ItR4ktSX1z6MD-1"
+         target="_blank" rel="noopener noreferrer" class="proto-link">View Figma Prototype</a>
+    </div>
+
+    <div class="case-section">
+      <div class="case-label">Tags</div>
+      <div class="tags-strip">
+        <span class="tag-pill">UX Research</span>
+        <span class="tag-pill">Mobile Design</span>
+        <span class="tag-pill">Healthcare</span>
+        <span class="tag-pill">AI</span>
+        <span class="tag-pill">Plant Care</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-logo">Dhruvi Malusare</div>
+  <div class="footer-copy">© 2025 — All work is my own. Built with intent.</div>
+  <a href="./projects.html" class="footer-top">← All projects</a>
+</footer>
+
+</body>
 </html>

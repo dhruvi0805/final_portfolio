@@ -1,50 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About — Dhruvi Malusare</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-    <script>tailwind={config:{theme:{extend:{colors:{night:{black:"var(--night-black)",cerulean:"var(--cerulean)"},star:{gold:"var(--gold)",white:"var(--white-star)",yellow:"var(--paint-yellow)"}},fontFamily:{sans:["Lora","Georgia","serif"],mono:["Space Mono","ui-monospace","monospace"],display:["Raleway","sans-serif"]}}}}};</script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../aurora-glass.css" />
-    <link rel="stylesheet" href="../border-glow.css" />
-  </head>
-  <body data-page="about" class="min-h-screen bg-night-black antialiased">
-    <header class="nav-pill-shell fixed left-0 right-0 top-0 z-[100]">
-      <nav class="glass-nav nav-glass flex w-full items-center justify-between">
-        <a href="../index.html" class="font-display text-[1.1rem] font-semibold tracking-tight text-star-white" style="text-decoration:none;opacity:1">Dhruvi <em class="font-normal not-italic italic">Malusare</em></a>
-        <ul class="flex list-none items-center gap-8">
-          <li><a href="../index.html" data-page="home" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Home</a></li>
-          <li><a href="./projects.html" data-page="projects" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">Projects</a></li>
-          <li><a href="./about.html" data-page="about" class="nav-link font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cream-faint transition-colors hover:text-star-white" style="text-decoration:none">About</a></li>
-          <li><a href="./contact.html" data-page="contact" class="glass-btn btn-primary-night">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="relative z-[2] px-[8vw] pb-20 pt-36">
-      <section class="mx-auto max-w-[1400px]">
-        <div class="mb-[72px] flex items-baseline gap-6" data-reveal><span class="shrink-0 font-mono text-[0.65rem] tracking-[0.2em] text-night-cerulean">03 —</span><h1 class="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-none text-star-white">About <em class="font-normal italic text-[rgba(240,180,41,0.8)]">me</em></h1></div>
-        <div class="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
-          <div data-reveal>
-            <h2 class="font-display text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-star-white">I think in <em class="font-normal italic text-star-yellow">systems,</em><br />design in <em class="font-normal italic text-star-yellow">stories.</em></h2>
-            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">I'm a UX designer focused on research-backed flows, accessible UI, and motion that supports comprehension-not decoration for its own sake.</p>
-            <p class="mt-5 text-base font-light leading-[1.9] text-cream-muted">Based in the NJIT / New Jersey area; open to internships, collaborative class projects, and roles where I can keep sharpening systems thinking and craft.</p>
-            <div class="mt-12"><p class="mb-4 font-mono text-[0.58rem] uppercase tracking-[0.25em] text-night-cerulean">Capabilities</p><div class="flex flex-wrap gap-2"><span class="skill-tag-night" data-starry-cursor-hover>UX Research</span><span class="skill-tag-night" data-starry-cursor-hover>Product Design</span><span class="skill-tag-night" data-starry-cursor-hover>Prototyping</span><span class="skill-tag-night" data-starry-cursor-hover>Figma</span><span class="skill-tag-night" data-starry-cursor-hover>Accessibility</span><span class="skill-tag-night" data-starry-cursor-hover>Motion Design</span></div></div>
-          </div>
-          <div class="glass-card glass-dark-strong p-12" data-reveal>
-            <p class="mb-8 font-mono text-[0.58rem] uppercase tracking-[0.25em] text-night-cerulean">Recognition & experience</p>
-            <ul class="list-none">
-              <li class="flex gap-5 border-b border-[rgba(100,160,255,0.08)] py-5"><span class="mt-0.5 text-lg text-star-gold">✦</span><div><div class="text-[0.95rem] text-star-white">UX Portfolio — IS117</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">NJIT · 2025–2026</div></div></li>
-              <li class="flex gap-5 border-b border-[rgba(100,160,255,0.08)] py-5"><span class="mt-0.5 text-lg text-star-gold">✦</span><div><div class="text-[0.95rem] text-star-white">Case studies & motion reels</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">Personal work · ongoing</div></div></li>
-              <li class="flex gap-5 py-5"><span class="mt-0.5 text-lg text-night-cerulean">◆</span><div><div class="text-[0.95rem] text-star-white">B.S. in progress</div><div class="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-cream-faint">New Jersey Institute of Technology</div></div></li>
-            </ul>
-          </div>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Dhruvi Malusare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../retro-elegance.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dhruvi Malusare</div>
+  <ul class="nav-links">
+    <li><a href="./projects.html">Work</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <section class="section-about">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-giant-name">
+          About<br>
+          <em>Dhruvi.</em>
         </div>
-      </section>
-    </main>
-    <script src="../aurora.js"></script>
-  </body>
+        <div class="about-divider"></div>
+        <p class="about-body">
+          I'm a UX designer focused on <strong>research-backed flows</strong>, accessible UI, and motion that supports comprehension — not decoration for its own sake.
+          <br><br>
+          Based in the New Jersey area; open to <strong>internships</strong>, collaborative projects, and roles where systems thinking and craft go hand in hand.
+        </p>
+        <div class="skills-list">
+          <div class="skill-row">UX Research</div>
+          <div class="skill-row">Product Design</div>
+          <div class="skill-row">Prototyping</div>
+          <div class="skill-row">Figma</div>
+          <div class="skill-row">Accessibility</div>
+          <div class="skill-row">Motion Design</div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="exp-section-label">Recognition &amp; Education</div>
+
+        <div class="exp-item">
+          <div class="exp-title">UX Portfolio</div>
+          <div class="exp-co">IS117 — NJIT</div>
+          <div class="exp-period">2025 – 2026</div>
+          <div class="exp-desc">End-to-end portfolio course covering case study documentation, interaction design, and research presentation.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-title">Case Studies &amp; Motion Reels</div>
+          <div class="exp-co">Personal Work</div>
+          <div class="exp-period">Ongoing</div>
+          <div class="exp-desc">Self-directed projects spanning wayfinding, health tech, and ed-tech — with a focus on accessibility and human-centered design methods.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-title">B.S. in Progress</div>
+          <div class="exp-co">New Jersey Institute of Technology</div>
+          <div class="exp-period">Current</div>
+          <div class="exp-desc">Undergraduate studies with coursework in UX, information architecture, and interaction design.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-logo">Dhruvi Malusare</div>
+  <div class="footer-copy">© 2025 — All work is my own. Built with intent.</div>
+  <a href="../index.html" class="footer-top">← Back to Home</a>
+</footer>
+
+</body>
 </html>

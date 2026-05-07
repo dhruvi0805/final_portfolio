@@ -679,6 +679,268 @@ footer {
 ::-webkit-scrollbar-thumb { background: rgba(200, 155, 42, 0.35); }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
+/* ─── INNER PAGES ───────────────────────────────────────────── */
+
+/* Offset for fixed nav */
+.page-wrap { padding-top: 62px; }
+
+/* Back navigation link */
+.page-back {
+  display: inline-block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.32em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.7);
+  padding: 28px 68px;
+  transition: color 0.2s;
+}
+.page-back:hover { color: var(--gold); }
+.page-back::before { content: '← '; }
+
+/* Case study / page hero panel */
+.page-hero {
+  background: var(--teal);
+  padding: 60px 68px 80px;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 79px,
+      rgba(0, 0, 0, 0.05) 79px, rgba(0, 0, 0, 0.05) 80px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.06) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(0, 0, 0, 0.10) 100%
+    );
+  pointer-events: none;
+}
+
+.page-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 155, 42, 0.6);
+  color: rgba(200, 155, 42, 0.85);
+  padding: 5px 16px;
+  display: inline-block;
+  margin-bottom: 28px;
+  position: relative; z-index: 1;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-style: italic;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.88; color: var(--cream);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+
+.page-subtitle {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: rgba(240, 230, 204, 0.6);
+  line-height: 1.4;
+  margin-bottom: 36px;
+  position: relative; z-index: 1;
+}
+
+.page-summary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 300; line-height: 1.8;
+  color: rgba(240, 230, 204, 0.82);
+  max-width: 680px;
+  border-left: 2.5px solid rgba(200, 155, 42, 0.6);
+  padding-left: 24px;
+  position: relative; z-index: 1;
+}
+
+/* Case study body */
+.page-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 68px;
+}
+
+.case-section {
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(240, 230, 204, 0.07);
+}
+.case-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.case-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.44em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.65);
+  margin-bottom: 20px;
+}
+
+.case-heading {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--cream); line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.case-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 300; line-height: 1.82;
+  color: rgba(240, 230, 204, 0.75);
+}
+
+.case-list {
+  list-style: none; padding: 0; margin: 20px 0 0;
+}
+.case-list li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 300; line-height: 1.72;
+  color: rgba(240, 230, 204, 0.70);
+  padding: 12px 0 12px 24px;
+  border-bottom: 1px solid rgba(240, 230, 204, 0.06);
+  position: relative;
+}
+.case-list li:last-child { border-bottom: none; }
+.case-list li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: rgba(212, 160, 48, 0.45);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px; line-height: 1.72;
+}
+
+/* Metrics grid */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px; margin-top: 28px;
+}
+.metric-item {
+  background: rgba(240, 230, 204, 0.03);
+  border: 1px solid rgba(240, 230, 204, 0.08);
+  padding: 32px 28px;
+}
+.metric-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1; color: var(--mustard-lt);
+  letter-spacing: -0.02em;
+}
+.metric-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.4);
+  margin-top: 8px;
+}
+.metric-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 300; line-height: 1.6;
+  color: rgba(240, 230, 204, 0.5); margin-top: 8px;
+}
+
+/* Prototype link button */
+.proto-link {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10.5px; font-weight: 300; letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 1px solid rgba(212, 160, 48, 0.5);
+  color: var(--mustard-lt);
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+  margin-top: 24px;
+  opacity: 0.92;
+}
+.proto-link:hover {
+  background: rgba(200, 155, 42, 0.88);
+  color: var(--ink);
+  border-color: transparent;
+  opacity: 1;
+}
+.proto-link::after { content: '↗'; font-size: 14px; }
+
+/* Tags row */
+.tags-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tag-pill {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
+  border: 1px solid rgba(240, 230, 204, 0.15);
+  padding: 5px 14px;
+}
+
+/* Two-column sub-grid for research / insights */
+.case-two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 24px;
+}
+.case-col-block {
+  background: rgba(240, 230, 204, 0.03);
+  border: 1px solid rgba(240, 230, 204, 0.07);
+  padding: 28px 24px;
+}
+.case-col-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.6);
+  margin-bottom: 16px;
+}
+
+/* Projects listing page */
+.proj-listing-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.proj-listing-card {
+  display: block;
+  padding: 52px 48px;
+  background: rgba(240, 230, 204, 0.03);
+  border: 1px solid rgba(240, 230, 204, 0.07);
+  transition: background 0.3s;
+  text-decoration: none;
+}
+.proj-listing-card:hover { background: rgba(240, 230, 204, 0.07); }
+.proj-listing-num {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.65);
+  margin-bottom: 16px;
+}
+.proj-listing-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-style: italic;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 0.96; color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.proj-listing-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 300; line-height: 1.75;
+  color: rgba(240, 230, 204, 0.62);
+  margin-bottom: 24px;
+}
+.proj-listing-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(240, 230, 204, 0.08);
+  padding-top: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.7);
+}
+.proj-listing-footer::after { content: '→'; font-size: 12px; }
+
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
@@ -690,4 +952,8 @@ footer {
   .about-right { padding: 60px 24px; }
   .stat-strip { flex-wrap: wrap; }
   .stat-item { min-width: 50%; }
+  /* inner pages */
+  .page-back, .page-hero { padding-left: 24px; padding-right: 24px; }
+  .page-body { padding-left: 24px; padding-right: 24px; }
+  .case-two-col, .proj-listing-grid { grid-template-columns: 1fr; }
 }
