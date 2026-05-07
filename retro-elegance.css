@@ -179,6 +179,12 @@ nav {
   display: block;
 }
 
+
+/* ABOUT — multi-paragraph rhythm */
+.about-left .about-body + .about-body {
+  margin-top: 1.35em;
+}
+
 /* CIRCLE BADGE — stamp aesthetic */
 .badge {
   position: absolute;
@@ -233,7 +239,7 @@ nav {
   font-family: 'DM Serif Display', serif;
   font-style: italic; font-size: clamp(16px, 2.2vw, 24px);
   color: var(--cream); line-height: 1.55;   /* was 0.82 → 3.72:1 on crimson; full cream = 4.83:1 */
-  max-width: 480px;
+  max-width: 560px;
   border-left: 2.5px solid rgba(217, 186, 116, 0.7);
   padding-left: 22px;
 }
@@ -295,6 +301,37 @@ nav {
   font-size: 16px; font-weight: 400; letter-spacing: 0.28em;
   text-transform: uppercase; color: var(--cream);   /* was 0.5 → 2.25:1 on crimson; full cream = 4.83:1 */
   margin-top: 5px;
+}
+/* NJIT in stats row — institution label uses stat-num sizing; majors in smaller serif below */
+.stat-strip-has-school .stat-item {
+  min-width: 0;
+}
+.stat-item-school {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.stat-num-institution {
+  letter-spacing: 0.02em;
+}
+.stat-edu-lines {
+  margin-top: 10px;
+  max-width: none;
+}
+.stat-edu-line {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.stat-edu-line + .stat-edu-line {
+  margin-top: 8px;
 }
 
 /* ─── MARQUEE — stately ticker ─────────────────────────────── */
@@ -588,7 +625,8 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px; font-weight: 600; letter-spacing: 0.42em;
   text-transform: uppercase; color: rgba(217, 186, 116, 0.8);
-  margin-top: 0; margin-bottom: -24px;
+  margin: 0;
+  flex-shrink: 0;
 }
 /* Work Experience heading — title + subtle resume control (hover reveals “View Resume”) */
 .exp-heading-with-action {
@@ -598,7 +636,21 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   gap: 12px;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: -24px;
+}
+/* Vertical rhythm — no overlap (replaces negative margin pull-up) */
+.about-right-exp-stack,
+.recognition-block {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.recognition-block {
+  padding-top: 8px;
+  border-top: 1px solid rgba(240, 230, 204, 0.08);
+  margin-top: 8px;
+}
+.exp-section-label + .exp-item {
+  margin-top: 0;
 }
 .resume-inline {
   display: inline-flex;
@@ -644,10 +696,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   opacity: 1;
   margin-left: 4px;
 }
-/* Recognition sits below work block */
-.recognition-block {
-  margin-top: 40px;
-}
+
 .recognition-bullets {
   list-style: none;
   padding: 0;
@@ -715,6 +764,9 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 300; line-height: 1.75;
   color: rgba(240, 230, 204, 0.55);
+}
+.exp-item .exp-desc {
+  margin-top: 12px;
 }
 
 /* ─── SECTION 4: CONTACT — crimson ─────────────────────────── */
@@ -1211,7 +1263,31 @@ button:focus-visible,
   .project-info-panel { border-left: none; border-top: 1px solid rgba(240,230,204,0.1); }
   .about-right { padding: 60px 24px; }
   .stat-strip { flex-wrap: wrap; }
-  .stat-item { min-width: 50%; }
+  .stat-strip-has-school .stat-item:not(.stat-item-school) {
+    flex: 1 1 42%;
+    min-width: min(260px, 46%);
+    box-sizing: border-box;
+  }
+  .stat-strip-has-school .stat-item-school {
+    flex: 1 1 100%;
+    min-width: 100%;
+    border-right: none;
+    border-top: 1px solid rgba(240, 230, 204, 0.12);
+    padding-top: 26px;
+  }
+  .hero-tagline-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .hero-cta-group {
+    align-self: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .about-right-exp-stack,
+  .recognition-block { gap: 22px; }
   /* inner pages */
   .page-back, .page-hero { padding-left: 24px; padding-right: 24px; }
   .page-body { padding-left: 24px; padding-right: 24px; }
