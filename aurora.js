@@ -343,11 +343,32 @@
     });
   }
 
+  /* ── Project Folder ─────────────────────────────────────────────────
+     Vanilla JS port of React Bits Folder component.
+     Click to toggle open / close. Each paper is a link to a case study.
+  ─────────────────────────────────────────────────────────────────── */
+  function initFolder() {
+    const folder = document.getElementById('proj-folder');
+    if (!folder) return;
+
+    let isOpen = false;
+
+    folder.addEventListener('click', (e) => {
+      /* If the folder is already open and user clicked a paper, let the
+         anchor navigate — don't toggle the folder state. */
+      if (isOpen && e.target.closest('.proj-paper')) return;
+
+      isOpen = !isOpen;
+      folder.classList.toggle('proj-folder--open', isOpen);
+    });
+  }
+
   /* ── Boot ──────────────────────────────────────────── */
   initReveal();
   initSmoothScroll();
   initHeroDither();
   initCrosshair();
   initScrambledText();
+  initFolder();
 
 })();
