@@ -19,8 +19,8 @@ body {
   background: var(--ink);
   color: var(--cream);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  line-height: 1.82;   /* airier body rhythm */
+  font-size: 17px;   /* +1px sitewide */
+  line-height: 1.82;
   overflow-x: hidden;
   cursor: default;
   -webkit-font-smoothing: antialiased;
@@ -58,7 +58,10 @@ nav {
   font-family: 'Playfair Display', serif;
   font-style: italic; font-size: 20px;
   color: var(--gold); letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
+.nav-logo:hover { opacity: 0.8; }
 
 .nav-links { display: flex; gap: 44px; list-style: none; }
 .nav-links a {
@@ -106,7 +109,7 @@ nav {
 /* EYEBROW */
 .eyebrow {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10.5px; font-weight: 300; letter-spacing: 0.42em;
+  font-size: 12.5px; font-weight: 400; letter-spacing: 0.42em;
   text-transform: uppercase; color: rgba(240, 230, 204, 0.6);
   margin-bottom: 26px;
 }
@@ -242,7 +245,7 @@ nav {
 }
 .stat-label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 300; letter-spacing: 0.28em;
+  font-size: 12px; font-weight: 400; letter-spacing: 0.28em;
   text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
   margin-top: 5px;
 }
@@ -298,8 +301,8 @@ nav {
 
 .section-label-text {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.42em; text-transform: uppercase;  /* print-catalog open */
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 0.42em; text-transform: uppercase;
   color: rgba(240, 230, 204, 0.45);
   white-space: nowrap;
 }
@@ -327,12 +330,25 @@ nav {
 /* PROJECT ROWS */
 .project-row {
   display: grid; grid-template-columns: 1fr 1fr;
-  border-top: 1px solid rgba(240, 230, 204, 0.1);  /* softer divider */
+  border-top: 1px solid rgba(240, 230, 204, 0.1);
   position: relative; z-index: 1;
   transition: background 0.35s;
+  cursor: pointer;
 }
-.project-row:hover { background: rgba(0, 0, 0, 0.08); }  /* gentler hover */
+/* anchor version — reset link defaults */
+a.project-row { color: inherit; text-decoration: none; }
+.project-row:hover { background: rgba(0, 0, 0, 0.08); }
 .project-row.full { grid-template-columns: 1fr; }
+
+/* .proj-link can be either <a> or <span> depending on context */
+span.proj-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--mustard-lt);
+  display: flex; align-items: center; gap: 8px;
+  transition: gap 0.25s;
+}
+span.proj-link::after { content: '→'; font-size: 14px; }
 
 .project-visual-panel {
   min-height: 360px;
@@ -374,9 +390,9 @@ nav {
 .proj-tag {
   position: absolute; top: 28px; left: 28px;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.35em;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
   text-transform: uppercase;
-  border: 1px solid rgba(200, 155, 42, 0.6);  /* aged mustard */
+  border: 1px solid rgba(200, 155, 42, 0.6);
   color: rgba(200, 155, 42, 0.85);
   padding: 5px 14px;
   z-index: 2;
@@ -391,7 +407,7 @@ nav {
 
 .proj-num-small {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 300; letter-spacing: 0.42em;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.42em;
   color: rgba(212, 160, 48, 0.8); margin-bottom: 18px;
 }
 
@@ -522,7 +538,7 @@ nav {
 
 .exp-section-label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 300; letter-spacing: 0.42em;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.42em;
   text-transform: uppercase; color: rgba(200, 155, 42, 0.8);
   margin-bottom: -24px;
 }
@@ -539,7 +555,7 @@ nav {
 }
 .exp-co {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 300; letter-spacing: 0.22em;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.22em;
   text-transform: uppercase; color: rgba(200, 155, 42, 0.75);
   margin-bottom: 4px;
 }
@@ -723,7 +739,7 @@ footer {
 
 .page-tag {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.38em;
   text-transform: uppercase;
   border: 1px solid rgba(200, 155, 42, 0.6);
   color: rgba(200, 155, 42, 0.85);
@@ -779,8 +795,8 @@ footer {
 
 .case-label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.44em;
-  text-transform: uppercase; color: rgba(212, 160, 48, 0.65);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.44em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.75);
   margin-bottom: 20px;
 }
 
@@ -839,8 +855,8 @@ footer {
 }
 .metric-label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.28em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.4);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
   margin-top: 8px;
 }
 .metric-desc {
@@ -892,8 +908,8 @@ footer {
 }
 .case-col-label {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
-  text-transform: uppercase; color: rgba(212, 160, 48, 0.6);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.38em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.75);
   margin-bottom: 16px;
 }
 
@@ -913,8 +929,8 @@ footer {
 .proj-listing-card:hover { background: rgba(240, 230, 204, 0.07); }
 .proj-listing-num {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.38em;
-  text-transform: uppercase; color: rgba(212, 160, 48, 0.65);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.38em;
+  text-transform: uppercase; color: rgba(212, 160, 48, 0.75);
   margin-bottom: 16px;
 }
 .proj-listing-title {
