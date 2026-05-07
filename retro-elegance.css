@@ -590,6 +590,105 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   text-transform: uppercase; color: rgba(217, 186, 116, 0.8);
   margin-top: 0; margin-bottom: -24px;
 }
+/* Work Experience heading — title + subtle resume control (hover reveals “View Resume”) */
+.exp-heading-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: -24px;
+}
+.resume-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(217, 186, 116, 0.9);
+  border: 1px solid rgba(217, 186, 116, 0.38);
+  padding: 7px 12px;
+  flex-shrink: 0;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+.resume-inline:hover,
+.resume-inline:focus-visible {
+  background: rgba(217, 186, 116, 0.12);
+  border-color: rgba(217, 186, 116, 0.55);
+}
+.resume-inline-arrow {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.resume-inline:hover .resume-inline-arrow,
+.resume-inline:focus-visible .resume-inline-arrow {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+.resume-inline-hint {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.28s ease, opacity 0.2s ease, margin 0.2s ease;
+}
+.resume-inline:hover .resume-inline-hint,
+.resume-inline:focus-visible .resume-inline-hint {
+  max-width: 9em;
+  opacity: 1;
+  margin-left: 4px;
+}
+/* Recognition sits below work block */
+.recognition-block {
+  margin-top: 40px;
+}
+.recognition-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.recognition-bullets li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(240, 230, 204, 0.55);
+  padding: 6px 0 6px 18px;
+  position: relative;
+  border-bottom: 1px solid rgba(240, 230, 204, 0.06);
+}
+.recognition-bullets li:last-child { border-bottom: none; }
+.recognition-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(225, 189, 112, 0.5);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px;
+}
+.contact-email-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.contact-email-secondary {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(240, 230, 204, 0.72);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 189, 112, 0.25);
+  padding-bottom: 2px;
+  transition: color 0.25s, border-color 0.25s;
+}
+.contact-email-secondary:hover { color: var(--cream); border-color: rgba(240, 230, 204, 0.4); }
 
 .exp-item {
   padding-left: 24px;
