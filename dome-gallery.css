@@ -1,0 +1,226 @@
+/* ============================================================
+   DomeGallery — vanilla JS port of React Bits DomeGallery
+   All classes prefixed with dome-* to avoid collisions.
+   ============================================================ */
+
+.dome-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  --dome-radius: 520px;
+  --dome-viewer-pad: 72px;
+  --dome-circ: calc(var(--dome-radius) * 3.14159);
+  --dome-rot-y: calc((360deg / var(--dome-segments-x)) / 2);
+  --dome-rot-x: calc((360deg / var(--dome-segments-y)) / 2);
+  --dome-item-width: calc(var(--dome-circ) / var(--dome-segments-x));
+  --dome-item-height: calc(var(--dome-circ) / var(--dome-segments-y));
+}
+
+.dome-root * {
+  box-sizing: border-box;
+}
+
+.dome-sphere,
+.dome-item,
+.dome-item__image {
+  transform-style: preserve-3d;
+}
+
+.dome-main {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  background: transparent;
+}
+
+.dome-stage {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  perspective: calc(var(--dome-radius) * 2);
+  perspective-origin: 50% 50%;
+  contain: layout paint size;
+}
+
+.dome-sphere {
+  transform: translateZ(calc(var(--dome-radius) * -1));
+  will-change: transform;
+}
+
+/* ── Overlays ───────────────────────────────────────────── */
+.dome-overlay,
+.dome-overlay--blur {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dome-overlay {
+  background-image: radial-gradient(
+    rgba(235, 235, 235, 0) 62%,
+    var(--overlay-blur-color, #FAF7F0) 100%
+  );
+}
+
+.dome-overlay--blur {
+  -webkit-mask-image: radial-gradient(
+    rgba(235, 235, 235, 0) 68%,
+    var(--overlay-blur-color, #FAF7F0) 90%
+  );
+  mask-image: radial-gradient(
+    rgba(235, 235, 235, 0) 68%,
+    var(--overlay-blur-color, #FAF7F0) 90%
+  );
+  backdrop-filter: blur(3px);
+}
+
+/* ── Tiles ──────────────────────────────────────────────── */
+.dome-item {
+  width: calc(var(--dome-item-width) * var(--item-size-x));
+  height: calc(var(--dome-item-height) * var(--item-size-y));
+  position: absolute;
+  top: -999px;
+  bottom: -999px;
+  left: -999px;
+  right: -999px;
+  margin: auto;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 300ms;
+  transform:
+    rotateY(calc(var(--dome-rot-y) * (var(--offset-x) + ((var(--item-size-x) - 1) / 2)) + var(--rot-y-delta, 0deg)))
+    rotateX(calc(var(--dome-rot-x) * (var(--offset-y) - ((var(--item-size-y) - 1) / 2)) + var(--rot-x-delta, 0deg)))
+    translateZ(var(--dome-radius));
+}
+
+.dome-item__image {
+  position: absolute;
+  display: block;
+  inset: 10px;
+  border-radius: var(--dome-tile-radius, 0px);
+  background: transparent;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 300ms;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  pointer-events: auto;
+  transform: translateZ(0);
+}
+
+.dome-item__image:focus {
+  outline: none;
+}
+
+.dome-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  filter: var(--dome-image-filter, none);
+}
+
+/* ── Viewer / enlarge ───────────────────────────────────── */
+.dome-viewer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--dome-viewer-pad, 72px);
+}
+
+.dome-frame {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--dome-enlarge-radius, 0px);
+  display: flex;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .dome-frame {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.dome-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  backdrop-filter: blur(2px);
+}
+
+.dome-root[data-enlarging='true'] .dome-scrim {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dome-enlarge {
+  position: absolute;
+  z-index: 30;
+  border-radius: var(--dome-enlarge-radius, 0px);
+  overflow: hidden;
+  transition: transform 500ms ease, opacity 500ms ease;
+  transform-origin: top left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+}
+
+.dome-enlarge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--dome-image-filter, none);
+}
+
+.dome-enlarge-closing img {
+  filter: var(--dome-image-filter, none);
+}
+
+/* ── Edge fades ─────────────────────────────────────────── */
+.dome-edge-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 130px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--overlay-blur-color, #FAF7F0)
+  );
+}
+
+.dome-edge-fade--top {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.dome-edge-fade--bottom {
+  bottom: 0;
+}
+
+/* ── Scroll lock ────────────────────────────────────────── */
+body.dg-scroll-lock {
+  overflow: hidden !important;
+}

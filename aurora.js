@@ -273,10 +273,81 @@
     });
   });
 
+  /* ── ScrambledText ─────────────────────────────────────────────────
+     Mouse-proximity text scramble for hero card elements.
+     Add data-scramble to any element; optional data-scramble-radius="80".
+  ─────────────────────────────────────────────────────────────────── */
+  function initScrambledText() {
+    const CHARS     = '.:·•○◦∘∙';
+    const DEFAULT_R = 80;
+    const STEPS     = 9;
+    const STEP_MS   = 58;
+
+    const targets = document.querySelectorAll('[data-scramble]');
+    if (!targets.length) return;
+
+    targets.forEach((el) => {
+      const radius  = parseInt(el.dataset.scrambleRadius, 10) || DEFAULT_R;
+      const rawText = el.innerText;
+      const charEls = [];
+
+      el.innerHTML = '';
+      [...rawText].forEach((ch) => {
+        if (ch === ' ') {
+          el.appendChild(document.createTextNode('\u00a0'));
+        } else if (ch === '\n') {
+          el.appendChild(document.createElement('br'));
+        } else {
+          const span            = document.createElement('span');
+          span.className        = 'scramble-char';
+          span.dataset.original = ch;
+          span.textContent      = ch;
+          el.appendChild(span);
+          charEls.push(span);
+        }
+      });
+
+      el._scrambleChars  = charEls;
+      el._scrambleRadius = radius;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      targets.forEach((el) => {
+        const chars  = el._scrambleChars;
+        const radius = el._scrambleRadius;
+        if (!chars) return;
+        chars.forEach((c) => {
+          if (c._scrambling) return;
+          const rect = c.getBoundingClientRect();
+          const dist = Math.hypot(
+            e.clientX - (rect.left + rect.width  / 2),
+            e.clientY - (rect.top  + rect.height / 2)
+          );
+          if (dist < radius) {
+            c._scrambling = true;
+            const original = c.dataset.original;
+            let step = 0;
+            const iv = setInterval(() => {
+              if (step >= STEPS) {
+                c.textContent = original;
+                c._scrambling = false;
+                clearInterval(iv);
+              } else {
+                c.textContent = CHARS[Math.floor(Math.random() * CHARS.length)];
+                step++;
+              }
+            }, STEP_MS);
+          }
+        });
+      });
+    });
+  }
+
   /* ── Boot ──────────────────────────────────────────── */
   initReveal();
   initSmoothScroll();
   initHeroDither();
   initCrosshair();
+  initScrambledText();
 
 })();
