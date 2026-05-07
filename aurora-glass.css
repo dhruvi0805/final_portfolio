@@ -1,46 +1,50 @@
 /* ============================================================
-   FOUNDATION UI — Minimal Design System
-   Eggshell white · Playfair Display / Inter · No decoration
+   NEWSPAPER EDITORIAL — Minimal Brutalist Design System
+   Warm archive · Deep green · Muted yellow · Paper grain
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-  /* Palette */
-  --bg:           #f5f1e8;
-  --bg-alt:       #edeae0;
-  --bg-white:     #ffffff;
-  --text:         #111111;
-  --text-muted:   #555555;
-  --text-faint:   #888888;
-  --border:       #d8d4cb;
-  --border-light: #e8e4da;
+  /* Newspaper palette */
+  --bg:           #F5F1E6;   /* warm eggshell */
+  --bg-alt:       #EBE7DA;   /* slightly deeper warm */
+  --bg-white:     #FAF8F2;
+  --text:         #000000;   /* pure black */
+  --text-muted:   #4a4a4a;
+  --text-faint:   #7a7a7a;
+  --border:       #bfbab0;
+  --border-light: #d5d0c6;
+
+  /* Editorial accents */
+  --accent:       #283618;   /* deep archive green */
+  --accent-warm:  #EFCB68;   /* muted newspaper yellow */
 
   /* Tailwind bridge — these drive all tw-custom color classes */
-  --night-black:  #f5f1e8;   /* bg-night-black → eggshell */
-  --cerulean:     #555555;   /* text-night-cerulean → muted */
-  --gold:         #111111;   /* text-star-gold → near black */
-  --white-star:   #111111;   /* text-star-white → dark text */
-  --paint-yellow: #333333;   /* text-star-yellow → dark */
-  --cream-soft:   #222222;
-  --cream-muted:  #555555;
-  --cream-faint:  #888888;
+  --night-black:  #F5F1E6;   /* bg-night-black → warm eggshell */
+  --cerulean:     #283618;   /* text-night-cerulean → deep green */
+  --gold:         #EFCB68;   /* text-star-gold → archive yellow */
+  --white-star:   #000000;   /* text-star-white → pure black */
+  --paint-yellow: #EFCB68;   /* text-star-yellow → muted yellow */
+  --cream-soft:   #1a1a1a;
+  --cream-muted:  #4a4a4a;
+  --cream-faint:  #7a7a7a;
 
   /* Legacy compat — neutralise glass/glow tokens */
   --glass-bg:           transparent;
   --glass-bg-hover:     rgba(0, 0, 0, 0.03);
   --glass-border:       var(--border);
-  --glass-border-vivid: var(--text-muted);
+  --glass-border-vivid: var(--accent);
   --glass-shadow:       none;
   --glass-glow:         none;
-  --accent-purple:      #111111;
-  --accent-pink:        #111111;
-  --accent-cyan:        #555555;
-  --aurora-violet:      #555555;
-  --aurora-cyan:        #555555;
+  --accent-purple:      var(--accent);
+  --accent-pink:        var(--accent);
+  --accent-cyan:        var(--accent);
+  --aurora-violet:      var(--accent);
+  --aurora-cyan:        var(--accent);
 
-  /* Typography */
+  /* Typography (DO NOT MODIFY — per plan) */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body:    'Inter', system-ui, -apple-system, Helvetica, sans-serif;
   --font-mono:    'Space Mono', 'Courier New', monospace;
@@ -68,6 +72,19 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   cursor: auto !important;
+}
+
+/* Paper grain texture — fixed overlay, very low opacity */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.048;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
 }
 
 body::after { display: none !important; }
@@ -140,10 +157,15 @@ a:hover { opacity: 0.6; }
   color: var(--text-muted) !important;
 }
 .nav-link:hover {
-  color: var(--text) !important;
+  color: var(--accent) !important;
   opacity: 1;
 }
-.nav-link::after { background: var(--text) !important; }
+.nav-link::after { background: var(--accent) !important; }
+
+/* Nav top rule — editorial masthead rule */
+.nav-pill-shell {
+  border-bottom: 3px solid var(--text) !important;
+}
 
 /* ── Buttons ────────────────────────────────────────────────── */
 .glass-btn,
@@ -181,14 +203,15 @@ a:hover { opacity: 0.6; }
 .glass-btn::before { display: none !important; }
 
 .btn-primary-night {
-  background: var(--text) !important;
-  border: 1px solid var(--text) !important;
-  color: var(--bg) !important;
+  background: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--bg-white) !important;
   box-shadow: none !important;
 }
 .btn-primary-night:hover {
   background: transparent !important;
-  color: var(--text) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
   opacity: 1;
 }
 
@@ -198,23 +221,24 @@ a:hover { opacity: 0.6; }
   color: var(--text-muted) !important;
 }
 .btn-ghost-night:hover {
-  border-color: var(--text) !important;
-  color: var(--text) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
   background: transparent !important;
   opacity: 1;
 }
 
-/* ── Cards ──────────────────────────────────────────────────── */
+/* ── Cards — brutalist sharp border with editorial top rule ─── */
 .glass-card,
 .glass-card.border-glow-card {
   background: transparent !important;
   border: 1px solid var(--border) !important;
+  border-top: 3px solid var(--text) !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, border-top-color 0.2s;
 }
 
 .glass-card::before,
@@ -225,13 +249,17 @@ a:hover { opacity: 0.6; }
 .glass-card:hover,
 .glass-card.border-glow-card:hover {
   border-color: var(--text-muted) !important;
+  border-top-color: var(--accent) !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
+/* Recognition / editorial boxed panel */
 .glass-dark-strong {
   background: transparent !important;
   border-color: var(--border) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-top: 1px solid var(--border) !important;
   box-shadow: none !important;
 }
 
@@ -295,14 +323,72 @@ a:hover { opacity: 0.6; }
 .hero-glow { position: relative; }
 .hero-glow::before { display: none !important; }
 
-/* ── Dividers ───────────────────────────────────────────────── */
+/* Archive stamp — portfolio seal, hero top-right */
+.hero-glow::after {
+  content: 'PORTFOLIO\A ARCHIVE\A 2026';
+  white-space: pre;
+  display: block;
+  position: absolute;
+  top: 18%;
+  right: 8%;
+  border: 2px solid rgba(40, 54, 24, 0.15);
+  padding: 14px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(40, 54, 24, 0.14);
+  line-height: 2.2;
+  transform: rotate(-9deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Footer stamp — UX DESIGN mark */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: 'UX\A DESIGN';
+  white-space: pre;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%) rotate(7deg);
+  border: 2px solid rgba(40, 54, 24, 0.10);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(40, 54, 24, 0.10);
+  line-height: 2.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dividers — editorial double rule ───────────────────────── */
 .aurora-divider,
 .section-divider {
-  height: 1px;
-  background: var(--border) !important;
+  height: auto;
+  background: none !important;
   background-image: none !important;
   opacity: 1;
   margin: 60px 0;
+  border: none;
+  border-top: 3px solid var(--text);
+  padding-top: 4px;
+  position: relative;
+}
+.aurora-divider::after,
+.section-divider::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--text);
+  margin-top: 2px;
 }
 
 .work-bg { background: transparent !important; }
@@ -328,7 +414,7 @@ a:hover { opacity: 0.6; }
 .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.25s; }
 .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.3s;  }
 
-/* ── Skill tags ─────────────────────────────────────────────── */
+/* ── Skill tags — editorial label style ─────────────────────── */
 .skill-tag-night {
   display: inline-flex;
   padding: 5px 13px;
@@ -337,14 +423,15 @@ a:hover { opacity: 0.6; }
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
+  color: var(--accent);
+  border: 1px solid rgba(40, 54, 24, 0.35);
   background: transparent;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .skill-tag-night:hover {
-  border-color: var(--text);
-  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────── */
@@ -354,7 +441,26 @@ a:hover { opacity: 0.6; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 /* ── Selection ──────────────────────────────────────────────── */
-::selection { background: var(--text); color: var(--bg); }
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ── Editorial category badge — green border/text on cards ─── */
+.glass-img-frame > span,
+.glass-card span[class*="font-mono"][class*="border"],
+article > span[class*="font-mono"][class*="border"] {
+  border-color: rgba(40, 54, 24, 0.4) !important;
+  background: rgba(40, 54, 24, 0.06) !important;
+  color: var(--accent) !important;
+}
+
+/* ── a tags — green hover for editorial body links ──────────── */
+main a:not([class*="glass-btn"]):not([class*="nav-link"]):hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* ── Scrollbar accent ──────────────────────────────────────── */
+::-webkit-scrollbar-thumb { background: var(--accent) !important; }
+::-webkit-scrollbar-thumb:hover { background: var(--text) !important; }
 
 /* ── Misc Tailwind overrides ────────────────────────────────── */
 .glass-card[class*="bg-"] { background: transparent !important; }
