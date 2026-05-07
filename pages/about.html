@@ -11,42 +11,44 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <nav>
   <a href="../index.html" class="nav-logo">Dhruvi Malusare</a>
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
     <li><a href="./projects.html">Work</a></li>
-    <li><a href="./about.html">About</a></li>
+    <li><a href="./about.html" class="active">About</a></li>
     <li><a href="./contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<div class="page-wrap">
-  <section class="section-about">
+<div class="page-wrap" id="main-content">
+  <section class="section-about" aria-labelledby="about-heading">
     <div class="about-grid">
       <div class="about-left">
-        <div class="about-giant-name">
+        <h1 class="about-giant-name" id="about-heading">
           About<br>
           <em>Dhruvi.</em>
-        </div>
-        <div class="about-divider"></div>
+        </h1>
+        <div class="about-divider" aria-hidden="true"></div>
         <p class="about-body">
           I'm a UX designer focused on <strong>research-backed flows</strong>, accessible UI, and motion that supports comprehension — not decoration for its own sake.
           <br><br>
           Based in the New Jersey area; open to <strong>internships</strong>, collaborative projects, and roles where systems thinking and craft go hand in hand.
         </p>
-        <div class="skills-list">
-          <div class="skill-row">UX Research</div>
-          <div class="skill-row">Product Design</div>
-          <div class="skill-row">Prototyping</div>
-          <div class="skill-row">Figma</div>
-          <div class="skill-row">Accessibility</div>
-          <div class="skill-row">Motion Design</div>
-        </div>
+        <ul class="skills-list">
+          <li class="skill-row">UX Research</li>
+          <li class="skill-row">Product Design</li>
+          <li class="skill-row">Prototyping</li>
+          <li class="skill-row">Figma</li>
+          <li class="skill-row">Accessibility</li>
+          <li class="skill-row">Motion Design</li>
+        </ul>
       </div>
 
       <div class="about-right">
-        <div class="exp-section-label">Recognition &amp; Education</div>
+        <h2 class="exp-section-label">Recognition &amp; Education</h2>
 
         <div class="exp-item">
           <div class="exp-title">UX Portfolio</div>

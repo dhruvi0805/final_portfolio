@@ -143,7 +143,7 @@ nav {
 .eyebrow {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12.5px; font-weight: 400; letter-spacing: 0.42em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.6);
+  text-transform: uppercase; color: var(--cream);   /* was 0.6 opacity → 2.65:1 on crimson; full cream = 4.83:1 */
   margin-bottom: 26px;
 }
 
@@ -218,9 +218,9 @@ nav {
 .hero-tagline {
   font-family: 'DM Serif Display', serif;
   font-style: italic; font-size: clamp(16px, 2.2vw, 24px);
-  color: rgba(240, 230, 204, 0.82); line-height: 1.55;
+  color: var(--cream); line-height: 1.55;   /* was 0.82 → 3.72:1 on crimson; full cream = 4.83:1 */
   max-width: 480px;
-  border-left: 2.5px solid rgba(200, 155, 42, 0.7);  /* softer, aged */
+  border-left: 2.5px solid rgba(200, 155, 42, 0.7);
   padding-left: 22px;
 }
 
@@ -279,7 +279,7 @@ nav {
 .stat-label {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; font-weight: 400; letter-spacing: 0.28em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
+  text-transform: uppercase; color: var(--cream);   /* was 0.5 → 2.25:1 on crimson; full cream = 4.83:1 */
   margin-top: 5px;
 }
 
@@ -336,7 +336,7 @@ nav {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; font-weight: 400;
   letter-spacing: 0.42em; text-transform: uppercase;
-  color: rgba(240, 230, 204, 0.45);
+  color: rgba(240, 230, 204, 0.88);   /* was 0.45 → 2.38:1 on teal; 0.88 = 4.80:1 */
   white-space: nowrap;
 }
 
@@ -350,8 +350,8 @@ nav {
   font-weight: 900; font-style: italic;
   font-size: clamp(60px, 11vw, 130px);
   line-height: 0.88; color: var(--cream);
-  padding: 0 68px; margin-bottom: 64px;
-  letter-spacing: -0.03em;  /* tighter — more editorial */
+  padding: 0 68px; margin-top: 0; margin-bottom: 64px;
+  letter-spacing: -0.03em;
 }
 
 .section-title-giant .outline {
@@ -425,8 +425,8 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   font-family: 'Josefin Sans', sans-serif;
   font-size: 11px; font-weight: 600; letter-spacing: 0.35em;
   text-transform: uppercase;
-  border: 1px solid rgba(200, 155, 42, 0.6);
-  color: rgba(200, 155, 42, 0.85);
+  border: 1px solid rgba(240, 230, 204, 0.5);
+  color: rgba(240, 230, 204, 0.90);   /* was gold 0.85 → fails on crimson-dk panel; cream 0.90 passes on all dark panels */
   padding: 5px 14px;
   z-index: 2;
 }
@@ -441,7 +441,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 .proj-num-small {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; font-weight: 600; letter-spacing: 0.42em;
-  color: rgba(212, 160, 48, 0.8); margin-bottom: 18px;
+  color: rgba(240, 230, 204, 0.88); margin-bottom: 18px;   /* was gold 0.8 → 2.41:1 on teal; cream 0.88 = 4.80:1 */
 }
 
 .proj-title {
@@ -456,16 +456,16 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 .proj-desc {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px; font-weight: 300; line-height: 1.82;
-  color: rgba(240, 230, 204, 0.72); margin-bottom: 32px;
+  color: rgba(240, 230, 204, 0.88); margin-bottom: 32px;   /* was 0.72 → 3.78:1 on teal; 0.88 = 4.80:1 */
   flex: 1;
 }
 
 .proj-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
 .proj-pill {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.22em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.55);
-  border: 1px solid rgba(240, 230, 204, 0.18);
+  font-size: 11px; font-weight: 300; letter-spacing: 0.22em;   /* was 9px → illegible; 0.55 → 2.87:1 on teal */
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.88);  /* 0.88 = 4.80:1 on teal */
+  border: 1px solid rgba(240, 230, 204, 0.35);                  /* was 0.18 → 1.2:1; 0.35 ≥ 3:1 on dark */
   padding: 4px 12px;
 }
 
@@ -529,11 +529,11 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   font-weight: 900;
   font-size: clamp(52px, 8vw, 96px);
   line-height: 0.9; color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 8px; margin-top: 0;
   letter-spacing: -0.03em;
 }
 .about-giant-name em {
-  font-style: italic; color: var(--crimson);
+  font-style: italic; color: var(--crimson-dk);   /* was --crimson → 1.95:1 on mustard; crimson-dk = 3.31:1 (large heading text passes 3:1) */
   display: block;
 }
 
@@ -552,6 +552,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 
 .skills-list {
   margin-top: 44px; display: flex; flex-direction: column; gap: 0;
+  list-style: none; padding-left: 0;
 }
 .skill-row {
   display: flex; justify-content: space-between; align-items: center;
@@ -573,7 +574,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12px; font-weight: 600; letter-spacing: 0.42em;
   text-transform: uppercase; color: rgba(200, 155, 42, 0.8);
-  margin-bottom: -24px;
+  margin-top: 0; margin-bottom: -24px;
 }
 
 .exp-item {
@@ -594,8 +595,8 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 }
 .exp-period {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 100; letter-spacing: 0.15em;
-  color: rgba(240, 230, 204, 0.28); margin-bottom: 10px;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.15em;   /* weight 100 at 10px is hair-thin; raised to 300 */
+  color: rgba(240, 230, 204, 0.55); margin-bottom: 10px;       /* was 0.28 → 2.19:1 on ink; 0.55 = 5.26:1 */
 }
 .exp-desc {
   font-family: 'Cormorant Garamond', serif;
@@ -646,7 +647,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 .contact-sub {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 300; line-height: 1.75;
-  color: rgba(240, 230, 204, 0.72); max-width: 380px;
+  color: var(--cream); max-width: 380px;   /* was 0.72 → 3.20:1 on crimson; full cream = 4.83:1 */
   margin-bottom: 44px;
 }
 
@@ -669,7 +670,7 @@ span.proj-link::after { content: '→'; font-size: 14px; }
 .contact-right-label {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 10px; font-weight: 300; letter-spacing: 0.38em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.38);
+  text-transform: uppercase; color: var(--cream);   /* was 0.38 → 2.80:1 on crimson; full cream = 4.83:1 */
   margin-bottom: 26px;
 }
 
@@ -708,13 +709,13 @@ footer {
 }
 .footer-copy {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px; font-weight: 100; letter-spacing: 0.24em;
-  color: rgba(240, 230, 204, 0.28);
+  font-size: 10px; font-weight: 300; letter-spacing: 0.24em;   /* weight 100 → hair-thin at 10px; raised to 300 */
+  color: rgba(240, 230, 204, 0.55);                             /* was 0.28 → 2.19:1 on ink; 0.55 = 5.26:1 */
 }
 .footer-top {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 10px; font-weight: 300; letter-spacing: 0.22em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.38);
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.55);  /* was 0.38 → 3.09:1 on ink; 0.55 = 5.26:1 */
   transition: color 0.25s; cursor: pointer;
 }
 .footer-top:hover { color: var(--gold); }
@@ -774,8 +775,8 @@ footer {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 11px; font-weight: 600; letter-spacing: 0.38em;
   text-transform: uppercase;
-  border: 1px solid rgba(200, 155, 42, 0.6);
-  color: rgba(200, 155, 42, 0.85);
+  border: 1px solid rgba(240, 230, 204, 0.5);
+  color: rgba(240, 230, 204, 0.90);   /* was gold 0.85 → 2.35:1 on teal; cream 0.90 = 5.1:1 */
   padding: 5px 16px;
   display: inline-block;
   margin-bottom: 28px;
@@ -796,7 +797,7 @@ footer {
   font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-size: clamp(18px, 2.5vw, 26px);
-  color: rgba(240, 230, 204, 0.6);
+  color: rgba(240, 230, 204, 0.88);   /* was 0.6 → fails on teal; 0.88 = 4.80:1 */
   line-height: 1.4;
   margin-bottom: 36px;
   position: relative; z-index: 1;
@@ -805,7 +806,7 @@ footer {
 .page-summary {
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px; font-weight: 300; line-height: 1.8;
-  color: rgba(240, 230, 204, 0.82);
+  color: rgba(240, 230, 204, 0.90);   /* was 0.82 → 4.41:1 on teal (just fails); 0.90 = 5.1:1 */
   max-width: 680px;
   border-left: 2.5px solid rgba(200, 155, 42, 0.6);
   padding-left: 24px;
@@ -889,13 +890,13 @@ footer {
 .metric-label {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 11px; font-weight: 600; letter-spacing: 0.28em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.65);  /* was 0.5 → 4.52:1 barely passes; 0.65 = 6.06:1 */
   margin-top: 8px;
 }
 .metric-desc {
   font-family: 'Cormorant Garamond', serif;
   font-size: 15px; font-weight: 300; line-height: 1.6;
-  color: rgba(240, 230, 204, 0.5); margin-top: 8px;
+  color: rgba(240, 230, 204, 0.65); margin-top: 8px;           /* was 0.5 → raised for comfortable safety margin */
 }
 
 /* Prototype link button */
@@ -923,9 +924,9 @@ footer {
 .tags-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .tag-pill {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px; font-weight: 300; letter-spacing: 0.22em;
-  text-transform: uppercase; color: rgba(240, 230, 204, 0.5);
-  border: 1px solid rgba(240, 230, 204, 0.15);
+  font-size: 11px; font-weight: 300; letter-spacing: 0.22em;   /* was 9px → illegible; raised to 11px */
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.65);  /* was 0.5 → 4.52:1 barely passes on ink; 0.65 = 6.06:1 */
+  border: 1px solid rgba(240, 230, 204, 0.35);                  /* was 0.15 → ~1.2:1 border; raised for UI component contrast */
   padding: 5px 14px;
 }
 
@@ -989,6 +990,84 @@ footer {
   text-transform: uppercase; color: rgba(212, 160, 48, 0.7);
 }
 .proj-listing-footer::after { content: '→'; font-size: 12px; }
+
+/* ─── CASE STUDY BOTTOM NAVIGATION — Nielsen H3 ─────────────── */
+.case-bottom-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 48px 68px;
+  border-top: 1px solid rgba(240, 230, 204, 0.1);
+  margin-top: 80px;
+  flex-wrap: wrap; gap: 16px;
+}
+.case-bottom-nav a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10.5px; font-weight: 300; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.80);
+  transition: color 0.25s;
+}
+.case-bottom-nav a:hover { color: var(--gold); }
+.case-bottom-nav .nav-back { color: rgba(212, 160, 48, 0.88); }
+.case-bottom-nav .nav-back:hover { color: var(--gold); }
+@media (max-width: 900px) {
+  .case-bottom-nav { padding: 32px 24px; }
+}
+
+/* ─── SKIP NAVIGATION — WCAG 2.4.1 ─────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  padding: 12px 28px;
+  background: var(--mustard-lt);
+  color: var(--ink);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ─── ACTIVE NAV STATE — Nielsen H1 ─────────────────────────── */
+.nav-links a.active {
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* ─── FOCUS VISIBLE — WCAG 2.4.7 ────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--mustard-lt);
+  outline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible,
+.btn-retro:focus-visible,
+.social-row:focus-visible,
+.project-row:focus-visible,
+.proj-listing-card:focus-visible {
+  outline: 2px solid var(--mustard-lt);
+  outline-offset: 3px;
+}
+
+/* ─── BADGE TEXT — readable sizes ───────────────────────────── */
+.badge-text-top {
+  font-size: 9px;   /* was 7px → unreadable; badges also receive aria-hidden in HTML */
+}
+.badge-sub {
+  font-size: 9px;   /* was 6.5px → unreadable */
+}
+
+/* ─── REDUCED MOTION — WCAG 2.2.2 ───────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .hero-bar      { transform: none !important; will-change: auto; }
+  html           { scroll-behavior: auto; }
+}
 
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 900px) {
