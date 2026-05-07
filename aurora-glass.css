@@ -7,10 +7,10 @@
 
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-  /* Newspaper palette */
-  --bg:           #F5F1E6;   /* warm eggshell */
-  --bg-alt:       #EBE7DA;   /* slightly deeper warm */
-  --bg-white:     #FAF8F2;
+  /* Newspaper palette — lightened ~20% for clean paper feel */
+  --bg:           #FAF7F0;   /* bright warm eggshell */
+  --bg-alt:       #F0EDE3;   /* slightly deeper warm */
+  --bg-white:     #FDFCF8;
   --text:         #000000;   /* pure black */
   --text-muted:   #4a4a4a;
   --text-faint:   #7a7a7a;
@@ -22,7 +22,7 @@
   --accent-warm:  #EFCB68;   /* muted newspaper yellow */
 
   /* Tailwind bridge — these drive all tw-custom color classes */
-  --night-black:  #F5F1E6;   /* bg-night-black → warm eggshell */
+  --night-black:  #FAF7F0;   /* bg-night-black → bright warm eggshell */
   --cerulean:     #283618;   /* text-night-cerulean → deep green */
   --gold:         #EFCB68;   /* text-star-gold → archive yellow */
   --white-star:   #000000;   /* text-star-white → pure black */
@@ -194,8 +194,9 @@ a:hover { opacity: 0.6; }
   box-shadow: none;
 }
 .glass-btn:hover {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--accent-warm);
+  border-color: var(--accent-warm);
+  color: #000;
   opacity: 1;
   transform: none;
   box-shadow: none;
@@ -203,9 +204,9 @@ a:hover { opacity: 0.6; }
 .glass-btn::before { display: none !important; }
 
 .btn-primary-night {
-  background: var(--accent) !important;
-  border: 1px solid var(--accent) !important;
-  color: var(--bg-white) !important;
+  background: var(--accent-warm) !important;
+  border: 1px solid var(--accent-warm) !important;
+  color: #000000 !important;
   box-shadow: none !important;
 }
 .btn-primary-night:hover {
@@ -414,7 +415,7 @@ footer::before {
 .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.25s; }
 .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.3s;  }
 
-/* ── Skill tags — editorial label style ─────────────────────── */
+/* ── Skill tags — yellow editorial labels ───────────────────── */
 .skill-tag-night {
   display: inline-flex;
   padding: 5px 13px;
@@ -423,15 +424,15 @@ footer::before {
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(40, 54, 24, 0.35);
+  color: #000;
+  border: 1px solid var(--accent-warm);
   background: transparent;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .skill-tag-night:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: var(--bg);
+  border-color: var(--accent-warm);
+  background: var(--accent-warm);
+  color: #000;
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────── */
@@ -468,6 +469,12 @@ main a:not([class*="glass-btn"]):not([class*="nav-link"]):hover {
 .nav-glass[class*="bg-"]  { background: var(--bg) !important; }
 .hover\:shadow-glow-gold:hover { box-shadow: none !important; }
 
+/* ── Bug-fix: hide decorative SVG squiggles in hero ─────────── */
+.hero-glow > svg[aria-hidden="true"] { display: none !important; }
+
+/* ── Bug-fix: remove any radial-gradient overlays (contact pg) */
+[class*="bg-[radial-gradient"] { background: transparent !important; }
+
 /* Strip any inline dark backdrop overlays from sections */
 [class*="bg-[rgba(10"],
 [class*="bg-[rgba(13"],
@@ -498,4 +505,55 @@ main a:not([class*="glass-btn"]):not([class*="nav-link"]):hover {
 /* Footer border light-mode fix */
 footer {
   border-top: 1px solid var(--border) !important;
+}
+
+/* ── Dark section variant — green emphasis blocks ────────────── */
+.dark-section {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  position: relative;
+}
+.dark-section h1,.dark-section h2,.dark-section h3,.dark-section h4,
+.dark-section p,.dark-section span,.dark-section em,.dark-section a,
+.dark-section div:not([class*="absolute"]) {
+  color: var(--bg) !important;
+  -webkit-text-fill-color: var(--bg) !important;
+}
+.dark-section .glass-card {
+  border-top-color: var(--bg) !important;
+  border-color: rgba(250, 247, 240, 0.25) !important;
+}
+.dark-section .glass-btn,.dark-section .btn-primary-night {
+  background: var(--accent-warm) !important;
+  border-color: var(--accent-warm) !important;
+  color: #000 !important;
+}
+.dark-section .glass-btn:hover,.dark-section .btn-primary-night:hover {
+  background: transparent !important;
+  color: var(--accent-warm) !important;
+  border-color: var(--accent-warm) !important;
+  opacity: 1;
+}
+.dark-section .section-divider,.dark-section .aurora-divider {
+  border-top-color: rgba(250,247,240,0.4) !important;
+}
+.dark-section .section-divider::after,.dark-section .aurora-divider::after {
+  background: rgba(250,247,240,0.4) !important;
+}
+
+/* ── Crosshair cursor lines ──────────────────────────────────── */
+#crosshair-h,#crosshair-v {
+  position: absolute;
+  pointer-events: none;
+  background: #283618;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#crosshair-h { width: 100%; height: 1px; top: 0; left: 0; }
+#crosshair-v { height: 100%; width: 1px; top: 0; left: 0; }
+
+/* Hero dither canvas — pixelated scaling for halftone look */
+#hero-dither-canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
