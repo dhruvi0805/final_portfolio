@@ -3,7 +3,8 @@
     "allow": [
       "Bash(dir C:\\\\Dhruvi\\\\NJIT classes\\\\junior\\\\IS117\\\\final_portfolio\\\\Images *)",
       "PowerShell(Get-ChildItem \"C:\\\\Dhruvi\\\\NJIT classes\\\\junior\\\\IS117\\\\final_portfolio\\\\Images\" -Recurse | ForEach-Object { $_.FullName })",
-      "PowerShell(Get-Content *)"
+      "PowerShell(Get-Content *)",
+      "Bash(Test-Path *)"
     ]
   }
 }
