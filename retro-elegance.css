@@ -1148,9 +1148,12 @@ footer {
 .proj-listing-card.c2:hover { background: rgba(16, 10, 4, 0.72); }
 .proj-listing-card.c3 {
   background: rgba(38, 56, 32, 0.55);    /* matches p3 — forest */
-  grid-column: 1 / -1;
 }
 .proj-listing-card.c3:hover { background: rgba(38, 56, 32, 0.72); }
+.proj-listing-card.c4 {
+  background: rgba(14, 38, 52, 0.60);    /* deep teal — fintech */
+}
+.proj-listing-card.c4:hover { background: rgba(14, 38, 52, 0.80); }
 .proj-listing-num {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 15px; font-weight: 600; letter-spacing: 0.38em;
