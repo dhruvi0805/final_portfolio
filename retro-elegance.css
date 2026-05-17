@@ -1200,6 +1200,12 @@ footer {
 .case-bottom-nav a:hover { color: var(--gold); }
 .case-bottom-nav .nav-back { color: rgba(225, 189, 112, 0.88); }
 .case-bottom-nav .nav-back:hover { color: var(--gold); }
+.case-nav-disabled {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14.5px; font-weight: 400; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(240, 230, 204, 0.22);
+  cursor: default; user-select: none;
+}
 
 /* ─── SKIP NAVIGATION — WCAG 2.4.1 ─────────────────────────── */
 .skip-link {
